@@ -1,5 +1,73 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>ACM题解-母牛的故事 | One Fly Bird's Nest</title><link rel="stylesheet" type="text/css" href="//fonts.neworld.org/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">ACM题解-母牛的故事</h1><a id="logo" href="/.">One Fly Bird's Nest</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="Arama"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">ACM题解-母牛的故事</h1><div class="post-meta"><a href="/2018/11/13/母牛的故事/#comments" class="comment-count"></a><p><span class="date">Nov 13, 2018</span><span><a href="/categories/c/" class="category">c</a></span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h1 id="母牛的故事"><a href="#母牛的故事" class="headerlink" title="母牛的故事"></a>母牛的故事</h1><hr>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>ACM题解-母牛的故事 | One Fly Bird&#39;s Nest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="题目 Problem Description 有一头母牛，它每年年初生一头小母牛。每头小母牛从第四个年头开始，每年年初也生一头小母牛。请编程实现在第n年的时候，共有多少头母牛？ Input 输入数据由多个测试实例组成，每个测试实例占一行，包括一个整数n(0&amp;lt;n&amp;lt;55)，n的含义如题目中描述。n=0表示输入数据的结束，不做处理。 Output 对于每个测试实例，输出在第n年的时候母牛的数">
+<meta name="keywords" content="acm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACM题解-母牛的故事">
+<meta property="og:url" content="http://yoursite.com/2018/11/13/母牛的故事/index.html">
+<meta property="og:site_name" content="One Fly Bird&#39;s Nest">
+<meta property="og:description" content="题目 Problem Description 有一头母牛，它每年年初生一头小母牛。每头小母牛从第四个年头开始，每年年初也生一头小母牛。请编程实现在第n年的时候，共有多少头母牛？ Input 输入数据由多个测试实例组成，每个测试实例占一行，包括一个整数n(0&amp;lt;n&amp;lt;55)，n的含义如题目中描述。n=0表示输入数据的结束，不做处理。 Output 对于每个测试实例，输出在第n年的时候母牛的数">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH5EiakOcayKptHD2QbmwosbkHpfuNHvkEc44KNtvTAhiWXSQ1">
+<meta property="og:updated_time" content="2018-11-18T08:33:27.535Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ACM题解-母牛的故事">
+<meta name="twitter:description" content="题目 Problem Description 有一头母牛，它每年年初生一头小母牛。每头小母牛从第四个年头开始，每年年初也生一头小母牛。请编程实现在第n年的时候，共有多少头母牛？ Input 输入数据由多个测试实例组成，每个测试实例占一行，包括一个整数n(0&amp;lt;n&amp;lt;55)，n的含义如题目中描述。n=0表示输入数据的结束，不做处理。 Output 对于每个测试实例，输出在第n年的时候母牛的数">
+<meta name="twitter:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH5EiakOcayKptHD2QbmwosbkHpfuNHvkEc44KNtvTAhiWXSQ1">
+  
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+</html>
+<body style="
+
+
+  background-color: #eff0f6
+
+">
+  <div id="container">
+    <nav id="nav">
+  <header class="header">
+    <a href="/" class="title">Oneflybird&#39;s Nest</a>
+  </header>
+  <div class="ctnWrap">
+    <div class="icons">
+      
+        
+          
+            <a href="https://github.com/oneflybird" target="_blank" class="nav-icn iconfont icon-github"></a>
+          
+        
+      
+    </div>
+    <div class="menu">
+      
+        
+            <a href="/" class="nav-menu ">HOME</a>
+          
+        
+            <a href="/about" class="nav-menu ">ABOUT</a>
+          
+        
+            <a href="/tags" class="nav-menu ">TAGS</a>
+          
+        
+            <a href="/categories" class="nav-menu ">CATEGORIES</a>
+          
+        
+      
+    </div>
+  </div>
+</nav>
+    <div id="main"><section class="article">
+  <h2 class="title">ACM题解-母牛的故事</h2>
+  <p class="sub">11月 13, 2018</p>
+  <article class="content">
+    <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
 <p>Problem Description</p>
 <p>有一头母牛，它每年年初生一头小母牛。每头小母牛从第四个年头开始，每年年初也生一头小母牛。请编程实现在第n年的时候，共有多少头母牛？</p>
 <p>Input</p>
@@ -32,5 +100,28 @@
 <hr>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>注意找出项与项之间的关系，可在草稿纸上进行推演</strong></p>
 <hr>
-</div><div class="tags"><a href="/tags/acm/">acm</a></div><div class="post-share"><div class="bdsharebuttonbox"><span style="float:left;line-height: 28px;height: 28px;font-size:16px;font-weight:blod">分享到：</span><a href="#" data-cmd="more" class="bds_more"></a><a href="#" data-cmd="mshare" title="分享到一键分享" class="bds_mshare"></a><a href="#" data-cmd="fbook" title="分享到Facebook" class="bds_fbook"></a><a href="#" data-cmd="twi" title="分享到Twitter" class="bds_twi"></a><a href="#" data-cmd="linkedin" title="分享到linkedin" class="bds_linkedin"></a><a href="#" data-cmd="youdao" title="分享到有道云笔记" class="bds_youdao"></a><a href="#" data-cmd="evernotecn" title="分享到印象笔记" class="bds_evernotecn"></a><a href="#" data-cmd="weixin" title="分享到微信" class="bds_weixin"></a><a href="#" data-cmd="qzone" title="分享到QQ空间" class="bds_qzone"></a><a href="#" data-cmd="tsina" title="分享到新浪微博" class="bds_tsina"></a></div></div><div class="post-nav"><a href="/2018/11/14/一些关于c的小技巧和基础/" class="pre">一些关于c的小技巧和基础知识</a><a href="/2018/11/09/hello-world/" class="next">Hello World</a></div><div id="comments"></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#母牛的故事"><span class="toc-text">母牛的故事</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目分析"><span class="toc-text">题目分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可用方法"><span class="toc-text">可用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#递推（需要理解）"><span class="toc-text">递推（需要理解）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递归-思路很清晰的一种解法"><span class="toc-text">递归(思路很清晰的一种解法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组-运用数学思想）"><span class="toc-text">数组(运用数学思想）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/11/17/python的flask框架/">python的flask框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/14/一些关于c的小技巧和基础/">一些关于c的小技巧和基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/13/母牛的故事/">ACM题解-母牛的故事</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/09/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/c/">c</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/flask/" style="font-size: 15px;">flask</a> <a href="/tags/acm/" style="font-size: 15px;">acm</a> <a href="/tags/basic/" style="font-size: 15px;">basic</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">Baidu Site Haritası</a> |  <a href="/atom.xml">订阅</a> |  <a href="/about/">关于</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="/." rel="nofollow">One fly bird.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.1" async></script><script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","weixin","tsina","qzone","linkedin","fbook","twi","print","renren","sqq","evernotecn","bdysc","tqq","tqf","bdxc","kaixin001","tieba","douban","bdhome","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","h163","copy"],"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"]}};with(document)0[(getElementsByTagName('head')[0]||head).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-</script></body></html>
+
+  </article>
+  <footer class="f-cf">
+    
+      <a href="/2018/11/14/一些关于c的小技巧和基础/" class="link f-fl">⟵一些关于c的小技巧和基础知识</a>
+    
+    
+      <a href="/2018/11/09/hello-world/" class="link f-fr">Hello World⟶</a>
+    
+  </footer>
+</section></div>
+    <footer id="footer" class="f-cf">
+  1361569005@qq.com
+  
+    
+      
+        · <a href="https://github.com/oneflybird" target="_blank" class="nav-icn">GitHub</a>
+      
+    
+  
+  <span class="copyright">All rights reserved @Fly bird</span>
+</footer>
+  </div>
+</body>
+</html>

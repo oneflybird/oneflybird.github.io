@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>archlinux基础安装步骤 | One Fly Bird&#39;s Nest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="使用虚拟机安装archlinux的步骤简单介绍  ArchLinux和Linux的联系商家将Linux系统的内核与外围应用软件和文档包装起来, 并提供系统安装界面和系统设置管理工具, 这样就构成了一个发行版本, ArchLinux是其中一个发行版本。 Archlinux Principles  Simplicity:  Arch Linux defines simplicity as withou">
+<meta name="keywords" content="basic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="archlinux基础安装步骤">
+<meta property="og:url" content="http://yoursite.com/2018/11/18/archlinux基础安装步骤/index.html">
+<meta property="og:site_name" content="One Fly Bird&#39;s Nest">
+<meta property="og:description" content="使用虚拟机安装archlinux的步骤简单介绍  ArchLinux和Linux的联系商家将Linux系统的内核与外围应用软件和文档包装起来, 并提供系统安装界面和系统设置管理工具, 这样就构成了一个发行版本, ArchLinux是其中一个发行版本。 Archlinux Principles  Simplicity:  Arch Linux defines simplicity as withou">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-18T08:49:20.599Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="archlinux基础安装步骤">
+<meta name="twitter:description" content="使用虚拟机安装archlinux的步骤简单介绍  ArchLinux和Linux的联系商家将Linux系统的内核与外围应用软件和文档包装起来, 并提供系统安装界面和系统设置管理工具, 这样就构成了一个发行版本, ArchLinux是其中一个发行版本。 Archlinux Principles  Simplicity:  Arch Linux defines simplicity as withou">
+  
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+</html>
+<body style="
+
+
+  background-color: #eff0f6
+
+">
+  <div id="container">
+    <nav id="nav">
+  <header class="header">
+    <a href="/" class="title">Oneflybird&#39;s Nest</a>
+  </header>
+  <div class="ctnWrap">
+    <div class="icons">
+      
+        
+          
+            <a href="https://github.com/oneflybird" target="_blank" class="nav-icn iconfont icon-github"></a>
+          
+        
+      
+    </div>
+    <div class="menu">
+      
+        
+            <a href="/" class="nav-menu ">HOME</a>
+          
+        
+            <a href="/about" class="nav-menu ">ABOUT</a>
+          
+        
+            <a href="/tags" class="nav-menu ">TAGS</a>
+          
+        
+            <a href="/categories" class="nav-menu ">CATEGORIES</a>
+          
+        
+      
+    </div>
+  </div>
+</nav>
+    <div id="main"><section class="article">
+  <h2 class="title">archlinux基础安装步骤</h2>
+  <p class="sub">11月 18, 2018</p>
+  <article class="content">
+    <p>使用虚拟机安装archlinux的步骤简单介绍</p>
+<hr>
+<h2 id="ArchLinux和Linux的联系"><a href="#ArchLinux和Linux的联系" class="headerlink" title="ArchLinux和Linux的联系"></a>ArchLinux和Linux的联系</h2><p>商家将Linux系统的内核与外围应用软件和文档包装起来, 并提供系统安装界面和系统设置管理工具, 这样就构成了一个发行版本, <strong>ArchLinux</strong>是其中一个发行版本。</p>
+<h3 id="Archlinux-Principles"><a href="#Archlinux-Principles" class="headerlink" title="Archlinux Principles"></a>Archlinux Principles</h3><blockquote>
+<ul>
+<li><p>Simplicity:  Arch Linux defines simplicity as <em>without unnecessary additions or modifications</em>.</p>
+</li>
+<li><p>Modernity:  a one-time installation with continuous upgrades</p>
+</li>
+<li><p>Pragmatism(实用): The large number of packages and build scripts in the various Arch Linux repositories offer free and open source software for those who prefer it, as well as proprietary software packages for those who embrace functionality over ideology.                  </p>
+</li>
+<li><p>翻译：Arch Linux 的仓库中包含大量的软件包和编译脚本。用户可以按照需要进行自由选择。仓库中既提供了开源、自由的软件，也提供了闭源软件。<strong>实用性大于意识形态</strong>.</p>
+</li>
+<li><p>User centrality: All users are encouraged to <a href="https://wiki.archlinux.org/index.php/Getting_involved" target="_blank" rel="noopener">participate</a> and contribute to the distribution.</p>
+</li>
+<li><p>Versality(通用): Arch Linux is a general-purpose distribution. Upon installation, only a command-line environment is provided: rather than tearing out unneeded and unwanted packages, the user is offered the ability to build a custom system by choosing among thousands of high-quality packages provided in the <a href="https://wiki.archlinux.org/index.php/Official_repositories" target="_blank" rel="noopener">official repositories</a> for the <a href="https://en.wikipedia.org/wiki/x86-64" target="_blank" rel="noopener">x86-64</a> architecture.</p>
+<p>Arch is backed by <a href="https://wiki.archlinux.org/index.php/Pacman" target="_blank" rel="noopener">pacman</a>, a lightweight, simple and fast package manager that allows to upgrade the entire system with one command. Arch also provides the <a href="https://wiki.archlinux.org/index.php/Arch_Build_System" target="_blank" rel="noopener">Arch Build System</a>, a ports-like system to make it easy to build and install packages from source, which can also be synchronized with one command. In addition, the <em>Arch User Repository</em> contains many thousands more of community-contributed <a href="https://wiki.archlinux.org/index.php/PKGBUILD" target="_blank" rel="noopener">PKGBUILD</a> scripts for compiling installable packages from source using the <a href="https://wiki.archlinux.org/index.php/Makepkg" target="_blank" rel="noopener">makepkg</a> application. It is also possible for users to build and maintain their own custom repositories with ease. </p>
+<p>翻译：Arch Linux 是通用发行版，初始安装仅提供命令行环境：用户不需要删除大量不需要的软件包，而是可以从<a href="https://wiki.archlinux.org/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93" target="_blank" rel="noopener">官方软件仓库</a>成千上万的高质量软件包中进行选择，搭建自己的系统。支持<a href="https://en.wikipedia.org/wiki/x86-64" target="_blank" rel="noopener">x86-64</a> 架构。</p>
+<p>Arch有一个易用的<a href="https://en.wikipedia.org/wiki/Package_manager" target="_blank" rel="noopener">包管理系统</a><a href="https://wiki.archlinux.org/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">Pacman</a>)，仅凭一条命令就升级整个系统。Arch还提供一个类似ports的包构建系统（<a href="https://wiki.archlinux.org/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">Arch Build System</a>)），通过它可以轻松从源码构建和安装软件包，并用一个命令完成同步。你甚至可以用一个命令重新构建整个系统。Arch还提供<a href="https://wiki.archlinux.org/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">Arch User Repository</a>)，它包含了数千个由用户维护的<a href="https://wiki.archlinux.org/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">PKGBUILD</a>)脚本，配合<a href="https://wiki.archlinux.org/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">makepkg</a>)工具，从编译到打包一气呵成。用户还能轻松构建和维护属于自己的自定义软件源。                                                                                                                      </p>
+</li>
+</ul>
+</blockquote>
+<h3 id="算了还是用中文吧"><a href="#算了还是用中文吧" class="headerlink" title="算了还是用中文吧"></a>算了还是用中文吧</h3><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="下载archlinux"><a href="#下载archlinux" class="headerlink" title="下载archlinux"></a>下载archlinux</h3><p>推荐从<a href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/" target="_blank" rel="noopener">清华镜像站任选一个版本下载</a></p>
+<h4 id="什么是开源镜像站"><a href="#什么是开源镜像站" class="headerlink" title="什么是开源镜像站"></a>什么是开源镜像站</h4><p>因为源的主机在一个地方，其它一些稍微远的地方的机器从这个源上更新比较慢，所以就会在离自己近的地方将这个源同步复制过来，这样从镜像站的源更新就会比之前快很多了。所以这就是为什么会有很多大学镜像站，因为都是同步到了校园内的主机，对于校园内网来说速度会飞快。（然而hdu并没有嘤嘤嘤）</p>
+<h4 id="不同的ISO版本有什么区别吗"><a href="#不同的ISO版本有什么区别吗" class="headerlink" title="不同的ISO版本有什么区别吗"></a>不同的ISO版本有什么区别吗</h4><p>我也不知道，大概没有吧</p>
+<h4 id="x86-64"><a href="#x86-64" class="headerlink" title="x86-64"></a>x86-64</h4><p>X86-64可在同一时间内处理64位的整数运算，并兼容X86-32架构。其中支持64位逻辑定址，同时提供转换为32位定址选项；但数据操作指令默认为32位和8位，提供转换成64位和16位的选项；支持常规用途<a href="https://baike.baidu.com/item/%E5%AF%84%E5%AD%98%E5%99%A8/187682" target="_blank" rel="noopener">寄存器</a>，如果是32<a href="https://baike.baidu.com/item/%E4%BD%8D%E8%BF%90%E7%AE%97" target="_blank" rel="noopener">位运算</a>操作，就要将结果扩展成完整的64位。这样，指令中有“直接执行”和“转换执行”的区别，其指令字段是8位或32位，可避免字段过长。x86处理器的32bit<a href="https://baike.baidu.com/item/%E5%AF%BB%E5%9D%80%E7%A9%BA%E9%97%B4/7848599" target="_blank" rel="noopener">寻址空间</a>限制在4GB内存，而IA-64的处理器又不能兼容x86。AMD考虑顾客需求，加强x86<a href="https://baike.baidu.com/item/%E6%8C%87%E4%BB%A4%E9%9B%86/238130" target="_blank" rel="noopener">指令集</a>的功能，使这套指令集可同时支持64位的运算模式，因此AMD把它们的结构称之为x86-64。<strong>总之最近几年的电脑都是64位处理器的cpu</strong></p>
+
+  </article>
+  <footer class="f-cf">
+    
+    
+      <a href="/2018/11/17/python的flask框架/" class="link f-fr">python的flask框架⟶</a>
+    
+  </footer>
+</section></div>
+    <footer id="footer" class="f-cf">
+  1361569005@qq.com
+  
+    
+      
+        · <a href="https://github.com/oneflybird" target="_blank" class="nav-icn">GitHub</a>
+      
+    
+  
+  <span class="copyright">All rights reserved @Fly bird</span>
+</footer>
+  </div>
+</body>
+</html>

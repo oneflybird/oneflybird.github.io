@@ -1,4 +1,74 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>python的flask框架 | One Fly Bird's Nest</title><link rel="stylesheet" type="text/css" href="//fonts.neworld.org/css?family=Source+Code+Pro"><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">python的flask框架</h1><a id="logo" href="/.">One Fly Bird's Nest</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="Arama"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="title">{title}</div><div class="time">{date}</div><div class="tags">{tags}</div></a></div></template></div></div></div><div id="layout" class="layout-g"><div class="layout-l"><div class="content_container"><div class="post"><h1 class="post-title">python的flask框架</h1><div class="post-meta"><a href="/2018/11/17/python的flask框架/#comments" class="comment-count"></a><p><span class="date">Nov 17, 2018</span><span><a href="/categories/python/" class="category">python</a></span><span><i id="busuanzi_container_page_pv"><i id="busuanzi_value_page_pv"></i><i>点击</i></i></span></p></div><div class="post-content"><h1 id="flask框架的初步尝试"><a href="#flask框架的初步尝试" class="headerlink" title="flask框架的初步尝试"></a>flask框架的初步尝试</h1><hr>
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>python的flask框架 | One Fly Bird&#39;s Nest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="flask框架的初步尝试  任务做出一个随机生成身份证码的网页  前期准备 黑马程序员入门视频（表单之前即可完成任务） flask官方中文手册 flask官方英文手册 pycharm3专业版 在终端上生成身份证的代码  安装flask1pip install Flask 在命令行上输完这条命令就可以开心地开始用py啦~（话说我不知道如果不输这条命令会有什么样的结果诶） 各文件夹里的内容 templ">
+<meta name="keywords" content="flask">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python的flask框架">
+<meta property="og:url" content="http://yoursite.com/2018/11/17/python的flask框架/index.html">
+<meta property="og:site_name" content="One Fly Bird&#39;s Nest">
+<meta property="og:description" content="flask框架的初步尝试  任务做出一个随机生成身份证码的网页  前期准备 黑马程序员入门视频（表单之前即可完成任务） flask官方中文手册 flask官方英文手册 pycharm3专业版 在终端上生成身份证的代码  安装flask1pip install Flask 在命令行上输完这条命令就可以开心地开始用py啦~（话说我不知道如果不输这条命令会有什么样的结果诶） 各文件夹里的内容 templ">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJRDuawlND6GIyj4Rwus-sVYOvhsn4lTVjoUSHnMgY8BEcZsKZ">
+<meta property="og:updated_time" content="2018-11-18T08:22:22.813Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python的flask框架">
+<meta name="twitter:description" content="flask框架的初步尝试  任务做出一个随机生成身份证码的网页  前期准备 黑马程序员入门视频（表单之前即可完成任务） flask官方中文手册 flask官方英文手册 pycharm3专业版 在终端上生成身份证的代码  安装flask1pip install Flask 在命令行上输完这条命令就可以开心地开始用py啦~（话说我不知道如果不输这条命令会有什么样的结果诶） 各文件夹里的内容 templ">
+<meta name="twitter:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJRDuawlND6GIyj4Rwus-sVYOvhsn4lTVjoUSHnMgY8BEcZsKZ">
+  
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+</html>
+<body style="
+
+
+  background-color: #eff0f6
+
+">
+  <div id="container">
+    <nav id="nav">
+  <header class="header">
+    <a href="/" class="title">Oneflybird&#39;s Nest</a>
+  </header>
+  <div class="ctnWrap">
+    <div class="icons">
+      
+        
+          
+            <a href="https://github.com/oneflybird" target="_blank" class="nav-icn iconfont icon-github"></a>
+          
+        
+      
+    </div>
+    <div class="menu">
+      
+        
+            <a href="/" class="nav-menu ">HOME</a>
+          
+        
+            <a href="/about" class="nav-menu ">ABOUT</a>
+          
+        
+            <a href="/tags" class="nav-menu ">TAGS</a>
+          
+        
+            <a href="/categories" class="nav-menu ">CATEGORIES</a>
+          
+        
+      
+    </div>
+  </div>
+</nav>
+    <div id="main"><section class="article">
+  <h2 class="title">python的flask框架</h2>
+  <p class="sub">11月 17, 2018</p>
+  <article class="content">
+    <p>flask框架的初步尝试</p>
+<hr>
 <h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>做出一个随机生成身份证码的网页</p>
 <hr>
 <h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ol>
@@ -82,5 +152,28 @@
 <p>返回success.html文件，并将list ID传给success.html（list ID可以是list数组，也可以是 int变量等任何变量，<strong>但是必须和文件里变量名相同，前一个list ID是success.html文件里的变量名，后一个是py里的变量名</strong>。</p>
 <hr>
 <h2 id="基础知识的讲解就到此完毕啦！！！撒花！"><a href="#基础知识的讲解就到此完毕啦！！！撒花！" class="headerlink" title="基础知识的讲解就到此完毕啦！！！撒花！"></a>基础知识的讲解就到此完毕啦！！！撒花！</h2><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>如果看了这篇文章之后还云里雾里的话，强烈推荐先去看黑马程序员里面的视频再回来看这篇文章哟，并且可以在这个程序里面加入表单等操作来更装逼一点~~对了，如果页面不能正确显示报错的话心态不要爆照，请回到py里面看error（error get下面的部分）出现在哪里以进行修改哦<strong>注意缩进，（），大小写等错误</strong></p>
-</div><div class="tags"><a href="/tags/flask/">flask</a></div><div class="post-share"><div class="bdsharebuttonbox"><span style="float:left;line-height: 28px;height: 28px;font-size:16px;font-weight:blod">分享到：</span><a href="#" data-cmd="more" class="bds_more"></a><a href="#" data-cmd="mshare" title="分享到一键分享" class="bds_mshare"></a><a href="#" data-cmd="fbook" title="分享到Facebook" class="bds_fbook"></a><a href="#" data-cmd="twi" title="分享到Twitter" class="bds_twi"></a><a href="#" data-cmd="linkedin" title="分享到linkedin" class="bds_linkedin"></a><a href="#" data-cmd="youdao" title="分享到有道云笔记" class="bds_youdao"></a><a href="#" data-cmd="evernotecn" title="分享到印象笔记" class="bds_evernotecn"></a><a href="#" data-cmd="weixin" title="分享到微信" class="bds_weixin"></a><a href="#" data-cmd="qzone" title="分享到QQ空间" class="bds_qzone"></a><a href="#" data-cmd="tsina" title="分享到新浪微博" class="bds_tsina"></a></div></div><div class="post-nav"><a href="/2018/11/14/一些关于c的小技巧和基础/" class="next">一些关于c的小技巧和基础知识</a></div><div id="comments"></div></div></div></div><div class="layout-r"><div id="sidebar"><div class="search-pla"></div><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#flask框架的初步尝试"><span class="toc-text">flask框架的初步尝试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#任务"><span class="toc-text">任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前期准备"><span class="toc-text">前期准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装flask"><span class="toc-text">安装flask</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#各文件夹里的内容"><span class="toc-text">各文件夹里的内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本操作"><span class="toc-text">基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#上述内容的简单解释"><span class="toc-text">上述内容的简单解释</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#form"><span class="toc-text">form</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#注释"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#变量（后面会有相关的代码和更详细的解释，现在看不懂也没关系）"><span class="toc-text">变量（后面会有相关的代码和更详细的解释，现在看不懂也没关系）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#关于导入的文件"><span class="toc-text">关于导入的文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#html里面的基本格式说明"><span class="toc-text">html里面的基本格式说明</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#上述内容的简单解释-1"><span class="toc-text">上述内容的简单解释</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#py里面的u’-‘"><span class="toc-text">py里面的u’ ‘</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基础知识的讲解就到此完毕啦！！！撒花！"><span class="toc-text">基础知识的讲解就到此完毕啦！！！撒花！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/11/17/python的flask框架/">python的flask框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/14/一些关于c的小技巧和基础/">一些关于c的小技巧和基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/13/母牛的故事/">ACM题解-母牛的故事</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/09/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/c/">c</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/flask/" style="font-size: 15px;">flask</a> <a href="/tags/acm/" style="font-size: 15px;">acm</a> <a href="/tags/basic/" style="font-size: 15px;">basic</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-you"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div></div><a id="totop" href="#top"></a><div id="footer"><div class="footer-info"><p><a href="/baidusitemap.xml">Baidu Site Haritası</a> |  <a href="/atom.xml">订阅</a> |  <a href="/about/">关于</a></p><p>本站总访问量：<i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>次</p><p><span> Copyright &copy;<a href="/." rel="nofollow">One fly bird.</a></span><span> Theme by<a rel="nofollow" target="_blank" href="https://github.com/chaooo/hexo-theme-BlueLake"> BlueLake.</a></span><span> Count by<a href="http://busuanzi.ibruce.info/"> busuanzi.</a></span><span> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a></span></p></div></div></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.1" async></script><script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","weixin","tsina","qzone","linkedin","fbook","twi","print","renren","sqq","evernotecn","bdysc","tqq","tqf","bdxc","kaixin001","tieba","douban","bdhome","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","h163","copy"],"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["tsina","qzone","weixin","fbook","twi","linkedin","youdao","evernotecn","mshare"]}};with(document)0[(getElementsByTagName('head')[0]||head).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-</script></body></html>
+
+  </article>
+  <footer class="f-cf">
+    
+      <a href="/2018/11/18/archlinux基础安装步骤/" class="link f-fl">⟵archlinux基础安装步骤</a>
+    
+    
+      <a href="/2018/11/14/一些关于c的小技巧和基础/" class="link f-fr">一些关于c的小技巧和基础知识⟶</a>
+    
+  </footer>
+</section></div>
+    <footer id="footer" class="f-cf">
+  1361569005@qq.com
+  
+    
+      
+        · <a href="https://github.com/oneflybird" target="_blank" class="nav-icn">GitHub</a>
+      
+    
+  
+  <span class="copyright">All rights reserved @Fly bird</span>
+</footer>
+  </div>
+</body>
+</html>
