@@ -1,19 +1,19 @@
-/*全局基础样式*/
-/*小屏幕下(手机类)的样式*/
+/*å…¨å±€åŸºç¡€æ ·å¼*/
+/*å°å±å¹•ä¸‹(æ‰‹æœºç±»)çš„æ ·å¼*/
 @media only screen and (max-width: 601px) {
     .container {
         width: 95%;
     }
 }
 
-/*中等屏幕下(平板类)的样式*/
+/*ä¸­ç­‰å±å¹•ä¸‹(å¹³æ¿ç±»)çš„æ ·å¼*/
 @media only screen and (min-width: 600px) and (max-width: 992px) {
     .container {
         width: 90%;
     }
 }
 
-/*大屏幕下(桌面类)的样式*/
+/*å¤§å±å¹•ä¸‹(æ¡Œé¢ç±»)çš„æ ·å¼*/
 @media only screen and (min-width: 993px) {
     .container {
         width: 85%;
@@ -28,11 +28,13 @@
 }
 
 body {
-    background-color: #eaeaea;
+    background-color: #9fc8df;
     margin: 0;
-    color: #34495e;
+    color: #03324F;
 }
-
+#toc-content. is-active-link {
+    color: #627086;
+}
 h1 {
     margin: 48px 0 22px -5px;
     font-size: 2.0rem;
@@ -86,7 +88,7 @@ hr {
 }
 
 blockquote {
-    border-left: 5px solid #42b983;
+    border-left: 5px solid #57a3c3;
     padding: 1rem 0.8rem 0.2rem 0.8rem;
     color: #666;
     background-color: rgba(66, 185, 131, .1);
@@ -104,7 +106,7 @@ pre {
 code {
     padding: 1px 5px;
     font-size: 0.91rem;
-    color: #e96900;
+    color: #0f8bc2;
     background-color: #f8f8f8;
     border-radius: 2px;
 }
@@ -165,10 +167,10 @@ mark {
 }
 
 .text-color {
-    color: #0077b3 !important;
+    color: #8cb9d0 !important;
 }
 
-/*头部导航栏样式*/
+/*å¤´éƒ¨å¯¼èˆªæ æ ·å¼*/
 @media only screen and (max-width: 600px) {
     header nav .brand-logo {
         left: 80px;
@@ -188,7 +190,7 @@ mark {
     position: fixed;
     bottom: 0;
     z-index: 300;
-    background: linear-gradient(to right, ##b3e0ff 0%, #b3e0ff 100%);
+    background: linear-gradient(to right, #b3e0ff 0%, #b3e0ff 100%);
     opacity: 0.8;
 }
 
@@ -299,10 +301,42 @@ header .side-nav .social-link {
     box-shadow: none;
 }
 
-.cover-btns a:hover {
-    border: 1px solid #3399FF;
-    background-color: #3399FF;
-    box-shadow: 0 14px 26px -12px rgba(233, 30, 99, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2);
+.cover-btns a:hover{
+    border: 1px solid #fff;
+    background-color: #b1dffe;
+    box-shadow: 0 14px 26px -12px rgba(146, 204, 226, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2);
+}
+
+.ih-item{           
+    position: relative;
+    width: 220px;
+    height: 220px;
+    } 
+
+
+.ih-item .img img{
+    position: relative;
+    width: 220px;
+    height: 220px;
+    max-width: 100%;
+    } 
+.ih-item .info {
+position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    -webkit-backface-visibility: hidden;/* 隐藏旋转元素的背面*/
+    backface-visibility: hidden;
+    background: rgba(0, 0, 0, 0.6);   /*后面这个0.6是指的背景的透明度*/
+    opacity: 0;
+    -webkit-transition: all 0.35s ease-in-out;   /*规定提示信息怎样出现ease-in-out以慢速度开始和结束*/
+    -moz-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+}
+.ih-item a:hover .info {
+    opacity: 1;    /*有opacity有0变成1*/            
 }
 
 .cover-btns a i {
@@ -337,12 +371,12 @@ header .go-back i {
     line-height: 56px;
 }
 
-/* 背景图效果. */
+/* èƒŒæ™¯å›¾æ•ˆæžœ. */
 .bg-cover {
     position: relative;
     display: flex;
     align-items: center;
-    height: 60vh;
+    height: 40vh;
     padding: 0;
     margin-top: -64px;
     border: 0;
@@ -374,8 +408,8 @@ header .go-back i {
 
 .bg-cover .container {
     position: relative;
-    color: #090909;
-    z-index: 2;
+    color: #94cef2
+    z-index: 3;
 }
 
 .bg-cover .title {
@@ -390,7 +424,7 @@ header .go-back i {
     font-size: 1.25rem;
     font-weight: 300;
     line-height: 1.4em;
-    color: #090909;
+    color: #363637;
 }
 
 .bg-cover .post-title {
@@ -414,7 +448,7 @@ header .go-back i {
 }
 
 .recommend {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .notice {
@@ -426,12 +460,12 @@ header .go-back i {
 }
 
 #recommend-sections {
-    margin-top: -30px;
-    padding-top: 30px;
+    margin-top: 20px;
+    padding-top: 0px;
 }
 
 .recommend .card .card-content {
-    padding: 20px 40px;
+    padding: 0px 0px;
 }
 
 @media only screen and (min-width: 1418px) {
@@ -452,10 +486,10 @@ header .go-back i {
     }
 }
 
-/*中等屏幕下(平板类)的样式*/
+/*ä¸­ç­‰å±å¹•ä¸‹(å¹³æ¿ç±»)çš„æ ·å¼*/
 @media only screen and (min-width: 600px) and (max-width: 992px) {
     .recommend .card .card-content {
-        padding: 20px 20px;
+        padding: 30px 10px;
     }
 }
 
@@ -467,9 +501,9 @@ header .go-back i {
     margin-top: 25px;
     margin-bottom: 25px;
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 2.0rem;
     font-weight: 700;
-    line-height: 1.8rem;
+    line-height: 1.4rem;
 }
 
 .recommend .post-card:before {
@@ -490,7 +524,7 @@ header .go-back i {
     width: 100%;
     height: 300px;
     max-height: 300px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     margin-top: 15px;
     text-align: center;
     border: 0;
@@ -568,7 +602,7 @@ header .go-back i {
     margin-top: -10px;
 }
 
-/*文章列表卡片各样式*/
+/*æ–‡ç« åˆ—è¡¨å¡ç‰‡å„æ ·å¼*/
 #articles {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -582,7 +616,7 @@ article a {
 
 article a:hover {
     font-weight: bold;
-    color: #42b983;
+    color: #51a0c2;
     text-decoration: underline;
 }
 
@@ -694,7 +728,7 @@ article .article-tags .chip {
     color: #999 !important;
 }
 
-/*文章详情样式*/
+/*æ–‡ç« è¯¦æƒ…æ ·å¼*/
 #artDetail {
     margin-top: -60px;
 }
@@ -753,7 +787,7 @@ article .article-tags .chip {
 
 #artDetail .post-info .post-category:hover {
     font-weight: bold;
-    color: #42b983;
+    color: #489ec4;
     text-decoration: underline;
 }
 
@@ -801,7 +835,7 @@ article .article-tags .chip {
 
 #artDetail .reprint a {
     font-size: 1.05rem;
-    color: #42b983;
+    color: #4099c3;
     font-weight: 500;
 }
 
@@ -817,7 +851,7 @@ article .article-tags .chip {
 
 #articleContent a {
     padding: 0 2px;
-    color: #42b983;
+    color: #528cae;
     font-weight: 500;
     text-decoration: underline;
 }
@@ -916,9 +950,11 @@ table tr:nth-child(2n), thead {
 
 .chip-container .chip-active {
     color: #FFF !important;
-    background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%) !important;
+    background: linear-gradient(to bottom right, #006699 0%, #aadbfb 100%) !important;
     box-shadow: 2px 5px 10px #aaa !important;
 }
+
+span.chip.center-align.waves-effect.waves-light.chip-active {}
 
 .chip-container .chip {
     margin: 10px 10px;
@@ -947,7 +983,7 @@ table tr:nth-child(2n), thead {
 }
 
 .chip-default .tag-length {
-    color: #0077b3;
+    color: #84c5eb;
 }
 
 .chip-active .tag-length {
@@ -961,14 +997,14 @@ table tr:nth-child(2n), thead {
     height: 80px;
     margin: 10px 0 50px -20px;
     padding: 21px 10px;
-    background-color: #ff5722;
-    color: #fff;
+    background-color: #0177b3;
+    color: #ffffff;
     font-size: 1.8rem;
     font-weight: 600;
 }
 
 #cd-timeline .year a {
-    color: #fff;
+    color: #ffffff;
 }
 
 #cd-timeline .month {
@@ -977,21 +1013,21 @@ table tr:nth-child(2n), thead {
     height: 60px;
     margin: 10px 0 30px -10px;
     padding: 14px 16px;
-    background-color: #ef6c00;
-    color: #fff;
+    background-color: #3b9acc;
+    color: #ffffff;
     font-size: 1.7rem;
     font-weight: 600;
 }
 
 #cd-timeline .month a {
-    color: #fff;
+    color: #ffffff;
 }
 
 #cd-timeline .day {
     position: relative;
     padding: 8px 10px;
-    background-color: #ffa726;
-    color: #fff;
+    background-color: #79bee6;
+    color: #ffffff;
     font-size: 1.2rem;
     font-weight: 500;
 }
@@ -1012,7 +1048,7 @@ table tr:nth-child(2n), thead {
     left: 18px;
     height: 100%;
     width: 4px;
-    background: #0f9d58;
+    background: #67b3df;
 }
 
 @media only screen and (min-width: 900px) {
@@ -1132,7 +1168,7 @@ table tr:nth-child(2n), thead {
     width: 14px;
     margin-left: 2px;
     margin-right: 2px;
-    border: 1px dashed #ffa726;
+    border: 1px dashed #92cdf1;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1175,7 +1211,7 @@ table tr:nth-child(2n), thead {
         top: 24px;
         left: auto;
         right: 100%;
-        border-color: #ffa726;
+        border-color: #bbdbf6;
     }
 
     .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
@@ -1227,12 +1263,12 @@ table tr:nth-child(2n), thead {
 }
 
 .post-statis .statis .count a {
-    color: #42b983;
+    color: #7ba9c4;
 }
 
 .post-statis .statis .name {
     font-size: 0.9rem;
-    color: #777;
+    color: #7fabc5;
 }
 
 #aboutme .social-link {
@@ -1248,8 +1284,8 @@ table tr:nth-child(2n), thead {
     margin: 0 0.5rem;
     padding: 0;
     color: #fff;
-    border: 1px solid #0f9d58;
-    background: radial-gradient(#4cbf30, #0f9d58);;
+    border: 1px solid #0c88c2;
+    background: radial-gradient(#80a5c6, #0f9d58);;
     font-size: 0.9rem;
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .21), 0 2px 3px rgba(0, 0, 0, .1);
@@ -1425,7 +1461,7 @@ table tr:nth-child(2n), thead {
 .other-skills .chip:hover {
     color: #fff;
     background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);;
-    border: 1px solid #4cbf30;
+    border: 1px solid #3097bf;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .25)
 }
 
@@ -1446,7 +1482,7 @@ table tr:nth-child(2n), thead {
     cursor: pointer;
 }
 
-/*尾部样式*/
+/*å°¾éƒ¨æ ·å¼*/
 footer {
     padding-bottom: 1px;
 }
@@ -1459,7 +1495,7 @@ footer .copy-right {
     color: #d5d5d5;
 }
 
-/*搜索层样式*/
+/*æœç´¢å±‚æ ·å¼*/
 #searchIcon {
     font-size: 1.6rem;
 }
@@ -1499,12 +1535,12 @@ footer .copy-right {
     padding: 1px 5px 1px 4px;
     border-radius: 2px;
     background-color: #f2f2f2;
-    color: #e96900;
+    color: #2394e5;
     font-size: .9rem;
     white-space: pre-wrap;
 }
 
-/*回到顶部按钮样式*/
+/*å›žåˆ°é¡¶éƒ¨æŒ‰é’®æ ·å¼*/
 .top-scroll {
     display: none;
     position: fixed;
