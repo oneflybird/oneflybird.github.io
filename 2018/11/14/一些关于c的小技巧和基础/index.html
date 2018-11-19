@@ -619,11 +619,9 @@ num 变量为 <span class="token number">4</span>
 此外：全局变量只初始化一次 不管是<span class="token keyword">static</span> 还是<span class="token keyword">extern</span>
 全局变量加<span class="token keyword">static</span> 是为了限制其作用域（ 仅在本文件中有效 在其他文件中不可见） 
 </code></pre>
-<hr>
-<h3><span id="补充">补充</span></h3><p>（auto int）实际上是int（auto 可省略）<br>在C语言中使用<strong>auto</strong>关键字声明一个变量为自动变量，是C语言中应用最广泛的一种类型，<br>在函数内定义变量时，如果没有被声明为其他类型的变量都是自动变量，也就是说，省去类型说明符auto的都是自动变量。<br>这里的其他类型指的是变量的存储类型即：静态类型变量（static ）、寄存器类型变量（register）和外部类型变量（extern）。</p>
-<hr>
-<h2><span id="12-学会按位与amp按位或按位异或">12. 学会按位与（&amp;）按位或（|）按位异或（^)</span></h2><h3><span id="按位与">按位与</span></h3><h4><span id="原理">原理</span></h4><p>0&amp;0=0; 0&amp;1=0; 1&amp;0=0; 1&amp;1=1 </p>
-<h4><span id="代码">代码</span></h4><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<h4><span id="补充">补充</span></h4><p>（auto int）实际上是int（auto 可省略）<br>在C语言中使用<strong>auto</strong>关键字声明一个变量为自动变量，是C语言中应用最广泛的一种类型，<br>在函数内定义变量时，如果没有被声明为其他类型的变量都是自动变量，也就是说，省去类型说明符auto的都是自动变量。<br>这里的其他类型指的是变量的存储类型即：静态类型变量（static ）、寄存器类型变量（register）和外部类型变量（extern）。</p>
+<h3><span id="12-学会按位与amp按位或按位异或">12. 学会按位与（&amp;）按位或（|）按位异或（^)</span></h3><h4><span id="按位与">按位与</span></h4><h5><span id="原理">原理</span></h5><p>0&amp;0=0; 0&amp;1=0; 1&amp;0=0; 1&amp;1=1 </p>
+<h5><span id="代码">代码</span></h5><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">int</span> a<span class="token punctuation">,</span>b<span class="token punctuation">;</span>
@@ -639,7 +637,7 @@ num 变量为 <span class="token number">4</span>
 a <span class="token operator">&amp;</span> <span class="token function">b</span><span class="token punctuation">(</span>decimal<span class="token punctuation">)</span> 为 <span class="token number">3</span> 
 a <span class="token operator">&amp;</span> <span class="token function">b</span><span class="token punctuation">(</span>decimal<span class="token punctuation">)</span> 为 <span class="token number">3</span>
 </code></pre>
-<h4><span id="代码解释">代码解释</span></h4><p>0开头是8进制数， 077 = 8*7+7=63， 其2进制是 111111<br>3的2进制 编码是 011<br>2者作“按位与”运算后，结果是 011,所以是3；<br>而77的二进制是 1001101, 和3(011)作“按位与”运算后, 是 001, 所以是1</p>
+<h5><span id="代码解释">代码解释</span></h5><p>0开头是8进制数， 077 = 8*7+7=63， 其2进制是 111111<br>3的2进制 编码是 011<br>2者作“按位与”运算后，结果是 011,所以是3；<br>而77的二进制是 1001101, 和3(011)作“按位与”运算后, 是 001, 所以是1</p>
 <hr>
 <h3><span id="按位或">按位或（|）</span></h3><p>0|0=0; 0|1=1; 1|0=1; 1|1=1 </p>
 <hr>
