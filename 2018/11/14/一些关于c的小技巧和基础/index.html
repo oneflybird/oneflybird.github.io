@@ -363,6 +363,10 @@ A~Z字母对应的十进制65-90 十六进制41-5A
             
             <div class="article-tag">
                 
+                <a href="/tags/acm/" target="_blank">
+                    <span class="chip bg-color">acm</span>
+                </a>
+                
                 <a href="/tags/basic/" target="_blank">
                     <span class="chip bg-color">basic</span>
                 </a>
@@ -672,13 +676,16 @@ a <span class="token operator">&amp;</span> <span class="token function">b</span
 <span class="token number">36</span>
 <span class="token number">1</span>
 </code></pre>
-<h2><span id="小技巧">小技巧</span></h2><h3><span id="1-acm">1. ACM</span></h3><blockquote>
+<h2><span id="小技巧">小技巧</span></h2><h3><span id="1-acm">1. ACM</span></h3><p><strong>可参考<a href="https://www.cnblogs.com/Leo_wl/archive/2013/05/12/3074829.html" target="_blank" rel="noopener">ACM在线测评系统评测程序设计与实现</a></strong></p>
+<blockquote>
 <ul>
 <li>只允许进行算法相关的操作，不允许进行访问网络，画图等操作。</li>
 <li>以回车结尾，行首不应有空格，输出的每两个数或字符串之间应以单个空格隔开。</li>
 <li>由于程序不能直接读取键盘和屏幕，不允许使用getch（），getche（），gotoxy（），clrscr（），conio.h</li>
 <li>输出格式很严格，不允许多字符或少字符，不需要界面友好分。（出现presentation error可能离成功只有一步之遥）</li>
 <li>用double代替float，可能会出现谜之wrong</li>
+<li>如果出现超时和超内存将会分别返回<code>Time Limit Exceeded</code>和<code>Memory Limit Exceeded</code>错误信息，如果程序执行时出现错误，比如非法指针，数组越界等，将会返回<code>Runtime Error</code>信息。如果你的程序没有出现上面的信息，说明程序顺利执行结束了。接下来，就是对你的程序的输出也就是运行结果进行检查，如果你的执行结果和我们的标准答案完全一样，则返回<code>Accepted</code>，也就说明你这个题目做对了。如果除去空格，换行，tab外完全相同，则说明你的代码格式错误，将返回<code>Presentation Error</code>，如果你输出的内容有一部分和标准答案完全一样，但是还输出了一些其他内容，则说明你多输出了，这时候将返回<code>Output Limit Exceeded</code>错误信息，出现其他情况，就说明你的输出结果和标准答案不一样，就是<code>Wrong Answer</code>了</li>
+<li><img src="https://images0.cnblogs.com/blog/353475/201305/12152323-c115069fc92d4edeb8cdc9d3a60dc6d8.jpg&quot;流程图&quot;" alt=""></li>
 </ul>
 </blockquote>
 <hr>
