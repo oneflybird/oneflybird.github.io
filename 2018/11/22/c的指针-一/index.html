@@ -5,12 +5,16 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ACM题解-母牛的故事, One Fly Bird&#39;s Nest">
-    <meta name="description" content="题目
-Problem Description
-有一头母牛，它每年年初生一头小母牛。每头小母牛从第四个年头开始，每年年初也生一头小母牛。请编程实现在第n年的时候，共有多少头母牛？
-Input
-输入数据由多个测试实例组成，每个测试实例占一行，包">
+    <meta name="keywords" content="c的指针(一), One Fly Bird&#39;s Nest">
+    <meta name="description" content="什么是指针指针也称作指针变量，大小为4个字节（或8个字节）的变量，其内容代表一个内存地址。
+
+sizeof(T*)  4字节（64位计算机上可能是8字节）
+T是任何变量类型
+
+指针的定义
+类型名  * 指针变量名
+
+如 floatp，p是指">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +22,7 @@ Input
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ACM题解-母牛的故事 | One Fly Bird&#39;s Nest</title>
+    <title>c的指针(一) | One Fly Bird&#39;s Nest</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -231,13 +235,13 @@ Input
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('http://pic41.photophoto.cn/20161223/1155116842450472_b.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('http://img2.3lian.com/2014/c7/15/d/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ACM题解-母牛的故事
+                        c的指针(一)
                     </div>
                 </div>
             </div>
@@ -348,8 +352,12 @@ Input
             
             <div class="article-tag">
                 
-                <a href="/tags/acm/" target="_blank">
-                    <span class="chip bg-color">acm</span>
+                <a href="/tags/c/" target="_blank">
+                    <span class="chip bg-color">c</span>
+                </a>
+                
+                <a href="/tags/指针/" target="_blank">
+                    <span class="chip bg-color">指针</span>
                 </a>
                 
             </div>
@@ -367,118 +375,89 @@ Input
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-11-13
+                    <i class="fa fa-clock-o fa-fw"></i>2018-11-22
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2><span id="题目">题目</span></h2><blockquote>
-<p>Problem Description</p>
-<p>有一头母牛，它每年年初生一头小母牛。每头小母牛从第四个年头开始，每年年初也生一头小母牛。请编程实现在第n年的时候，共有多少头母牛？</p>
-<p>Input</p>
-<p>输入数据由多个测试实例组成，每个测试实例占一行，包括一个整数n(0&lt;n&lt;55)，n的含义如题目中描述。<br>n=0表示输入数据的结束，不做处理。</p>
-<p>Output</p>
-<p>对于每个测试实例，输出在第n年的时候母牛的数量。<br>每个输出占一行。</p>
-<p>Sample Input</p>
-<pre><code>2
-4
-5
-0
-</code></pre><p>Sample Output</p>
-<pre><code>2
-4
-6
-</code></pre></blockquote>
-<h2><span id="题目分析">题目分析</span></h2><p>类似于斐波纳契数列，可得<strong>递推函数</strong></p>
+                <h2><span id="什么是指针">什么是指针</span></h2><p>指针也称作指针变量，大小为4个字节（或8个字节）的变量，其内容代表一个内存地址。</p>
 <blockquote>
-<p>f(n)=n        n&lt;=4</p>
-<p>f(n)=f(n-1) + f(n-3) n&gt;4</p>
+<p>sizeof(T*)  4字节（64位计算机上可能是8字节）</p>
+<p>T是任何变量类型</p>
 </blockquote>
-<h2><span id="可用方法">可用方法</span></h2><ul>
-<li style="list-style: none"><input type="checkbox" checked> 递推</li>
-<li style="list-style: none"><input type="checkbox" checked> 递归</li>
-<li style="list-style: none"><input type="checkbox" checked> 数组</li>
-</ul>
-<h2><span id="代码">代码</span></h2><h3><span id="递推需要理解">递推（需要理解）</span></h3><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-<span class="token keyword">int</span> n<span class="token punctuation">,</span>i<span class="token punctuation">;</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span>n<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-<span class="token keyword">int</span> num<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token operator">/</span><span class="token number">3.0</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//注意浮点数3.0,并且由于在第4年成熟所以3年一循环</span>
-<span class="token punctuation">{</span>
-num<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token operator">=</span>num<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//第4年</span>
-num<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token operator">=</span>num<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//第5年</span>
-num<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token operator">=</span>num<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//第6年</span>
-<span class="token punctuation">}</span>
-<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>num<span class="token punctuation">[</span><span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//注意是n-1</span>
-
-<span class="token punctuation">}</span>
-
-<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-
-<span class="token punctuation">}</span>
+<h2><span id="指针的定义">指针的定义</span></h2><blockquote>
+<p>类型名  * 指针变量名</p>
+</blockquote>
+<p>如 float<em>p，p是指针变量名，变量p的类型是<strong>float</strong> </em></p>
+<blockquote>
+<p>注意：保存地址的是p不是*p</p>
+</blockquote>
+<p>通过表达式 *p可以读写从地址p开始的sizeof(float)个字节,*p等价于存放在地址p处的一个float类型变量。</p>
+<blockquote>
+<p>注：float可以被任何变量类型替代</p>
+</blockquote>
+<h2><span id="指针用法">指针用法</span></h2><pre class=" language-c"><code class="language-c"><span class="token keyword">char</span> ch1 <span class="token operator">=</span> <span class="token string">'a'</span>
+<span class="token keyword">char</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token operator">&amp;</span>ch1
+<span class="token keyword">char</span> ch2 <span class="token operator">=</span> <span class="token operator">*</span>p
+p <span class="token operator">=</span> <span class="token operator">&amp;</span>ch2
+<span class="token operator">*</span> p <span class="token operator">=</span> <span class="token string">'d'</span>
 </code></pre>
-<hr>
-<h3><span id="递归思路很清晰的一种解法">递归(思路很清晰的一种解法)</span></h3><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-
-<span class="token comment" spellcheck="true">// 递推式 f(n) = n n&lt;=4，f(n) = f(n-1) + f(n-3) n>4</span>
-<span class="token keyword">int</span> <span class="token function">cow</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">4</span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> n<span class="token punctuation">;</span>
-    <span class="token keyword">else</span>
-        <span class="token keyword">return</span> <span class="token function">cow</span><span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">cow</span><span class="token punctuation">(</span>n<span class="token number">-3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
-
-    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token constant">EOF</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 判定结束条件</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
-            <span class="token keyword">break</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">// 计算并输出结果</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token function">cow</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> 
-作者：海岛Blog 
-来源：CSDN 
-原文：https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>blog<span class="token punctuation">.</span>csdn<span class="token punctuation">.</span>net<span class="token operator">/</span>tigerisland45<span class="token operator">/</span>article<span class="token operator">/</span>details<span class="token operator">/</span><span class="token number">51772927</span> 
-版权声明：本文为博主原创文章，转载请附上博文链接！
+<blockquote>
+<p>注意要使用&amp;取地址运算符（&amp;x的类型是T<em>),p是地址，\</em>p是p所指的变量</p>
+</blockquote>
+<h2><span id="不同类型指针的相互赋值">不同类型指针的相互赋值</span></h2><blockquote>
+<p>不同类型的指针，如果不经过强制类型转换，不能直接赋值</p>
+</blockquote>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token operator">*</span>pn<span class="token punctuation">,</span><span class="token keyword">char</span> <span class="token operator">*</span>pc<span class="token punctuation">,</span><span class="token keyword">char</span> c <span class="token operator">=</span><span class="token number">0x65</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//0x是十六进制</span>
+pn <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>c<span class="token punctuation">;</span>
+<span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token operator">*</span>pn<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//n值不确定</span>
+<span class="token operator">*</span>pn <span class="token operator">=</span> <span class="token number">0x12345678</span><span class="token comment" spellcheck="true">//编译能过但运行可能出错</span>
 </code></pre>
-<hr>
-<h3><span id="数组运用数学思想">数组(运用数学思想）</span></h3><p><strong>当年母牛生下的小牛与几年前的母牛数（也就是当年的成熟牛）是相等的</strong></p>
-<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> n<span class="token punctuation">,</span>count<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+<h3><span id="运行出错的原因">运行出错的原因</span></h3><h4><span id="n值不确定">n值不确定</span></h4><p>*pn是int类型，读取四个字节，而c只占开始的一个字节</p>
+<h4><span id="编译能过但运行可能出错">编译能过但运行可能出错</span></h4><p>从pn指向的4个字节往里面写东西，但不能确定c后面的3个字节是否能够访问（操作系统不让访问，导致程序崩溃），或者可以访问，但这3个空间可能是其他变量的空间（程序出错）</p>
+<h2><span id="指针运算">指针运算</span></h2><h4><span id="两个同类型的指针变量可以比较大小">两个同类型的指针变量可以比较大小</span></h4><p>地址p1&lt;地址p2 p1&lt;p2的值为真</p>
+<h4><span id="同类型的指针变量可以相减">同类型的指针变量可以相减</span></h4><p>两个T*类型的指针p1和p2</p>
+<p>p1-p2=(地址p1-地址p2)/sizeof(T)</p>
+<h4><span id="指针变量加减一个整数的结果是指针">指针变量加减一个整数的结果是指针</span></h4><p>n:整数类型的<strong>变量</strong>或常量</p>
+<p>p+n：T*类型的指针，指向地址：</p>
+<p>地址p+n * sizeof(T)</p>
+<h4><span id="可自增可自减">可自增，可自减</span></h4><p>T*类型的指针p指向地址n</p>
+<p>p++，++p：p指向n + sizeof(T)</p>
+<h4><span id="指针可以用下标运算符运算">指针可以用下标运算符[]运算</span></h4><p>p[n]等价于*（p+n）</p>
+<h2><span id="空指针">空指针</span></h2><blockquote>
+<p> 地址0不能访问，指向地址0的指针就是空指针</p>
+</blockquote>
+<blockquote>
+<p>可以用”NULL”关键字对任何类型的指针进行赋值，NULL实际上就是整数0，值为NULL的指针就是空指针</p>
+</blockquote>
+<blockquote>
+<p>指针可以作为条件表达式使用。如果指针的值为NULL，则相当于为假，值不为NULL，就相当于为真</p>
+</blockquote>
+<h2><span id="指针和数组">指针和数组</span></h2><blockquote>
+<p>数组是特殊类型的指针</p>
+</blockquote>
+<h3><span id="指针形式的数组运算">指针形式的数组运算：</span></h3><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token punctuation">;</span>
+<span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+p<span class="token operator">=</span>a<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//p指向数组a的起始地址，即p指向a[0]</span>
+<span class="token operator">*</span>p<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//a[0]=10</span>
+<span class="token operator">*</span><span class="token punctuation">(</span>p<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//a[1]=20</span>
+p<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//a[0]=30</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token operator">*</span><span class="token punctuation">(</span>p<span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token operator">=</span>i<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//对数字的前10个元素进行赋值</span>
+<span class="token punctuation">}</span>
+p <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token number">6</span><span class="token comment" spellcheck="true">//p指向a[6]</span>
+</code></pre>
+<h3><span id="颠倒一个数组">颠倒一个数组</span></h3><pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">reverse</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token punctuation">,</span><span class="token keyword">int</span> size<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">int</span> i<span class="token punctuation">;</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">56</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">56</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">&lt;=</span><span class="token number">4</span><span class="token punctuation">)</span>
-                a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
-            <span class="token keyword">else</span>
-                a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">+</span>a<span class="token punctuation">[</span>i<span class="token number">-3</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//第一年生的小牛在第四年成熟了</span>
-        <span class="token punctuation">}</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>a<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>size<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> tmp <span class="token operator">=</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>p<span class="token punctuation">[</span>size<span class="token number">-1</span><span class="token operator">-</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        p<span class="token punctuation">[</span>size<span class="token number">-1</span><span class="token operator">-</span>i<span class="token punctuation">]</span><span class="token operator">=</span>tmp<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<hr>
-<h2><span id="总结">总结</span></h2><p><strong>注意找出项与项之间的关系，可在草稿纸上进行推演</strong></p>
-<hr>
 
             </div>
             <hr>
@@ -500,7 +479,7 @@ num<span class="token punctuation">[</span><span class="token number">2</span><s
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://yoursite.com" class="b-link-green">One Fly Bird's Nest</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/13/母牛的故事/" class="b-link-green">ACM题解-母牛的故事</a>
+                    <a href="/2018/11/22/c的指针-一/" class="b-link-green">c的指针(一)</a>
                 </p>
             </div>
         </div>
@@ -520,41 +499,30 @@ num<span class="token punctuation">[</span><span class="token number">2</span><s
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
-                <a href="/2018/11/14/一些关于c的小技巧和基础/">
+                <a href="/2018/11/22/c的指针-一/">
                     <div class="card-image">
                         
-                        <img src="https://p.jingyanben.com/1009/a9f8955ec57fe.png" class="responsive-img" alt="一些关于c的小技巧和基础知识">
+                        <img src="http://img2.3lian.com/2014/c7/15/d/11.jpg" class="responsive-img" alt="c的指针(一)">
                         
-                        <span class="card-title">一些关于c的小技巧和基础知识</span>
+                        <span class="card-title">c的指针(一)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">c的小技巧和基础知识
+                    <div class="summary">什么是指针指针也称作指针变量，大小为4个字节（或8个字节）的变量，其内容代表一个内存地址。
 
-基础知识1. 十进制的ASCII码
+sizeof(T*)  4字节（64位计算机上可能是8字节）
+T是任何变量类型
 
-0~9数字对应十进制48-57
+指针的定义
+类型名  * 指针变量名
 
-
-
-
-a~z字母对应的十进制 十六进制61-7A
-
-
-
-
-A~Z字母对应的十进制65-90 十六进制41-5A
-
-
-
-
-汉语的ASCII码与英文</div>
+如 floatp，p是指</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -567,15 +535,16 @@ A~Z字母对应的十进制65-90 十六进制41-5A
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/acm/" target="_blank">
-                        <span class="chip bg-color">acm</span>
+                    <a href="/tags/c/" target="_blank">
+                        <span class="chip bg-color">c</span>
                     </a>
                     
-                    <a href="/tags/basic/" target="_blank">
-                        <span class="chip bg-color">basic</span>
+                    <a href="/tags/指针/" target="_blank">
+                        <span class="chip bg-color">指针</span>
                     </a>
                     
                 </div>
@@ -587,27 +556,50 @@ A~Z字母对应的十进制65-90 十六进制41-5A
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/11/09/hello-world/">
+                <a href="/2018/11/21/利用github把本地图片显示到博客上的方法/">
                     <div class="card-image">
                         
-                        <img src="http://pic1.win4000.com/wallpaper/6/57bd626e9cd08.jpg" class="responsive-img" alt="Hello World">
+                        <img src="https://raw.githubusercontent.com/oneflybird/localimages/people/4.jpg?token=AZObGhwdSOieAQpBw2yrRZVNDLBMlyVTks5b_jnGwA%3D%3D" class="responsive-img" alt="利用github把本地图片显示到博客上的方法">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">利用github把本地图片显示到博客上的方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
+                    <div class="summary">上方展示的图片就是把本地图片传到github然后展示在博客上的结果
+
+
+想法来源：与某位兄弟聊天时的灵光一闪+闲的慌+知乎+没钱买域名用图床
+
+准备工作
+注册了一个github的账号
+
+git教程，推荐雪峰老师的网站
+
+有git bash
+</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-21
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            One fly bird
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/little-knowledge/" class="post-category" target="_blank">
+                                    little knowledge
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/github/" target="_blank">
+                        <span class="chip bg-color">github</span>
+                    </a>
+                    
                 </div>
                 
             </div>
