@@ -5,7 +5,7 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="c的指针(一), One Fly Bird&#39;s Nest">
+    <meta name="keywords" content="c的指针, One Fly Bird&#39;s Nest">
     <meta name="description" content="
  指针的基本概念，一维数组的指针。
 
@@ -23,7 +23,7 @@ T是任何变量类型
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>c的指针(一) | One Fly Bird&#39;s Nest</title>
+    <title>c的指针 | One Fly Bird&#39;s Nest</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -236,13 +236,13 @@ T是任何变量类型
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('http://img2.3lian.com/2014/c7/15/d/11.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('http://i1.hdslb.com/bfs/archive/1c69a2e2d4602744d8c67cecc3fd39f7ea63d3b4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        c的指针(一)
+                        c的指针
                     </div>
                 </div>
             </div>
@@ -462,6 +462,77 @@ p <span class="token operator">=</span> a <span class="token operator">+</span> 
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
+<h2><span id="指针和二维数组">指针和二维数组</span></h2><p>二维数组的地址是连续存放的，所以二维本质上是一维。</p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">reverse</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token punctuation">,</span><span class="token keyword">int</span> size<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> ihttps<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>hexojs<span class="token operator">/</span>hexo<span class="token operator">/</span>files<span class="token operator">/</span><span class="token number">2246484</span><span class="token operator">/</span>log<span class="token punctuation">.</span>txt
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>size<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span><span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> tmp <span class="token operator">=</span> p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>p<span class="token punctuation">[</span>size<span class="token number">-1</span><span class="token operator">-</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        p<span class="token punctuation">[</span>size<span class="token number">-1</span><span class="token operator">-</span>i<span class="token punctuation">]</span><span class="token operator">=</span>tmp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">reverse</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p>颠倒后的数组为</p>
+<pre class=" language-c"><code class="language-c"><span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+</code></pre>
+</blockquote>
+<h2><span id="指向指针的指针">指向指针的指针</span></h2><p>T **p</p>
+<blockquote>
+<p>p是指向指针的指针，p指向的地方存放着一个类型为T*的指针</p>
+</blockquote>
+<blockquote>
+<p><em>p的类型是T\</em></p>
+</blockquote>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token operator">*</span><span class="token operator">*</span>pp<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//是指向int*类型指针的指针</span>
+<span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token punctuation">;</span>
+<span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">1234</span><span class="token punctuation">;</span>
+p <span class="token operator">=</span> <span class="token operator">&amp;</span>n<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//n的类型是int*</span>
+pp<span class="token operator">=</span><span class="token operator">&amp;</span>p<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//*pp是p，所以*(*pp)是n</span>
+</code></pre>
+<h2><span id="指针和字符串">指针和字符串</span></h2><blockquote>
+<p>char *p=”asadcd”</p>
+</blockquote>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p>name是char *类型的，name实际上就是地址</p>
+</blockquote>
+<p><a href="https://blog.csdn.net/qq_33757398/article/details/81212618" target="_blank" rel="noopener">C(string.h)字符串操作函数总结</a></p>
+<h2><span id="void指针">void指针</span></h2><p>因sizeof(void)没有定义，所以*p无定义，++p等运算也无定义</p>
+<h3><span id="void指针的用处">void指针的用处</span></h3><p>在头文件<em>cstring</em>中声明的内存操作库函数<em>memset</em>用到了void指针</p>
+<pre><code>void *memset(void * dest,int ch,int n);
+</code></pre><blockquote>
+<p>dest是void*，所以可以是任何类型的指针，ch是字符的ASCII码</p>
+</blockquote>
+<blockquote>
+<p><strong>将从dest开始的n个<em>字节</em>都设置成ch</strong>，返回值是dest，ch每次只对一个字节起作用。</p>
+</blockquote>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">char</span> a<span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">""</span><span class="token comment" spellcheck="true">//空串每一个位置都是"\0"</span>
+<span class="token function">memset</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//将前10个字符设置为’a‘</span>
+</code></pre>
+<p>输出a数组得到aaaaaaaaaa</p>
+<h4><span id="memset函数的用处">memset函数的用处</span></h4><p>清空(运用sizeof)，无穷大(0x3f)，初始化最大值(0x7f)，详解见<a href="https://www.cnblogs.com/handsomecui/p/4723949.html" target="_blank" rel="noopener">memset函数详解</a></p>
+<h2><span id="函数指针">函数指针</span></h2><h3><span id="基本概念">基本概念</span></h3><p>程序运行期间，每个函数都会占用一段连续的内存空间。函数名就是该函数所占内存区域的起始地址（也称入口地址）我们可以将函数的入口地址赋给一个指针变量，然后通过指针变量就可以调用这个函数。这种指向函数的指针变量称为“函数指针”。</p>
+<h3><span id="定义形式">定义形式</span></h3><p>类型名 (*指针变量名)(参数类型1,参数类型二….)</p>
+<blockquote>
+<p>类型名是函数的返回类型</p>
+</blockquote>
+<p>例如：</p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span><span class="token punctuation">(</span><span class="token operator">*</span>pf<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<blockquote>
+<p>表示pf是一个函数指针，他所指向的函数的返回值为int，该函数有两个参数</p>
+</blockquote>
+<h3><span id="使用方法">使用方法</span></h3><p>先定义指针；</p>
+<p>把函数名赋值给指针变量名；</p>
+<p>指针变量名名(实参表)；</p>
+<h4><span id="qsort库函数">qsort库函数</span></h4><p><a href="https://www.icourse163.org/learn/PKU-1001553023#/learn/content?type=detail&amp;id=1004496116&amp;sm=1" target="_blank" rel="noopener">mooc视频</a></p>
+<hr>
 
             </div>
             <hr>
@@ -483,7 +554,7 @@ p <span class="token operator">=</span> a <span class="token operator">+</span> 
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://yoursite.com" class="b-link-green">One Fly Bird's Nest</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/22/c的指针-一/" class="b-link-green">c的指针(一)</a>
+                    <a href="/2018/11/22/c的指针-一/" class="b-link-green">c的指针</a>
                 </p>
             </div>
         </div>
@@ -557,7 +628,7 @@ p <span class="token operator">=</span> a <span class="token operator">+</span> 
                 <a href="/2018/11/21/利用github把本地图片显示到博客上的方法/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/oneflybird/localimages/people/4.jpg?token=AZObGhwdSOieAQpBw2yrRZVNDLBMlyVTks5b_jnGwA%3D%3D" class="responsive-img" alt="利用github把本地图片显示到博客上的方法">
+                        <img src="https://raw.githubusercontent.com/oneflybird/localimages/people/4.jpg?token=AZObGpAVMBO1AXD13ipKxqXoCZoH_04lks5cCc4-wA%3D%3D" class="responsive-img" alt="利用github把本地图片显示到博客上的方法">
                         
                         <span class="card-title">利用github把本地图片显示到博客上的方法</span>
                     </div>
