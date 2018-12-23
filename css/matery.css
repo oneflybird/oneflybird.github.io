@@ -973,7 +973,7 @@ span.chip.center-align.waves-effect.waves-light.chip-active {}
 
 .chip-container .chip:hover {
     color: #fff;
-    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%) !important;
+    background: linear-gradient(to right, #59a6f1 0%, #a0d5ea 100%) !important;
 }
 
 .chip .tag-length {
@@ -1285,7 +1285,7 @@ span.chip.center-align.waves-effect.waves-light.chip-active {}
     padding: 0;
     color: #fff;
     border: 1px solid #0c88c2;
-    background: radial-gradient(#80a5c6, #0f9d58);;
+    background: radial-gradient(#80a5c6, #65bdec);;
     font-size: 0.9rem;
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .21), 0 2px 3px rgba(0, 0, 0, .1);
@@ -1460,7 +1460,7 @@ span.chip.center-align.waves-effect.waves-light.chip-active {}
 
 .other-skills .chip:hover {
     color: #fff;
-    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);;
+    background: linear-gradient(to right, #1f9aeb 0%, #afd9e9 100%);;
     border: 1px solid #3097bf;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .25)
 }
@@ -1522,7 +1522,7 @@ footer .copy-right {
 
 .search-result-list .search-result-title {
     font-size: 1.4rem;
-    color: #42b983;
+    color: #49b3d8;
 }
 
 .search-result-list li {
