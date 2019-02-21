@@ -5,8 +5,17 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, One Fly Bird&#39;s Nest">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="常用的linux指令, One Fly Bird&#39;s Nest">
+    <meta name="description" content="常用linux指令cd
+cd / 进入到根目录
+cd ~进入到根目录下的root目录即/root/
+由/开头的是绝对路径，跟在cd后面可以进入相应的文件夹
+cd ../进入上一集目录
+
+常用文本编辑器nanovim
+vim常用命令
+
+w保存">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +23,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | One Fly Bird&#39;s Nest</title>
+    <title>常用的linux指令 | One Fly Bird&#39;s Nest</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -227,13 +236,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('http://pic1.win4000.com/wallpaper/6/57bd626e9cd08.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        常用的linux指令
                     </div>
                 </div>
             </div>
@@ -342,29 +351,85 @@
     <div class="card">
         <div class="card-content article-info">
             
+            <div class="article-tag">
+                
+                <a href="/tags/linux/" target="_blank">
+                    <span class="chip bg-color">linux</span>
+                </a>
+                
+            </div>
+            
             <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/linux/" class="post-category" target="_blank">
+                        linux
+                    </a>
+                    
+                </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-11-09
+                    <i class="fa fa-clock-o fa-fw"></i>2019-02-21
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2><span id="quick-start">Quick Start</span></h2><h3><span id="create-a-new-post">Create a new post</span></h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
-</code></pre>
-<h3><span id="run-server">Run server</span></h3><pre class=" language-bash"><code class="language-bash">$ hexo server
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3><span id="generate-static-files">Generate static files</span></h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3><span id="deploy-to-remote-sites">Deploy to remote sites</span></h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h2><span id="常用linux指令">常用linux指令</span></h2><h4><span id="cd">cd</span></h4><ol>
+<li><code>cd /</code> 进入到根目录</li>
+<li><code>cd ~</code>进入到根目录下的root目录即/root/</li>
+<li>由<code>/</code>开头的是绝对路径，跟在cd后面可以进入相应的文件夹</li>
+<li><code>cd ../</code>进入上一集目录</li>
+</ol>
+<h4><span id="常用文本编辑器">常用文本编辑器</span></h4><h5><span id="nano">nano</span></h5><h5><span id="vim">vim</span></h5><blockquote>
+<p>vim常用命令</p>
+<ol>
+<li>w保存q退出!强制适用于只读保存文件</li>
+<li>i进入插入模式，: 进入底线命令模式</li>
+<li><code>/</code>加文字表示搜索后面相匹配的文字，<code>?</code>向前搜索，按n查看下一个匹配</li>
+<li>[常用vim命令][<a href="http://www.runoob.com/linux/linux-vim.html]" target="_blank" rel="noopener">http://www.runoob.com/linux/linux-vim.html]</a></li>
+</ol>
+</blockquote>
+<h4><span id="配置python时常用的命令">配置python时常用的命令</span></h4><blockquote>
+<p>以下皆为举例形式</p>
+</blockquote>
+<ol>
+<li><code>ll /usr/bin | grep python</code>查看/usr/bin下的python版本</li>
+<li><code>mv /usr/bin/python  /usr/bin/python2.7</code>重命名旧版本</li>
+<li><code>rm -rf /usr/bin/python</code>删除旧的软链接</li>
+<li><code>ln -s 新链接源文件 链接文件</code> 创建新链接</li>
+<li><code>python --version</code>或<code>python -V</code>查看python位置</li>
+<li><code>which python</code>查看python指令所调用的目录 （非常重要 改了软链接不起作用很有可能是这条！！）</li>
+<li><code>chmod 777 文件名</code>如果出现permission denied用此命令授予源文件权限</li>
+<li><code>vim ~/.bash_profile</code>添加环境变量</li>
+<li><code>vim ~/.bashrc</code>同样添加环境变量</li>
+<li><code>source ~/.bash_profile</code>保存文件</li>
+<li><code>pip install -r requirments.txt</code>新增依赖</li>
+<li><code>pip freeze &gt; requirements.txt</code>导出该环境下的依赖到requirements.txt文件</li>
+<li><code>tar -xf tgz包</code>解压tgz包</li>
+<li>·<code>./configure --prefix=需要安装的目录</code>执行此命令前要先回到解压文件夹下</li>
+<li><code>make &amp;&amp; make install</code>编译安装，需要紧跟上部</li>
+<li><code>sh start.sh start/restart/stop/reload</code>执行 start.sh脚本，即shell脚本，可用于常开服务器端口</li>
+<li><code>rm [-f][-R] 文件名</code> 不加参数删除单个文件，-f强行删除，-R删除目录下所有文件</li>
+<li><code>update-alternatives --config python</code>快速切换python</li>
+<li><code>update-alternatives --remove python /usr/bin/python2.7</code>移除旧版本</li>
+</ol>
+<h4><span id="其他的一些有用的命令">其他的一些有用的命令</span></h4><ol>
+<li><code>ls  -a</code>显示所有文件和文件夹，包括隐藏</li>
+<li><code>pstree -ap | grep gunicorn</code>获取gunicorn进程树</li>
+<li><code>kill -9 查询出的主进程pid</code> 关闭主进程</li>
+<li><code>kill -HUP 主进程id</code>重启gunicorn任务</li>
+</ol>
+<h3><span id="参考文档">参考文档</span></h3><p>[在软链接地方有坑其他ok的教程][<a href="https://www.cnblogs.com/mqxs/p/9103031.html]" target="_blank" rel="noopener">https://www.cnblogs.com/mqxs/p/9103031.html]</a></p>
+<p>[安装python加虚拟环境的靠谱教程][<a href="https://shimo.im/docs/PITngHlPpaIdxtFa/read]" target="_blank" rel="noopener">https://shimo.im/docs/PITngHlPpaIdxtFa/read]</a></p>
+<p>[linux命令大全][<a href="http://www.runoob.com/linux/linux-command-manual.html]" target="_blank" rel="noopener">http://www.runoob.com/linux/linux-command-manual.html]</a></p>
+<p>[快速切换python][<a href="https://www.cnblogs.com/rexyan/p/7485135.html]" target="_blank" rel="noopener">https://www.cnblogs.com/rexyan/p/7485135.html]</a></p>
+<p>[flask+ningx=gunicorn][<a href="https://www.cnblogs.com/Ray-liang/p/4837850.html]" target="_blank" rel="noopener">https://www.cnblogs.com/Ray-liang/p/4837850.html]</a></p>
+<p>[virtuaenvwrapper基本使用][<a href="https://www.cnblogs.com/justbreaking/p/7103234.html]" target="_blank" rel="noopener">https://www.cnblogs.com/justbreaking/p/7103234.html]</a></p>
 
             </div>
             <hr>
@@ -386,7 +451,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://yoursite.com" class="b-link-green">One Fly Bird's Nest</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/09/hello-world/" class="b-link-green">Hello World</a>
+                    <a href="/2019/02/21/常用的linux指令/" class="b-link-green">常用的linux指令</a>
                 </p>
             </div>
         </div>
@@ -406,43 +471,50 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
-                <a href="/2018/11/13/母牛的故事/">
+                <a href="/2019/02/21/常用的linux指令/">
                     <div class="card-image">
                         
-                        <img src="http://pic41.photophoto.cn/20161223/1155116842450472_b.jpg" class="responsive-img" alt="ACM题解-母牛的故事">
                         
-                        <span class="card-title">ACM题解-母牛的故事</span>
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="常用的linux指令">
+                        
+                        <span class="card-title">常用的linux指令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">题目
-Problem Description
-有一头母牛，它每年年初生一头小母牛。每头小母牛从第四个年头开始，每年年初也生一头小母牛。请编程实现在第n年的时候，共有多少头母牛？
-Input
-输入数据由多个测试实例组成，每个测试实例占一行，包</div>
+                    <div class="summary">常用linux指令cd
+cd / 进入到根目录
+cd ~进入到根目录下的root目录即/root/
+由/开头的是绝对路径，跟在cd后面可以进入相应的文件夹
+cd ../进入上一集目录
+
+常用文本编辑器nanovim
+vim常用命令
+
+w保存</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/c/" class="post-category" target="_blank">
-                                    c
+                            <a href="/categories/linux/" class="post-category" target="_blank">
+                                    linux
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/acm/" target="_blank">
-                        <span class="chip bg-color">acm</span>
+                    <a href="/tags/linux/" target="_blank">
+                        <span class="chip bg-color">linux</span>
                     </a>
                     
                 </div>
@@ -452,9 +524,9 @@ Input
         
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">本篇</div>
+            <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/11/09/hello-world/">
+                <a href="/2019/02/21/hello-world/">
                     <div class="card-image">
                         
                         <img src="http://pic1.win4000.com/wallpaper/6/57bd626e9cd08.jpg" class="responsive-img" alt="Hello World">
@@ -466,7 +538,7 @@ Input
                     <div class="summary">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-21
                             </span>
                         <span class="publish-author">
                             
@@ -476,7 +548,6 @@ Input
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -587,5 +658,5 @@ Input
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":120,"height":190},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":130,"height":150},"mobile":{"show":false},"log":false});</script></body>
 </html>
