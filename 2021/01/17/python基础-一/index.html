@@ -7,11 +7,11 @@
     <meta charset="utf-8">
     <meta name="keywords" content="python基础(一), One Fly Bird&#39;s Nest">
     <meta name="description" content="
-这篇文章主要的内容是不同语言的比较，python基本数据类型，socket相关，对flask中的蓝图的理解，线程与进程，迭代器，生成器，装饰器
+这篇文章主要的内容是不同语言的比较，python基本数据类型，socket相关，线程与进程，高阶函数：迭代器，生成器，装饰器
 
-python和java的异同
+python和java的区别
 JAVA编译以后才能运行，python直接就可以运行；
-JAV">
+JAVA是混合型语言，p">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -370,18 +370,18 @@ JAV">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>这篇文章主要的内容是不同语言的比较，python基本数据类型，socket相关，对flask中的蓝图的理解，线程与进程，迭代器，生成器，装饰器</p>
+<p>这篇文章主要的内容是不同语言的比较，python基本数据类型，socket相关，线程与进程，高阶函数：迭代器，生成器，装饰器</p>
 </blockquote>
-<h2><span id="python和java的异同">python和java的异同</span></h2><ol>
+<h2><span id="python和java的区别">python和java的区别</span></h2><ol>
 <li>JAVA编译以后才能运行，python直接就可以运行；</li>
 <li>JAVA是混合型语言，python是解释型语言。JAVA可以是解释型的，因为java代码编译后不能直接运行，它是解释运行在JVM上的；但是现在的JVM为了效率，都有一些JIT优化，它又会把.class的二进制代码编译为本地的代码直接运行。</li>
 <li>JAVA 的类型要声明，Python 的类型不需要。</li>
 <li>JAVA 中的字符串以双引号括起来，Python 中单引号或双引号都可以</li>
 <li>python是弱类型语言，java是强类型。</li>
-<li>Python是函数为一等公民的语言,而Java是类为一等公民的语言<h3><span id="python和java都是面向对象的">python和java都是面向对象的</span></h3></li>
+<li>Python是函数为一等公民的语言,而Java是类为一等公民的语言</li>
+<li>`</li>
 </ol>
-<p>python可以单独定义函数，但这与python是一门面向对象的语言不冲突。<br>python支持面向对象的所有内涵，python里面的所有操作内容都是对象(包括函数)</p>
-<h3><span id="编译型语言和解释型语言">编译型语言和解释型语言</span></h3><h4><span id="定义">定义</span></h4><ul>
+<h3><span id="python和java都是面向对象的">python和java都是面向对象的</span></h3><h4><span id="定义">定义</span></h4><ul>
 <li><p>编译型语言：把做好的源程序全部编译成二进制代码的可运行程序。然后，可直接运行这个程序。 </p>
 </li>
 <li><p>解释型语言：把做好的源程序翻译一句，然后执行一句，直至结束！ </p>
@@ -424,18 +424,8 @@ c.close()                # 关闭连接
 <li>两者都能做即时通讯</li>
 </ol>
 <h4><span id="为什么有了-http-还需要-websocket">为什么有了 HTTP 还需要 WebSocket？</span></h4><p>http通信协议不是双工的，只能客户端先发送请求，服务器响应请求。如果有需要服务端主动通知的业务，就需要轮询（客户端定时向服务端发送请求）。轮询的效率低，非常浪费资源。为了解决 Web 端即时通讯的需求就出现了 WebSocket。</p>
-<h2><span id="flask中的蓝图blueprint">flask中的蓝图(Blueprint)</span></h2><p>flask使用蓝图让应用实现<strong>模块化</strong>，蓝图对象用起来和一个应用差不多:</p>
-<ol>
-<li>创建一个蓝图对象<code>admin=Blueprint(&#39;admin&#39;,__name__)</code></li>
-<li><p>在这个蓝图对象上进行操作,注册路由,指定静态文件夹,注册模版过滤器</p>
-<pre><code>@admin.route(&#39;/&#39;)
-def admin_home():
-return &#39;admin_home&#39;
-</code></pre><p>3.在应用对象上注册这个蓝图对象<code>app.register_blueprint(admin,url\_prefix=&#39;/admin&#39;)</code></p>
-<p>但一个BluePrint并不是一个完整的应用，不能独立于应用运行，而必须注册到某一个应用中。</p>
-<h2><span id="魔法函数">魔法函数</span></h2><h3><span id="装饰器">装饰器</span></h3><p>本质上，decorator就是一个返回函数的高阶函数。装饰器本质上是一个Python函数，它可以让其他函数在不需要做任何代码变动的前提下增加额外功能，装饰器的返回值也是一个函数对象。可以进行插入日志、性能测试、权限校验这些操作。</p>
-</li>
-</ol>
+<p>## </p>
+<h3><span id="装饰器">装饰器</span></h3><p>本质上，decorator就是一个返回函数的高阶函数。装饰器本质上是一个Python函数，它可以让其他函数在不需要做任何代码变动的前提下增加额外功能，装饰器的返回值也是一个函数对象。可以进行插入日志、性能测试、权限校验这些操作。</p>
 <h3><span id="迭代器和生成器的区别">迭代器和生成器的区别</span></h3><h4><span id="在python的实现中">在python的实现中：</span></h4><ul>
 <li>实现了<code>__iter__</code>方法和<code>__next__</code>方法的类对象，就是迭代器</li>
 <li>使用yield语句返回结果就是生成器</li>
