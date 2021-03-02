@@ -5,16 +5,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="bisect&amp;pop,remove,del的区别&amp;双指针使用场景, One Fly Bird&#39;s Nest">
-    <meta name="description" content="这篇文章有三个知识点：
+    <meta name="keywords" content="对于endpoint（端点）的理解, One Fly Bird&#39;s Nest">
+    <meta name="description" content="对于endpoint（端点）的理解
+参考文章：https://www.jianshu.com/p/808917d76b51
 
-python的二分查找库bisect
-pop,remove,del的区别
-双指针使用场景的简单说明
-
-bisectbisect是一种数组二分查找算法库，返回合适的插入位置索引。
-
-参考：https://docs.p">
+flask框架的程序理念是把URL地址映射到相应的业务逻辑上。
+其中，映射过程并非直接为URL–&amp;gt;viewf">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +18,7 @@ bisectbisect是一种数组二分查找算法库，返回合适的插入位置�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>bisect&amp;pop,remove,del的区别&amp;双指针使用场景 | One Fly Bird&#39;s Nest</title>
+    <title>对于endpoint（端点）的理解 | One Fly Bird&#39;s Nest</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -238,13 +234,13 @@ bisectbisect是一种数组二分查找算法库，返回合适的插入位置�
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        bisect&amp;pop,remove,del的区别&amp;双指针使用场景
+                        对于endpoint（端点）的理解
                     </div>
                 </div>
             </div>
@@ -365,81 +361,52 @@ bisectbisect是一种数组二分查找算法库，返回合适的插入位置�
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2021-02-03
+                    <i class="fa fa-clock-o fa-fw"></i>2021-03-02
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>这篇文章有三个知识点：</p>
-<ul>
-<li>python的二分查找库bisect</li>
-<li>pop,remove,del的区别</li>
-<li>双指针使用场景的简单说明</li>
-</ul>
-<h2><span id="bisect">bisect</span></h2><p>bisect是一种数组二分查找算法库，返回合适的插入位置索引。</p>
-<blockquote>
-<p>参考：<a href="https://docs.python.org/zh-cn/3.6/library/bisect.html" target="_blank" rel="noopener">https://docs.python.org/zh-cn/3.6/library/bisect.html</a></p>
+                <h2><span id="对于endpoint端点的理解">对于endpoint（端点）的理解</span></h2><blockquote>
+<p>参考文章：<a href="https://www.jianshu.com/p/808917d76b51" target="_blank" rel="noopener">https://www.jianshu.com/p/808917d76b51</a></p>
 </blockquote>
-<h3><span id="用途">用途</span></h3><ul>
-<li>对有序列表提供支持，辅助进行查找，插入，排序。</li>
-</ul>
-<h3><span id="常用函数搜索与插入">常用函数【搜索与插入】</span></h3><blockquote>
-<p>要注意搜索是 O(log n) 的，插入却是 O(n) 的（<em>数组的插入</em>）</p>
-</blockquote>
-<h4><span id="搜索">搜索</span></h4><p>在 a 中找到数字 x 合适的插入点以维持有序,当不存在和x相同的数时，下面两个方法返回的结果相同：</p>
-<ol>
-<li><p><code>bisect.bisect_left(a, x, lo=0, hi=len(a))</code><br> 返回的插入点 i 可以将数组 a 分成两部分。左侧是 all(val &lt; x for val in a[lo:i]) ，右侧是 all(val &gt;= x for val in a[i:hi])<br> <strong>在存在多个和x相等的数时，a[i]是第一个和x相等的数</strong></p>
-</li>
-<li><p><code>bisect.bisect_right(a, x, lo=0, hi=len(a))</code><br><strong>在存在多个和x相等的数时，a[i]是第一个不和x相等的数，左侧是小于等于x的数</strong></p>
-</li>
-</ol>
-<pre><code>    a=[1,2,2,3,4]
-    print(bisect.bisect_left(a, 2)) # 1
-    print(bisect.bisect_right(a, 2))# 3
-</code></pre><h4><span id="插入">插入</span></h4><p>将 x 插入到一个<strong>有序</strong>序列 a 里，并维持其有序：</p>
-<ol>
-<li><p><code>bisect.insort_left(a, x, lo=0, hi=len(a))</code><br>相当于 a.insert(bisect.bisect_left(a, x, lo, hi), x)。  </p>
-</li>
-<li><p><code>bisect.insort_right(a, x, lo=0, hi=len(a))</code><br>相当于 a.insert(bisect.bisect_right(a, x, lo, hi), x)。  </p>
-</li>
-</ol>
-<h2><span id="popremovedel的区别">pop,remove,del的区别</span></h2><p>在使用目的上都是为了从一个列表中移除元素</p>
-<table>
-<thead>
-<tr>
-<th>不同点</th>
-<th>使用结果</th>
-<th>返回数据</th>
-<th>异常</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>remove</td>
-<td>移除第一个相同的元素</td>
-<td>不返回数据</td>
-<td><code>ValueError: list.remove(x): x not in list</code></td>
-</tr>
-<tr>
-<td>del</td>
-<td>按照索引移除元素</td>
-<td>不返回数据</td>
-<td><code>IndexError: list assignment index out of range</code></td>
-</tr>
-<tr>
-<td>pop</td>
-<td>按照索引移除元素</td>
-<td>返回被移除的元素</td>
-<td><code>IndexError: pop index out of range</code></td>
-</tr>
-</tbody>
-</table>
-<h2><span id="双指针使用场景的简单说明">双指针使用场景的简单说明</span></h2><ol>
-<li>从两端向中间迭代数组：一个指针从头部开始，另一个指针从尾部开始。【如反转】</li>
-<li>同时有一个快指针和一个慢指针：确定两个指针的移动策略。【如原地移除一个列表中所有等于val的元素】</li>
-</ol>
+<p>flask框架的程序理念是把URL地址映射到相应的业务逻辑上。</p>
+<p>其中，映射过程并非直接为URL–&gt;viewfunction，而是URL–&gt;endpoint–&gt;viewfunction。</p>
+<h3><span id="endpoint的存在意义">endpoint的存在意义</span></h3><p><strong>endpoint一般用作反向查询URL地址（viewfunction–&gt;endpoint–&gt;URL）。这样就可以让URL与视图间的关联代码进行解耦，比如：在两个视图通过<code>url_for()</code>进行相关联的时候，可以任意改变视图的URL，只要端点不变，就不需要改动关联代码。</strong></p>
+<h4><span id="endpoint在蓝图中的应用">endpoint在蓝图中的应用</span></h4><p>除了解耦作用，endpoint在蓝图中还有更妙的用处：<strong>通过端点实现对命名空间的支持</strong></p>
+<p>main.py</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> Blueprint
+<span class="token keyword">from</span> admin <span class="token keyword">import</span> admin
+<span class="token keyword">from</span> user <span class="token keyword">import</span> user
+
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span>register_blueprint<span class="token punctuation">(</span>admin<span class="token punctuation">,</span> url_prefix<span class="token operator">=</span><span class="token string">'admin'</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span>register_blueprint<span class="token punctuation">(</span>user<span class="token punctuation">,</span> url_prefix<span class="token operator">=</span><span class="token string">'user'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>admin.py</p>
+<pre class=" language-python"><code class="language-python">admin <span class="token operator">=</span> Blueprint<span class="token punctuation">(</span><span class="token string">'admin'</span><span class="token punctuation">,</span> __name__<span class="token punctuation">)</span>
+
+@admin<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/greeting'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">greeting</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">'Hello, administrative user!'</span>
+</code></pre>
+<p>user.py</p>
+<pre class=" language-python"><code class="language-python">user <span class="token operator">=</span> Blueprint<span class="token punctuation">(</span><span class="token string">'user'</span><span class="token punctuation">,</span> __name__<span class="token punctuation">)</span>
+@user<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/greeting'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">greeting</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">'Hello, lowly normal user!'</span>
+</code></pre>
+<p>user.py</p>
+<pre class=" language-python"><code class="language-python">user <span class="token operator">=</span> Blueprint<span class="token punctuation">(</span><span class="token string">'user'</span><span class="token punctuation">,</span> __name__<span class="token punctuation">)</span>
+@user<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/greeting'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">greeting</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">'Hello, lowly normal user!'</span>
+</code></pre>
+<p>打印url，可以发现虽然不同蓝图下的url相同，但是端点是不同的，也就是说不同的蓝图，他们的命名空间是相互隔离的。</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span> url_for<span class="token punctuation">(</span><span class="token string">'admin.greeting'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Prints '/admin/greeting'</span>
+<span class="token keyword">print</span> url_for<span class="token punctuation">(</span><span class="token string">'user.greeting'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Prints '/user/greeting'</span>
+</code></pre>
 
             </div>
             <hr/>
@@ -461,7 +428,7 @@ bisectbisect是一种数组二分查找算法库，返回合适的插入位置�
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://yoursite.com" class="b-link-green">One Fly Bird's Nest</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/02/03/bisect和pop-remove-del的区别和双指针/" class="b-link-green">bisect&amp;pop,remove,del的区别&amp;双指针使用场景</a>
+                    <a href="/2021/03/02/对于EndPoint的理解/" class="b-link-green">对于endpoint（端点）的理解</a>
                 </p>
             </div>
         </div>
@@ -483,21 +450,17 @@ bisectbisect是一种数组二分查找算法库，返回合适的插入位置�
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2021/03/02/对于EndPoint的理解/">
+                <a href="/2021/03/02/Inbox/flask进阶/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="对于endpoint（端点）的理解">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="flask进阶">
                         
-                        <span class="card-title">对于endpoint（端点）的理解</span>
+                        <span class="card-title">flask进阶</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">对于endpoint（端点）的理解
-参考文章：https://www.jianshu.com/p/808917d76b51
-
-flask框架的程序理念是把URL地址映射到相应的业务逻辑上。
-其中，映射过程并非直接为URL–&gt;viewf</div>
+                    <div class="summary"></div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-02
@@ -511,14 +474,6 @@ flask框架的程序理念是把URL地址映射到相应的业务逻辑上。
                     </div>
                 </div>
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python/" target="_blank">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
-                </div>
-                
             </div>
         </div>
         
@@ -526,25 +481,28 @@ flask框架的程序理念是把URL地址映射到相应的业务逻辑上。
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2021/01/17/python基础-一/">
+                <a href="/2021/02/03/bisect和pop-remove-del的区别和双指针/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="python基础(一)">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="bisect&pop,remove,del的区别&双指针使用场景">
                         
-                        <span class="card-title">python基础(一)</span>
+                        <span class="card-title">bisect&pop,remove,del的区别&双指针使用场景</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
-这篇文章主要的内容是不同语言的比较，python基本数据类型，socket相关，线程与进程，高阶函数：迭代器，生成器，装饰器
+                    <div class="summary">这篇文章有三个知识点：
 
-python和java的区别
-JAVA编译以后才能运行，python直接就可以运行；
-JAVA是混合型语言，p</div>
+python的二分查找库bisect
+pop,remove,del的区别
+双指针使用场景的简单说明
+
+bisectbisect是一种数组二分查找算法库，返回合适的插入位置索引。
+
+参考：https://docs.p</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-03
                             </span>
                         <span class="publish-author">
                             
