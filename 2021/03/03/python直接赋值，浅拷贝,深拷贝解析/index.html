@@ -405,6 +405,11 @@ a<span class="token punctuation">[</span><span class="token number">4</span><spa
 <span class="token keyword">print</span><span class="token punctuation">(</span> <span class="token string">'d = '</span><span class="token punctuation">,</span> d <span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># ('d = ', [1, 2, 3, 4, ['a', 'b']])</span>
 </code></pre>
+<h3><span id="python特性">python特性</span></h3><ol>
+<li><p>切片是深拷贝</p>
+<p><code>a = b[:]</code>，b改变之后a不会改变</p>
+</li>
+</ol>
 </li>
 </ul>
 
@@ -447,31 +452,49 @@ a<span class="token punctuation">[</span><span class="token number">4</span><spa
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">本篇</div>
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2021/03/03/python直接赋值，浅拷贝,深拷贝解析/">
+                <a href="/2021/03/09/post-put-patch之间的区别/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="python直接赋值，浅拷贝,深拷贝解析">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="post,put,patch之间的区别">
                         
-                        <span class="card-title">python直接赋值，浅拷贝,深拷贝解析</span>
+                        <span class="card-title">post,put,patch之间的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
-参考：https://www.runoob.com/w3cnote/python-understanding-dict-copy-shallow-or-deep.html
+                    <div class="summary">总结
 
 
-直接赋值：其实就是对象的引用（别名）。
+区别
+Post
+put
+Patch
 
 
-浅拷贝(copy)</div>
+
+
+等幂性
+非等幂
+等幂
+
+
+
+用处
+创建
+更新资源，如果资源不存在就创建资源
+只更新资源的一部分
+
+
+
+详细说明
+POST是非等幂的,多次调用会产生不同的结果。比如：创建一个用户,由于网络</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-03
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -480,12 +503,11 @@ a<span class="token punctuation">[</span><span class="token number">4</span><spa
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/" target="_blank">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/计算机网络/" target="_blank">
+                        <span class="chip bg-color">计算机网络</span>
                     </a>
                     
                 </div>
