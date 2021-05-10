@@ -253,7 +253,8 @@
 
 <script>
 // Dynamically switch banner pictures every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+// $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + Math.floor(Math.random()*13).toString()  + '.jpg)'); //向下舍入，最后一个照片编号+1
 </script>
 
 <main class="content">
@@ -267,38 +268,65 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             <div class="tag-chips">
                 
                 
-                <a href="/tags/basic/" title="basic: 4">
+                <a href="/tags/基础/" title="基础: 6">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="basic" style="background-color: #d1f3ec;">basic
-                        <span class="tag-length">4</span>
+                            data-tagname="基础" style="background-color: #d1f3ec;">基础
+                        <span class="tag-length">6</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/ruby/" title="ruby: 1">
+                <a href="/tags/排序/" title="排序: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="ruby" style="background-color: #cdebd0;">ruby
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/c/" title="c: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="c" style="background-color: #abdbfc;">c
+                            data-tagname="排序" style="background-color: #cdebd0;">排序
                         <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/指针/" title="指针: 1">
+                <a href="/tags/package/" title="package: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="指针" style="background-color: #b9e9e5;">指针
-                        <span class="tag-length">1</span>
+                            data-tagname="package" style="background-color: #abdbfc;">package
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/双指针/" title="双指针: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="双指针" style="background-color: #b9e9e5;">双指针
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/静态和动态/" title="静态和动态: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="静态和动态" style="background-color: #f3f2d4;">静态和动态
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/指针/" title="指针: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="指针" style="background-color: #bed8e7;">指针
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/备忘/" title="备忘: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="备忘" style="background-color: #ebeadf;">备忘
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -306,62 +334,44 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/tags/docker/" title="docker: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="docker" style="background-color: #f3f2d4;">docker
+                            data-tagname="docker" style="background-color: #cdf3d9;">docker
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/flask-python/" title="flask python: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="flask python" style="background-color: #bed8e7;">flask python
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/git/" title="git: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="git" style="background-color: #ebeadf;">git
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/python/" title="python: 7">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="python" style="background-color: #cdf3d9;">python
-                        <span class="tag-length">7</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/js/" title="js: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="js" style="background-color: #bfd7f7;">js
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/计算机网络/" title="计算机网络: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="计算机网络" style="background-color: #e0ecf7;">计算机网络
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/flask/" title="flask: 1">
+                <a href="/tags/flask/" title="flask: 5">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            data-tagname="flask" style="background-color: #b8e8d0;">flask
+                            data-tagname="flask" style="background-color: #bfd7f7;">flask
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/git/" title="git: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="git" style="background-color: #e0ecf7;">git
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/持续集成/" title="持续集成: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="持续集成" style="background-color: #b8e8d0;">持续集成
                         <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/博客/" title="博客: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="博客" style="background-color: #cae5bc;">博客
+                        <span class="tag-length">4</span>
                     </span>
                 </a>
                 
@@ -369,89 +379,62 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <a href="/tags/k8s/" title="k8s: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="k8s" style="background-color: #cae5bc;">k8s
+                            data-tagname="k8s" style="background-color: #abdbfc;">k8s
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/acm/" title="acm: 2">
+                <a href="/tags/面试/" title="面试: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="acm" style="background-color: #d1f3ec;">acm
+                            data-tagname="面试" style="background-color: #d1f3ec;">面试
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/踩坑/" title="踩坑: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="踩坑" style="background-color: #b8e8d0;">踩坑
                         <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/钩子/" title="钩子: 1">
+                <a href="/tags/递归/" title="递归: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="钩子" style="background-color: #ebeadf;">钩子
+                            data-tagname="递归" style="background-color: #ebeadf;">递归
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/动态规划/" title="动态规划: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="动态规划" style="background-color: #b8e8d0;">动态规划
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/java的隐藏超类/" title="java的隐藏超类: 1">
+                <a href="/tags/阅读总结/" title="阅读总结: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="java的隐藏超类" style="background-color: #f3f2d4;">java的隐藏超类
+                            data-tagname="阅读总结" style="background-color: #b8e8d0;">阅读总结
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/cookie/" title="cookie: 1">
+                <a href="/tags/异或/" title="异或: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="cookie" style="background-color: #cae5bc;">cookie
+                            data-tagname="异或" style="background-color: #abdbfc;">异或
                         <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/存储路径/" title="存储路径: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="存储路径" style="background-color: #b8e8d0;">存储路径
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/动态博客/" title="动态博客: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="动态博客" style="background-color: #bed8e7;">动态博客
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/github/" title="github: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="github" style="background-color: #cdebd0;">github
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/linux/" title="linux: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="linux" style="background-color: #e0ecf7;">linux
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/算法/" title="算法: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="算法" style="background-color: #d1f3ec;">算法
-                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -465,10 +448,19 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </a>
                 
                 
-                <a href="/tags/区块链/" title="区块链: 1">
+                <a href="/tags/面向对象/" title="面向对象: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="区块链" style="background-color: #e0ecf7;">区块链
+                            data-tagname="面向对象" style="background-color: #f3f2d4;">面向对象
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/cookie/" title="cookie: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="cookie" style="background-color: #cae5bc;">cookie
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -487,12 +479,141 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 
                 <div class="article tag-post col s12 m6 l4" data-tags="flask" data-aos="fade-up">
                     <div class="card">
-                        <a href="/2018/11/17/python的flask框架/">
+                        <a href="/2021/03/12/flask获取前端数据的几个方法的区别/">
                             <div class="card-image tag-image">
                                 
-                                <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1542974916891&amp;di=79a52e0a519da3213551079710f36b5e&amp;imgtype=0&amp;src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Fd62a6059252dd42a9e4aa67f093b5bb5c8eab8a7.jpg" class="responsive-img" alt="python的flask框架">
                                 
-                                <span class="card-title">python的flask框架</span>
+                                <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="flask获取前端数据的几个方法的区别">
+                                
+                                <span class="card-title">flask获取前端数据的几个方法的区别</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-12
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="article tag-post col s12 m6 l4" data-tags="flask" data-aos="fade-up">
+                    <div class="card">
+                        <a href="/2021/03/09/post-put-patch之间的区别/">
+                            <div class="card-image tag-image">
+                                
+                                
+                                <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="post,put,patch之间的区别">
+                                
+                                <span class="card-title">post,put,patch之间的区别</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-09
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="article tag-post col s12 m6 l4" data-tags="flask" data-aos="fade-up">
+                    <div class="card">
+                        <a href="/2021/03/02/对于EndPoint的理解/">
+                            <div class="card-image tag-image">
+                                
+                                
+                                <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="对于endpoint（端点）的理解">
+                                
+                                <span class="card-title">对于endpoint（端点）的理解</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-02
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="article tag-post col s12 m6 l4" data-tags="flask, 踩坑" data-aos="fade-up">
+                    <div class="card">
+                        <a href="/2019/02/21/做第一个项目时遇到的一些小坑/">
+                            <div class="card-image tag-image">
+                                
+                                
+                                <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="做第一个项目时遇到的一些小坑">
+                                
+                                <span class="card-title">做第一个项目时遇到的一些小坑</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-21
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="article tag-post col s12 m6 l4" data-tags="flask" data-aos="fade-up">
+                    <div class="card">
+                        <a href="/2018/11/17/利用flask框架做一个随机生成身份证码的网页/">
+                            <div class="card-image tag-image">
+                                
+                                
+                                <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="一个随机生成身份证码的网页">
+                                
+                                <span class="card-title">一个随机生成身份证码的网页</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
@@ -574,5 +695,5 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":130,"height":150},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":200,"height":300},"mobile":{"show":false},"log":false});</script></body>
 </html>

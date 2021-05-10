@@ -5,7 +5,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="python基础(一), One Fly Bird&#39;s Nest">
+    <meta name="keywords" content="python基础, One Fly Bird&#39;s Nest">
     <meta name="description" content="
 这篇文章主要的内容是不同语言的比较，python基本数据类型，socket相关，线程与进程，高阶函数：迭代器，生成器，装饰器
 
@@ -19,7 +19,7 @@ JAVA是混合型语言，p">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>python基础(一) | One Fly Bird&#39;s Nest</title>
+    <title>python基础 | One Fly Bird&#39;s Nest</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -235,13 +235,13 @@ JAVA是混合型语言，p">
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        python基础(一)
+                        python基础
                     </div>
                 </div>
             </div>
@@ -352,13 +352,26 @@ JAVA是混合型语言，p">
             
             <div class="article-tag">
                 
-                <a href="/tags/python/" target="_blank">
-                    <span class="chip bg-color">python</span>
+                <a href="/tags/基础/" target="_blank">
+                    <span class="chip bg-color">基础</span>
+                </a>
+                
+                <a href="/tags/面试/" target="_blank">
+                    <span class="chip bg-color">面试</span>
                 </a>
                 
             </div>
             
             <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/python/" class="post-category" target="_blank">
+                        python
+                    </a>
+                    
+                </span>
                 
 
                 <span class="post-date">
@@ -379,7 +392,6 @@ JAVA是混合型语言，p">
 <li>JAVA 中的字符串以双引号括起来，Python 中单引号或双引号都可以</li>
 <li>python是弱类型语言，java是强类型。</li>
 <li>Python是函数为一等公民的语言,而Java是类为一等公民的语言</li>
-<li>`</li>
 </ol>
 <h3><span id="python和java都是面向对象的">python和java都是面向对象的</span></h3><h4><span id="定义">定义</span></h4><ul>
 <li><p>编译型语言：把做好的源程序全部编译成二进制代码的可运行程序。然后，可直接运行这个程序。 </p>
@@ -424,13 +436,12 @@ c.close()                # 关闭连接
 <li>两者都能做即时通讯</li>
 </ol>
 <h4><span id="为什么有了-http-还需要-websocket">为什么有了 HTTP 还需要 WebSocket？</span></h4><p>http通信协议不是双工的，只能客户端先发送请求，服务器响应请求。如果有需要服务端主动通知的业务，就需要轮询（客户端定时向服务端发送请求）。轮询的效率低，非常浪费资源。为了解决 Web 端即时通讯的需求就出现了 WebSocket。</p>
-<p>## </p>
-<h3><span id="装饰器">装饰器</span></h3><p>本质上，decorator就是一个返回函数的高阶函数。装饰器本质上是一个Python函数，它可以让其他函数在不需要做任何代码变动的前提下增加额外功能，装饰器的返回值也是一个函数对象。可以进行插入日志、性能测试、权限校验这些操作。</p>
-<h3><span id="迭代器和生成器的区别">迭代器和生成器的区别</span></h3><h4><span id="在python的实现中">在python的实现中：</span></h4><ul>
+<h2><span id="装饰器">装饰器</span></h2><p>本质上，decorator就是一个返回函数的高阶函数。装饰器本质上是一个Python函数，它可以让其他函数在不需要做任何代码变动的前提下增加额外功能，装饰器的返回值也是一个函数对象。可以进行插入日志、性能测试、权限校验这些操作。</p>
+<h2><span id="迭代器和生成器的区别">迭代器和生成器的区别</span></h2><h3><span id="在python的实现中">在python的实现中：</span></h3><ul>
 <li>实现了<code>__iter__</code>方法和<code>__next__</code>方法的类对象，就是迭代器</li>
 <li>使用yield语句返回结果就是生成器</li>
 </ul>
-<h4><span id="定义">定义</span></h4><h5><span id="迭代器">迭代器</span></h5><blockquote>
+<h3><span id="定义">定义</span></h3><h4><span id="迭代器">迭代器</span></h4><blockquote>
 <p><strong>迭代器是用来帮助我们记录每次迭代访问到的位置，当我们对迭代器使用next()函数的时候，迭代器会向我们返回它所记录位置的下一个位置的数据</strong>。<br>iter()函数会返回一个定义了next()方法的迭代器对象，它在容器中逐个访问容器内的元素。<br>next()也是python内置函数。在没有后续元素时，next()会抛出一个StopIteration异常，通知for语句循环结束。</p>
 </blockquote>
 <pre><code>class Fib(object):
@@ -455,7 +466,7 @@ def main():
     fib = Fib(20)
     for i in fib:
         print(i)
-</code></pre><h5><span id="生成器">生成器</span></h5><blockquote>
+</code></pre><h4><span id="生成器">生成器</span></h4><blockquote>
 <p><strong>延迟操作。也就是在需要的时候才产生结果，不是立即产生结果。</strong>.<br><em>区别</em>：生成器是只能遍历一次的。<br><em>联系</em>：生成器是一类特殊的迭代器。</p>
 </blockquote>
 <pre><code>def Fib(max):
@@ -464,7 +475,78 @@ def main():
         yield b
         a, b = b, a + b
     return 
+</code></pre><h2><span id="变量打印">变量打印</span></h2><h3><span id="方法1">方法1</span></h3><p>直接print(变量名)</p>
+<h3><span id="方法2">方法2</span></h3><p>运用%：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"%s %s "</span> <span class="token operator">%</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#两个变量要加（）</span>
 </code></pre>
+<p>说明：</p>
+<p>(1) %字符：标记转换说明符的开始</p>
+<p>(2) 转换标志：-表示左对齐；+表示在转换值之前要加上正负号；“”（空白字符）表示正数之前保留空格；0表示转换值若位数不够则用0填充</p>
+<p>(3) 最小字段宽度：转换后的字符串至少应该具有该值指定的宽度。如果是*，则宽度会从值元组中读出。</p>
+<p>(4) 点(.)后跟精度值：如果转换的是实数，精度值就表示出现在小数点后的位数。如果转换的是字符串，那么该数字就表示最大字段宽度。如果是*，那么精度将从元组中读出</p>
+<h4><span id="字符串格式化转换类型">字符串格式化转换类型</span></h4><table>
+<thead>
+<tr>
+<th>转换类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d,i</td>
+<td>带符号的十进制整数</td>
+</tr>
+<tr>
+<td>o</td>
+<td>不带符号的八进制</td>
+</tr>
+<tr>
+<td>u</td>
+<td>不带符号的十进制</td>
+</tr>
+<tr>
+<td>x</td>
+<td>不带符号的十六进制（小写）</td>
+</tr>
+<tr>
+<td>X</td>
+<td>不带符号的十六进制（大写）</td>
+</tr>
+<tr>
+<td>e</td>
+<td>科学计数法表示的浮点数（小写）</td>
+</tr>
+<tr>
+<td>E</td>
+<td>科学计数法表示的浮点数（大写）</td>
+</tr>
+<tr>
+<td>f,F</td>
+<td>十进制浮点数</td>
+</tr>
+<tr>
+<td>g</td>
+<td>如果指数大于-4或者小于精度值则和e相同，其他情况和f相同</td>
+</tr>
+<tr>
+<td>G</td>
+<td>如果指数大于-4或者小于精度值则和E相同，其他情况和F相同</td>
+</tr>
+<tr>
+<td>C</td>
+<td>单字符（接受整数或者单字符字符串）</td>
+</tr>
+<tr>
+<td>r</td>
+<td>字符串（使用repr转换任意python对象)</td>
+</tr>
+<tr>
+<td>s</td>
+<td>字符串（使用str转换任意python对象）</td>
+</tr>
+</tbody>
+</table>
+
             </div>
             <hr/>
 
@@ -485,7 +567,7 @@ def main():
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://yoursite.com" class="b-link-green">One Fly Bird's Nest</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/01/17/python基础-一/" class="b-link-green">python基础(一)</a>
+                    <a href="/2021/01/17/python基础-一/" class="b-link-green">python基础</a>
                 </p>
             </div>
         </div>
@@ -511,7 +593,7 @@ def main():
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="bisect&pop,remove,del的区别&双指针使用场景">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="bisect&pop,remove,del的区别&双指针使用场景">
                         
                         <span class="card-title">bisect&pop,remove,del的区别&双指针使用场景</span>
                     </div>
@@ -532,8 +614,12 @@ bisectbisect是一种数组二分查找算法库，返回合适的插入位置�
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            One fly bird
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -541,8 +627,16 @@ bisectbisect是一种数组二分查找算法库，返回合适的插入位置�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/" target="_blank">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/排序/" target="_blank">
+                        <span class="chip bg-color">排序</span>
+                    </a>
+                    
+                    <a href="/tags/package/" target="_blank">
+                        <span class="chip bg-color">package</span>
+                    </a>
+                    
+                    <a href="/tags/双指针/" target="_blank">
+                        <span class="chip bg-color">双指针</span>
                     </a>
                     
                 </div>
@@ -558,7 +652,7 @@ bisectbisect是一种数组二分查找算法库，返回合适的插入位置�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="刷题一周总结 2020.12.20">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="刷题一周总结 2020.12.20">
                         
                         <span class="card-title">刷题一周总结 2020.12.20</span>
                     </div>
@@ -590,8 +684,12 @@ bisectbisect是一种数组二分查找算法库，返回合适的插入位置�
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            One fly bird
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/算法/" class="post-category" target="_blank">
+                                    算法
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -599,8 +697,16 @@ bisectbisect是一种数组二分查找算法库，返回合适的插入位置�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/算法/" target="_blank">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/双指针/" target="_blank">
+                        <span class="chip bg-color">双指针</span>
+                    </a>
+                    
+                    <a href="/tags/递归/" target="_blank">
+                        <span class="chip bg-color">递归</span>
+                    </a>
+                    
+                    <a href="/tags/动态规划/" target="_blank">
+                        <span class="chip bg-color">动态规划</span>
                     </a>
                     
                 </div>
@@ -715,5 +821,5 @@ bisectbisect是一种数组二分查找算法库，返回合适的插入位置�
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":130,"height":150},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":200,"height":300},"mobile":{"show":false},"log":false});</script></body>
 </html>

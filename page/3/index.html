@@ -260,7 +260,8 @@
 
 <script>
 // Dynamically switch banner pictures every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+// $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + Math.floor(Math.random()*13).toString()  + '.jpg)'); //向下舍入，最后一个照片编号+1
 </script>
 
 <main class="content">
@@ -279,10 +280,244 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2019/02/21/常用的linux指令/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="常用的linux指令">
+                            
+                            <span class="card-title">常用的linux指令</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">常用linux指令cd
+cd / 进入到根目录
+cd ~进入到根目录下的root目录即/root/
+由/开头的是绝对路径，跟在cd后面可以进</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-21
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/linux/" class="post-category" target="_blank">
+                                    linux
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/备忘/" target="_blank">
+                            <span class="chip bg-color">备忘</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/12/23/植物养护知识/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="多肉植物养护知识">
+                            
+                            <span class="card-title">多肉植物养护知识</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">多肉植物购买：
+名字+多肉 的方式搜索，按销量排名，你可以开始看最低价格了，只看第一页，一般来说我们最终会选的店铺不会在第一二排（第一常识）</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-23
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/娱乐/" class="post-category" target="_blank">
+                                    娱乐
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/植物/" target="_blank">
+                            <span class="chip bg-color">植物</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/12/05/我的第一本算法书重点总结/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/29.jpg" class="responsive-img" alt="《我的第一本算法书》知识总结">
+                            
+                            <span class="card-title">《我的第一本算法书》知识总结</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">安全算法概论用互联网传输数据时可能会发生的四个主要问题1.窃听：
+A向B发送的消息在传输途中被X偷看
+2.假冒：
+A以为向B发送了信息，但B</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-05
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/算法/" class="post-category" target="_blank">
+                                    算法
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/阅读总结/" target="_blank">
+                            <span class="chip bg-color">阅读总结</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/12/03/c里的静态变量只初始化一次的原因/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="c里的静态变量只初始化一次的原因">
+                            
+                            <span class="card-title">c里的静态变量只初始化一次的原因</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">c里的静态变量只初始化一次的原因
+来源于百度：
+
+#include "stdafx.h"
+
+int _tmain(int argc, _TC</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-03
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/c/" class="post-category" target="_blank">
+                                    c
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/静态和动态/" target="_blank">
+                            <span class="chip bg-color">静态和动态</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/11/29/js/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="js的基本操作">
+                            
+                            <span class="card-title">js的基本操作</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">定义变量声明var 变量名；
+
+即使不声明也可以使用，先声明后使用更规范
+
+定义函数声明function 函数名 {}
+使用函数名();
+如</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-29
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/js/" class="post-category" target="_blank">
+                                    js
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/基础/" target="_blank">
+                            <span class="chip bg-color">基础</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2018/11/28/Ruby/">
                         <div class="card-image">
                             
-                            <img src="https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/0B/05/ChMkJlcgb6mIY7cbAAg5YZ7Q3FwAAQrzAAWO2sACDl5956.jpg" class="responsive-img" alt="Ruby的基础知识">
+                            
+                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Ruby的基础知识">
                             
                             <span class="card-title">Ruby的基础知识</span>
                         </div>
@@ -310,12 +545,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/basic/" target="_blank">
-                            <span class="chip bg-color">basic</span>
-                        </a>
-                        
-                        <a href="/tags/ruby/" target="_blank">
-                            <span class="chip bg-color">ruby</span>
+                        <a href="/tags/基础/" target="_blank">
+                            <span class="chip bg-color">基础</span>
                         </a>
                         
                     </div>
@@ -325,19 +556,21 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2018/11/23/今天的小收获系列之二/">
+                    <a href="/2018/11/23/隐藏和覆盖的区别和用法/">
                         <div class="card-image">
                             
-                            <img src="http://5b0988e595225.cdn.sohucs.com/images/20171006/d8ce65e907084151911b9f84ce83bc69.jpeg" class="responsive-img" alt="今天的小收获系列之二">
                             
-                            <span class="card-title">今天的小收获系列之二</span>
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="隐藏和覆盖的区别和用法">
+                            
+                            <span class="card-title">隐藏和覆盖的区别和用法</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
-                        <div class="summary">内容主要是关于钩子的简单介绍和java中的隐藏超类的简单介绍和扩展知识。
-** 什么是钩子
-钩子源于hook，即在消息过去之前先把消息钩住，</div>
+                        <div class="summary">隐藏和覆盖的区别和用法
+以下内容来自隐藏和覆盖的区别和用法
+
+静态类型和动态类型任何一个引用变量都有两个类型：一个叫静态类型，也就是定义该引</div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-23
@@ -346,8 +579,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                                 
                                 <i class="fa fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/little-knowledge/" class="post-category" target="_blank">
-                                    little knowledge
+                                <a href="/categories/java/" class="post-category" target="_blank">
+                                    java
                                 </a>
                                 
                                 
@@ -358,12 +591,12 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/钩子/" target="_blank">
-                            <span class="chip bg-color">钩子</span>
+                        <a href="/tags/静态和动态/" target="_blank">
+                            <span class="chip bg-color">静态和动态</span>
                         </a>
                         
-                        <a href="/tags/java的隐藏超类/" target="_blank">
-                            <span class="chip bg-color">java的隐藏超类</span>
+                        <a href="/tags/面向对象/" target="_blank">
+                            <span class="chip bg-color">面向对象</span>
                         </a>
                         
                     </div>
@@ -376,7 +609,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     <a href="/2018/11/22/c的指针/">
                         <div class="card-image">
                             
-                            <img src="http://i1.hdslb.com/bfs/archive/1c69a2e2d4602744d8c67cecc3fd39f7ea63d3b4.jpg" class="responsive-img" alt="c的指针">
+                            
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="c的指针">
                             
                             <span class="card-title">c的指针</span>
                         </div>
@@ -409,10 +643,6 @@ siz</div>
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/c/" target="_blank">
-                            <span class="chip bg-color">c</span>
-                        </a>
-                        
                         <a href="/tags/指针/" target="_blank">
                             <span class="chip bg-color">指针</span>
                         </a>
@@ -427,7 +657,8 @@ siz</div>
                     <a href="/2018/11/21/利用github把本地图片显示到博客上的方法/">
                         <div class="card-image">
                             
-                            <img src="https://raw.githubusercontent.com/oneflybird/localimages/people/4.jpg?token=AZObGpAVMBO1AXD13ipKxqXoCZoH_04lks5cCc4-wA%3D%3D" class="responsive-img" alt="利用github把本地图片显示到博客上的方法">
+                            
+                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="利用github把本地图片显示到博客上的方法">
                             
                             <span class="card-title">利用github把本地图片显示到博客上的方法</span>
                         </div>
@@ -446,8 +677,8 @@ siz</div>
                                 
                                 <i class="fa fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/little-knowledge/" class="post-category" target="_blank">
-                                    little knowledge
+                                <a href="/categories/工具/" class="post-category" target="_blank">
+                                    工具
                                 </a>
                                 
                                 
@@ -458,8 +689,8 @@ siz</div>
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/github/" target="_blank">
-                            <span class="chip bg-color">github</span>
+                        <a href="/tags/博客/" target="_blank">
+                            <span class="chip bg-color">博客</span>
                         </a>
                         
                     </div>
@@ -469,12 +700,13 @@ siz</div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2018/11/20/今天的小收获系列之一/">
+                    <a href="/2018/11/20/静态博客和动态博客的区别，cookie，git里显示‘:’路径的原因/">
                         <div class="card-image">
                             
-                            <img src="http://5b0988e595225.cdn.sohucs.com/images/20171006/d8ce65e907084151911b9f84ce83bc69.jpeg" class="responsive-img" alt="今天的小收获系列之一">
                             
-                            <span class="card-title">今天的小收获系列之一</span>
+                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="静态博客和动态博客的区别，cookie，git里显示‘/’路径的原因">
+                            
+                            <span class="card-title">静态博客和动态博客的区别，cookie，git里显示‘/’路径的原因</span>
                         </div>
                     </a>
 
@@ -491,8 +723,8 @@ hexo静态博客和动态博客的区别文章来源：</div>
                                 
                                 <i class="fa fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/little-knowledge/" class="post-category" target="_blank">
-                                    little knowledge
+                                <a href="/categories/概念/" class="post-category" target="_blank">
+                                    概念
                                 </a>
                                 
                                 
@@ -502,240 +734,17 @@ hexo静态博客和动态博客的区别文章来源：</div>
 
                     
                     <div class="card-action article-tags">
+                        
+                        <a href="/tags/git/" target="_blank">
+                            <span class="chip bg-color">git</span>
+                        </a>
+                        
+                        <a href="/tags/博客/" target="_blank">
+                            <span class="chip bg-color">博客</span>
+                        </a>
                         
                         <a href="/tags/cookie/" target="_blank">
                             <span class="chip bg-color">cookie</span>
-                        </a>
-                        
-                        <a href="/tags/存储路径/" target="_blank">
-                            <span class="chip bg-color">存储路径</span>
-                        </a>
-                        
-                        <a href="/tags/动态博客/" target="_blank">
-                            <span class="chip bg-color">动态博客</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/11/18/hello-world/">
-                        <div class="card-image">
-                            
-                            <img src="http://pic1.win4000.com/wallpaper/6/57bd626e9cd08.jpg" class="responsive-img" alt="Hello World">
-                            
-                            <span class="card-title">Hello World</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">Welcome to Hexo! This is your very first post. Check documentation for</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-18
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-user fa-fw"></i>
-                                One fly bird
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/11/18/archlinux基础安装步骤/">
-                        <div class="card-image">
-                            
-                            <img src="http://www.yangdog.com/uploads/allimg/161102/0946001632-0.jpg" class="responsive-img" alt="archlinux基础安装步骤">
-                            
-                            <span class="card-title">archlinux基础安装步骤</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">使用虚拟机安装archlinux的步骤简单介绍,一下都是legacy启动模式
-
-参考资料
-ArchWiki，根据上面指令即可完成安装
-在 V</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-18
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/linux/" class="post-category" target="_blank">
-                                    linux
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/basic/" target="_blank">
-                            <span class="chip bg-color">basic</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/11/17/python的flask框架/">
-                        <div class="card-image">
-                            
-                            <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1542974916891&amp;di=79a52e0a519da3213551079710f36b5e&amp;imgtype=0&amp;src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Fd62a6059252dd42a9e4aa67f093b5bb5c8eab8a7.jpg" class="responsive-img" alt="python的flask框架">
-                            
-                            <span class="card-title">python的flask框架</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">任务做出一个随机生成身份证码的网页
-
-前期准备
-黑马程序员入门视频（表单之前即可完成任务）
-flask官方中文手册
-flask官方英文手册
-</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-17
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/python/" class="post-category" target="_blank">
-                                    python
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/flask/" target="_blank">
-                            <span class="chip bg-color">flask</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/11/14/一些关于c的小技巧和基础/">
-                        <div class="card-image">
-                            
-                            <img src="https://p.jingyanben.com/1009/a9f8955ec57fe.png" class="responsive-img" alt="一些关于c的小技巧和基础知识">
-                            
-                            <span class="card-title">一些关于c的小技巧和基础知识</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">c的小技巧和基础知识
-
-基础知识1. 十进制的ASCII码
-
-0~9数字对应十进制48-57
-
-
-
-
-a~z字母对应的十进制 十六进制61-</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/c/" class="post-category" target="_blank">
-                                    c
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/basic/" target="_blank">
-                            <span class="chip bg-color">basic</span>
-                        </a>
-                        
-                        <a href="/tags/acm/" target="_blank">
-                            <span class="chip bg-color">acm</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2018/11/13/母牛的故事/">
-                        <div class="card-image">
-                            
-                            <img src="http://pic41.photophoto.cn/20161223/1155116842450472_b.jpg" class="responsive-img" alt="ACM题解-母牛的故事">
-                            
-                            <span class="card-title">ACM题解-母牛的故事</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">题目
-Problem Description
-有一头母牛，它每年年初生一头小母牛。每头小母牛从第四个年头开始，每年年初也生一头小母牛。请编程</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/c/" class="post-category" target="_blank">
-                                    c
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/acm/" target="_blank">
-                            <span class="chip bg-color">acm</span>
                         </a>
                         
                     </div>
@@ -760,11 +769,12 @@ Problem Description
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">3 / 3</div>
+            <div class="center-align b-text-gray">3 / 4</div>
         </div>
         <div class="col s6 m4 l4">
             
-            <a class="right btn-floating btn-large disabled">
+            <a href="/page/4/"
+               class="right btn-floating btn-large waves-effect waves-light bg-color">
                 <i class="fa fa-angle-right"></i>
             </a>
             
@@ -827,5 +837,5 @@ Problem Description
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":130,"height":150},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":200,"height":300},"mobile":{"show":false},"log":false});</script></body>
 </html>

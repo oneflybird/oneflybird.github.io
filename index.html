@@ -282,7 +282,8 @@
 
 <script>
 // Dynamically switch banner pictures every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+// $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + Math.floor(Math.random()*13).toString()  + '.jpg)'); //向下舍入，最后一个照片编号+1
 </script>
 
 <main class="content">
@@ -306,13 +307,260 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2021/05/10/修改博客图片的方法/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="修改博客图片的方法">
+                            
+                            <span class="card-title">修改博客图片的方法</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">修改博客图片的方法博客上的图片分为两种：
+
+banner图片
+文章预览上面的图片
+
+banner图片
+将图片存储到/themes/hexo-</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-10
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/工具/" class="post-category" target="_blank">
+                                    工具
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/博客/" target="_blank">
+                            <span class="chip bg-color">博客</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/05/10/git关于分支的几个易混淆点/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/29.jpg" class="responsive-img" alt="git关于分支的易混淆点">
+                            
+                            <span class="card-title">git关于分支的易混淆点</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">git 切换分支时会把未add或未commit的内容带过去
+每一次修改都会放入工作区，工作区是未add的修改（未被git跟踪），暂存区是未c</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-10
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-user fa-fw"></i>
+                                One fly bird
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/git/" target="_blank">
+                            <span class="chip bg-color">git</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/05/10/区块链与比特币/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="区块链与比特币">
+                            
+                            <span class="card-title">区块链与比特币</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">区块链与比特币区块链视频来源：区块链技术核心概念与原理讲解
+前世
+Hashcash,使用了POW（工作量证明）
+时间戳方法（保证数字文件的安</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-10
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/概念/" class="post-category" target="_blank">
+                                    概念
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/05/10/什么是钩子/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="什么是钩子">
+                            
+                            <span class="card-title">什么是钩子</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">什么是钩子钩子源于hook，即在消息过去之前先把消息钩住，不让消息执行，自己先优先处理。
+钩子实际上是一个处理消息的程序段，通过系统调用，把</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-10
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/概念/" class="post-category" target="_blank">
+                                    概念
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/05/10/原码，反码，补码的用途/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="原码，反码，补码的用途">
+                            
+                            <span class="card-title">原码，反码，补码的用途</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">问题： 为什么计算机里要存在补码，只有反码不可以吗？我们想求 2 - 1，但我们不想在计算机内部用减法去完成这件事
+所以，我们可以曲线救国，</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-10
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/计算机原理/" class="post-category" target="_blank">
+                                    计算机原理
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/04/15/hexo自动化部署/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="使用GitHub Action进行hexo自动化部署">
+                            
+                            <span class="card-title">使用GitHub Action进行hexo自动化部署</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">
+当自己使用github action完成hexo自动化构建时非常开心！！！相当有成就感！！虽然不是什么大佬的操作，但也算是自己用技术改变自</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-04-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-user fa-fw"></i>
+                                One fly bird
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/git/" target="_blank">
+                            <span class="chip bg-color">git</span>
+                        </a>
+                        
+                        <a href="/tags/持续集成/" target="_blank">
+                            <span class="chip bg-color">持续集成</span>
+                        </a>
+                        
+                        <a href="/tags/博客/" target="_blank">
+                            <span class="chip bg-color">博客</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2021/04/06/marshmallow/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="marshmallow库">
+                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="marshmallow库的简单介绍">
                             
-                            <span class="card-title">marshmallow库</span>
+                            <span class="card-title">marshmallow库的简单介绍</span>
                         </div>
                     </a>
 
@@ -325,13 +573,25 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fa fa-user fa-fw"></i>
-                                One fly bird
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                                
                                 
                             </span>
                         </div>
                     </div>
 
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/package/" target="_blank">
+                            <span class="chip bg-color">package</span>
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -342,7 +602,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="flask获取前端数据的几个方法的区别">
+                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="flask获取前端数据的几个方法的区别">
                             
                             <span class="card-title">flask获取前端数据的几个方法的区别</span>
                         </div>
@@ -371,8 +631,12 @@ request.view_a</div>
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fa fa-user fa-fw"></i>
-                                One fly bird
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -381,8 +645,8 @@ request.view_a</div>
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/flask-python/" target="_blank">
-                            <span class="chip bg-color">flask python</span>
+                        <a href="/tags/flask/" target="_blank">
+                            <span class="chip bg-color">flask</span>
                         </a>
                         
                     </div>
@@ -396,7 +660,7 @@ request.view_a</div>
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="蜜汁json解析错误">
+                            <img src="/medias/featureimages/30.jpg" class="responsive-img" alt="蜜汁json解析错误">
                             
                             <span class="card-title">蜜汁json解析错误</span>
                         </div>
@@ -412,8 +676,12 @@ request.view_a</div>
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fa fa-user fa-fw"></i>
-                                One fly bird
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -422,8 +690,8 @@ request.view_a</div>
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/python/" target="_blank">
-                            <span class="chip bg-color">python</span>
+                        <a href="/tags/踩坑/" target="_blank">
+                            <span class="chip bg-color">踩坑</span>
                         </a>
                         
                     </div>
@@ -437,7 +705,7 @@ request.view_a</div>
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="post,put,patch之间的区别">
+                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="post,put,patch之间的区别">
                             
                             <span class="card-title">post,put,patch之间的区别</span>
                         </div>
@@ -471,8 +739,12 @@ Patch
                             </span>
                             <span class="publish-author">
                                 
-                                <i class="fa fa-user fa-fw"></i>
-                                One fly bird
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                                
                                 
                             </span>
                         </div>
@@ -481,253 +753,8 @@ Patch
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/计算机网络/" target="_blank">
-                            <span class="chip bg-color">计算机网络</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/03/03/python直接赋值，浅拷贝,深拷贝解析/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="python直接赋值，浅拷贝,深拷贝解析">
-                            
-                            <span class="card-title">python直接赋值，浅拷贝,深拷贝解析</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">
-参考：https://www.runoob.com/w3cnote/python-understanding-dict-copy-shal</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-user fa-fw"></i>
-                                One fly bird
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/python/" target="_blank">
-                            <span class="chip bg-color">python</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/03/03/k8s相关的知识/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="k8s相关的知识">
-                            
-                            <span class="card-title">k8s相关的知识</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">使用k8s运行一个应用的过程
-创建集群
-一切都是在集群（机器）上运行的
-
-创建deployment
-
-Deployment是管理 Pod 创</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-user fa-fw"></i>
-                                One fly bird
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/k8s/" target="_blank">
-                            <span class="chip bg-color">k8s</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/03/02/Inbox/flask进阶/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="flask进阶">
-                            
-                            <span class="card-title">flask进阶</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary"></div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-02
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-user fa-fw"></i>
-                                One fly bird
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/03/02/对于EndPoint的理解/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="对于endpoint（端点）的理解">
-                            
-                            <span class="card-title">对于endpoint（端点）的理解</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">对于endpoint（端点）的理解
-参考文章：https://www.jianshu.com/p/808917d76b51
-
-flask框架</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-02
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-user fa-fw"></i>
-                                One fly bird
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/python/" target="_blank">
-                            <span class="chip bg-color">python</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/02/03/bisect和pop-remove-del的区别和双指针/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="bisect&pop,remove,del的区别&双指针使用场景">
-                            
-                            <span class="card-title">bisect&pop,remove,del的区别&双指针使用场景</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">这篇文章有三个知识点：
-
-python的二分查找库bisect
-pop,remove,del的区别
-双指针使用场景的简单说明
-
-bisect</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-user fa-fw"></i>
-                                One fly bird
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/python/" target="_blank">
-                            <span class="chip bg-color">python</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/01/17/python基础-一/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="python基础(一)">
-                            
-                            <span class="card-title">python基础(一)</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary">
-这篇文章主要的内容是不同语言的比较，python基本数据类型，socket相关，线程与进程，高阶函数：迭代器，生成器，装饰器
-
-pytho</div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-17
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-user fa-fw"></i>
-                                One fly bird
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/python/" target="_blank">
-                            <span class="chip bg-color">python</span>
+                        <a href="/tags/flask/" target="_blank">
+                            <span class="chip bg-color">flask</span>
                         </a>
                         
                     </div>
@@ -751,7 +778,7 @@ pytho</div>
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 3</div>
+            <div class="center-align b-text-gray">1 / 4</div>
         </div>
         <div class="col s6 m4 l4">
             
@@ -819,5 +846,5 @@ pytho</div>
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":130,"height":150},"mobile":{"show":false},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":200,"height":300},"mobile":{"show":false},"log":false});</script></body>
 </html>

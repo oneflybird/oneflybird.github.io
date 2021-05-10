@@ -348,12 +348,14 @@ position: absolute;
     position: relative;
     top: 18vh;
     text-align: center;
+	z-index: 1;
 }
 
 .cover-social-link a {
     padding: 0 15px;
     font-size: 1.35rem;
     color: #fff;
+	 z-index: 1;
 }
 
 header .go-back {
@@ -397,7 +399,7 @@ header .go-back i {
 
 .bg-cover:before, .bg-cover:after {
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     width: 100%;
     height: 100%;
     display: block;
