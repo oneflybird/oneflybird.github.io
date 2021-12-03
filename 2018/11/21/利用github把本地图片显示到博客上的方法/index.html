@@ -3,7 +3,7 @@
 <head>
     
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="利用github把本地图片显示到博客上的方法, One Fly Bird&#39;s Nest">
     <meta name="description" content="上方展示的图片就是把本地图片传到github然后展示在博客上的结果
@@ -37,7 +37,7 @@ git教程，推荐雪峰老师的网站
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 </head>
 
@@ -358,7 +358,7 @@ git教程，推荐雪峰老师的网站
             
             <div class="article-tag">
                 
-                <a href="/tags/博客/" target="_blank">
+                <a href="/tags/%E5%8D%9A%E5%AE%A2/" target="_blank">
                     <span class="chip bg-color">博客</span>
                 </a>
                 
@@ -369,7 +369,7 @@ git教程，推荐雪峰老师的网站
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/工具/" class="post-category" target="_blank">
+                    <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category" target="_blank">
                         工具
                     </a>
                     
@@ -392,66 +392,89 @@ git教程，推荐雪峰老师的网站
 <h2><span id="准备工作">准备工作</span></h2><ol>
 <li><p>注册了一个github的账号</p>
 </li>
-<li><p>git教程，推荐<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">雪峰老师的网站</a></p>
+<li><p>git教程，推荐<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">雪峰老师的网站</a></p>
 </li>
-<li>有git bash</li>
+<li><p>有git bash</p>
+</li>
 </ol>
 <hr>
 <h2><span id="新手版">新手版</span></h2><p>第一步，初始化一个文件夹为仓库</p>
 <pre><code>git init
-</code></pre><p>第二步，将本地仓库与远程仓库连接起来，这里将远程仓库命名为remote images（如何创建远程仓库并进行关联请看git教程）</p>
+</code></pre>
+<p>第二步，将本地仓库与远程仓库连接起来，这里将远程仓库命名为remote images（如何创建远程仓库并进行关联请看git教程）</p>
 <pre><code>git remote add remoteimages github上自己的ssr
-</code></pre><p>第三步，将本地仓库里的图片添加到暂存区(可一次性add多个图片，只需在后面加上其他图片名)</p>
+</code></pre>
+<p>第三步，将本地仓库里的图片添加到暂存区(可一次性add多个图片，只需在后面加上其他图片名)</p>
 <pre><code>git add 图片名
-</code></pre><p>第四步，提交，注释会成为github上的备注，<strong>注意注释两边是单引号</strong></p>
+</code></pre>
+<p>第四步，提交，注释会成为github上的备注，<strong>注意注释两边是单引号</strong></p>
 <pre><code>git commit -m &#39;注释&#39;
-</code></pre><p>第五步，推送到远程库</p>
+</code></pre>
+<p>第五步，推送到远程库</p>
 <pre><code>git push remoteimages master
-</code></pre><p>第一次推送成功后可简化为</p>
+</code></pre>
+<p>第一次推送成功后可简化为</p>
 <pre><code>git push
-</code></pre><hr>
+</code></pre>
+<hr>
 <h2><span id="进阶版推送分支">进阶版（推送分支）</span></h2><blockquote>
 <p> 推送分支原因：可进行分类和<em>熟练分支操作（笑</em></p>
 </blockquote>
 <p><strong>在新手版第二步和第三步之前添加</strong></p>
 <p>进阶版第一步：创建并切换分支,此时把新分支命名为people（更多关于分支的教程请看上方git教程）</p>
 <pre><code>checkout -b people
-</code></pre><p>在分支里commit完图片之后</p>
+</code></pre>
+<p>在分支里commit完图片之后</p>
 <p>第四步：推送到远程仓库，注意原来的master已改成现在的分支名字</p>
 <pre><code>git push remoteimages people
-</code></pre><p>若想进行简化命令，需要先进行分支关联</p>
+</code></pre>
+<p>若想进行简化命令，需要先进行分支关联</p>
 <pre><code>git branch --set-upstream 远程仓库命 需要关联的分支名，比如此处是people
-</code></pre><p>关联后可进行简化</p>
+</code></pre>
+<p>关联后可进行简化</p>
 <pre><code>git push
-</code></pre><hr>
+</code></pre>
+<hr>
 <h2><span id="最后一步啦撒花">最后一步啦撒花！！</span></h2><p>从github的仓库里找到自己需要用到的图片，点击download，复制上方链接即可。</p>
 <h2><span id="一些常用git命令补充">一些常用git命令补充</span></h2><p>查看当前分支</p>
 <pre><code>git branch
-</code></pre><p>创建分支</p>
+</code></pre>
+<p>创建分支</p>
 <pre><code>git branch 分支名
-</code></pre><p>切换分支</p>
+</code></pre>
+<p>切换分支</p>
 <pre><code>git checkout 分支名
-</code></pre><p>强行删除分支(通常用于分支里的工作区和缓存区还有文件的情况下)</p>
+</code></pre>
+<p>强行删除分支(通常用于分支里的工作区和缓存区还有文件的情况下)</p>
 <pre><code>git branch -D
-</code></pre><p>删除分支</p>
+</code></pre>
+<p>删除分支</p>
 <pre><code>git branch -d
-</code></pre><p>合并分支：将分支都合并到当前分分支上</p>
+</code></pre>
+<p>合并分支：将分支都合并到当前分分支上</p>
 <pre><code>git merge 当前文件名
-</code></pre><p>查看当前工作区和暂存区的情况</p>
+</code></pre>
+<p>查看当前工作区和暂存区的情况</p>
 <pre><code>git status
-</code></pre><p>删除远程文件</p>
+</code></pre>
+<p>删除远程文件</p>
 <pre><code>git rm 需要删除的文件名
-</code></pre><pre><code>git commit -m 注释
-</code></pre><pre><code>git push
-</code></pre><p>不删除本地文件仅删除远程文件</p>
+</code></pre>
+<pre><code>git commit -m 注释
+</code></pre>
+<pre><code>git push
+</code></pre>
+<p>不删除本地文件仅删除远程文件</p>
 <pre><code>git rm --cache 文件名（路径）
-</code></pre><pre><code>git push
-</code></pre><hr>
+</code></pre>
+<pre><code>git push
+</code></pre>
+<hr>
 <h2><span id="总结">总结</span></h2><p>这次达成目的的过程还是很顺利的，完美的解决了自己一个多星期以来的问题，github真是太棒了！！顺便还复习了下git23333，发现自己对分支那块还是理解的不透彻呢，等以后用到的时候再去理解吧（笑</p>
 <h2><span id="注释">注释</span></h2><blockquote>
 <p>如果对自己的github进行操作，照片地址会改变，需要更新地址，否则图片不能正常显示。</p>
 </blockquote>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr/>
 
@@ -472,7 +495,7 @@ git教程，推荐雪峰老师的网站
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://yoursite.com" class="b-link-green">One Fly Bird's Nest</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/21/利用github把本地图片显示到博客上的方法/" class="b-link-green">利用github把本地图片显示到博客上的方法</a>
+                    <a href="/2018/11/21/%E5%88%A9%E7%94%A8github%E6%8A%8A%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E5%88%B0%E5%8D%9A%E5%AE%A2%E4%B8%8A%E7%9A%84%E6%96%B9%E6%B3%95/" class="b-link-green">利用github把本地图片显示到博客上的方法</a>
                 </p>
             </div>
         </div>
@@ -494,7 +517,7 @@ git教程，推荐雪峰老师的网站
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2018/11/22/c的指针/">
+                <a href="/2018/11/22/c%E7%9A%84%E6%8C%87%E9%92%88/">
                     <div class="card-image">
                         
                         
@@ -533,7 +556,7 @@ T是任何变量类型
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/指针/" target="_blank">
+                    <a href="/tags/%E6%8C%87%E9%92%88/" target="_blank">
                         <span class="chip bg-color">指针</span>
                     </a>
                     
@@ -546,7 +569,7 @@ T是任何变量类型
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/11/20/静态博客和动态博客的区别，cookie，git里显示‘:’路径的原因/">
+                <a href="/2018/11/20/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E5%92%8C%E5%8A%A8%E6%80%81%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8Ccookie%EF%BC%8Cgit%E9%87%8C%E6%98%BE%E7%A4%BA%E2%80%98:%E2%80%99%E8%B7%AF%E5%BE%84%E7%9A%84%E5%8E%9F%E5%9B%A0/">
                     <div class="card-image">
                         
                         
@@ -569,7 +592,7 @@ hexo静态博客和动态博客的区别文章来源：静态博客和动态博�
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/概念/" class="post-category" target="_blank">
+                            <a href="/categories/%E6%A6%82%E5%BF%B5/" class="post-category" target="_blank">
                                     概念
                                 </a>
                             
@@ -582,14 +605,6 @@ hexo静态博客和动态博客的区别文章来源：静态博客和动态博�
                     
                     <a href="/tags/git/" target="_blank">
                         <span class="chip bg-color">git</span>
-                    </a>
-                    
-                    <a href="/tags/博客/" target="_blank">
-                        <span class="chip bg-color">博客</span>
-                    </a>
-                    
-                    <a href="/tags/cookie/" target="_blank">
-                        <span class="chip bg-color">cookie</span>
                     </a>
                     
                 </div>

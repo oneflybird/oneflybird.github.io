@@ -3,7 +3,7 @@
 <head>
     
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="k8s相关的知识, One Fly Bird&#39;s Nest">
     <meta name="description" content="使用k8s运行一个应用的过程
@@ -36,7 +36,7 @@ Deployment是管理 Pod 创建和扩展的推荐方法
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 </head>
 
@@ -368,7 +368,7 @@ Deployment是管理 Pod 创建和扩展的推荐方法
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/云原生相关/" class="post-category" target="_blank">
+                    <a href="/categories/%E4%BA%91%E5%8E%9F%E7%94%9F%E7%9B%B8%E5%85%B3/" class="post-category" target="_blank">
                         云原生相关
                     </a>
                     
@@ -399,7 +399,7 @@ Deployment是管理 Pod 创建和扩展的推荐方法
 <ul>
 <li><p>创建service之前，Pod 只能通过 Kubernetes 集群中的内部 IP 地址访问。</p>
 </li>
-<li><p>要使得容器可以从 Kubernetes 虚拟网络的外部访问，必须将 Pod（deployment） 暴露为 Kubernetes <a href="https://kubernetes.io/zh/docs/concepts/services-networking/service/" target="_blank" rel="noopener"><em>Service</em></a>。</p>
+<li><p>要使得容器可以从 Kubernetes 虚拟网络的外部访问，必须将 Pod（deployment） 暴露为 Kubernetes <a target="_blank" rel="noopener" href="https://kubernetes.io/zh/docs/concepts/services-networking/service/"><em>Service</em></a>。</p>
 </li>
 <li><p><code>kubectl expose deployment hello-node --type=LoadBalancer --port=8080</code><br>这里的 <code>--type=LoadBalancer</code> 参数表明你希望将你的 Service 暴露到集群外部。<br>应用程序代码仅监听 TCP 8080 端口。</p>
 </li>
@@ -445,7 +445,7 @@ Deployment是管理 Pod 创建和扩展的推荐方法
 <li>与标签相比而言，注解包含的数据更多一些。</li>
 </ul>
 <h2><span id="存活检查就绪检查启动检查">存活检查，就绪检查，启动检查</span></h2><blockquote>
-<p>参考：<a href="https://kubernetes.io/zh/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#define-startup-probes" target="_blank" rel="noopener">https://kubernetes.io/zh/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#define-startup-probes</a></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://kubernetes.io/zh/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#define-startup-probes">https://kubernetes.io/zh/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#define-startup-probes</a></p>
 </blockquote>
 <h3><span id="三种检查方式">三种检查方式</span></h3><blockquote>
 <p>三类检查的检查方式都相同，以下的yaml以存活探测为例，其他检查的yaml文件也都类似，只是字段不同：存活探测是<code>livenessProbe</code>，启动探测是<code>startupProbe</code>，就绪探测是<code>readinessProbe</code>。</p>
@@ -478,8 +478,6 @@ Deployment是管理 Pod 创建和扩展的推荐方法
       <span class="token key atrule">periodSeconds</span><span class="token punctuation">:</span> <span class="token number">5 </span><span class="token comment" spellcheck="true">#  kubelet 应该每 5 秒执行一次存活探测</span>
 </code></pre>
 </li>
-</ul>
-<ul>
 <li><p>发送网络get请求</p>
 <p>如果服务器上 <code>/healthz</code> 路径下的处理程序返回成功代码，则 kubelet 认为容器是健康存活的。</p>
 <p>如果处理程序返回失败代码，则 kubelet 会杀死这个容器并且重新启动它。</p>
@@ -506,8 +504,6 @@ Deployment是管理 Pod 创建和扩展的推荐方法
       <span class="token key atrule">periodSeconds</span><span class="token punctuation">:</span> <span class="token number">3 </span><span class="token comment" spellcheck="true"># kubelet每隔3秒执行一次存活探测</span>
 </code></pre>
 </li>
-</ul>
-<ul>
 <li><p>测试TCP Socket连接</p>
 <p>kubelet 会尝试在指定端口和容器建立套接字链接。 </p>
 <p>如果能建立连接，这个容器就被看作是健康的</p>
@@ -564,7 +560,7 @@ Deployment是管理 Pod 创建和扩展的推荐方法
     <span class="token key atrule">port</span><span class="token punctuation">:</span> liveness<span class="token punctuation">-</span>port
   <span class="token key atrule">failureThreshold</span><span class="token punctuation">:</span> <span class="token number">1</span>
   <span class="token key atrule">periodSeconds</span><span class="token punctuation">:</span> <span class="token number">10</span>
-
+  
 <span class="token comment" spellcheck="true"># 应用程序将会有最多 5 分钟(30 * 10 = 300s) 的时间来完成它的启动</span>
 <span class="token key atrule">startupProbe</span><span class="token punctuation">:</span>
   <span class="token key atrule">httpGet</span><span class="token punctuation">:</span>
@@ -589,7 +585,7 @@ Deployment是管理 Pod 创建和扩展的推荐方法
   <span class="token key atrule">periodSeconds</span><span class="token punctuation">:</span> <span class="token number">5        </span>
 </code></pre>
 <h2><span id="部署策略">部署策略</span></h2><blockquote>
-<p>参考： <a href="https://kubernetes.io/zh/docs/tasks/configure-pod-container/assign-pods-nodes-using-node-affinity/" target="_blank" rel="noopener">https://kubernetes.io/zh/docs/tasks/configure-pod-container/assign-pods-nodes-using-node-affinity/</a></p>
+<p>参考： <a target="_blank" rel="noopener" href="https://kubernetes.io/zh/docs/tasks/configure-pod-container/assign-pods-nodes-using-node-affinity/">https://kubernetes.io/zh/docs/tasks/configure-pod-container/assign-pods-nodes-using-node-affinity/</a></p>
 </blockquote>
 <p>通常情况下，k8s调度程序会自动合理地将pod分配给节点，比如将Pod分散到节点上，不将Pod放置在可用资源不足的节点上等等。</p>
 <p>但某些情况下，我们需要把Pod分配到特定的节点，而不是让k8s来自动调度，比如确保Pod最终落在连接了SSD的机器上。</p>
@@ -660,7 +656,6 @@ Deployment是管理 Pod 创建和扩展的推荐方法
   <span class="token key atrule">containers</span><span class="token punctuation">:</span>
   <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> with<span class="token punctuation">-</span>node<span class="token punctuation">-</span>affinity
     <span class="token key atrule">image</span><span class="token punctuation">:</span> k8s.gcr.io/pause<span class="token punctuation">:</span><span class="token number">2.0</span>
-
 </code></pre>
 <h6><span id="注意事项">注意事项：</span></h6><ol>
 <li>如果同时指定了 <code>nodeSelector</code> 和 <code>nodeAffinity</code>，<em>两者</em>必须都要满足， 才能将 Pod 调度到候选节点上。</li>
@@ -700,7 +695,7 @@ Deployment是管理 Pod 创建和扩展的推荐方法
   <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> with<span class="token punctuation">-</span>pod<span class="token punctuation">-</span>affinity
     <span class="token key atrule">image</span><span class="token punctuation">:</span> k8s.gcr.io/pause<span class="token punctuation">:</span><span class="token number">2.0</span>
 </code></pre>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr/>
 
@@ -721,7 +716,7 @@ Deployment是管理 Pod 创建和扩展的推荐方法
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://yoursite.com" class="b-link-green">One Fly Bird's Nest</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/03/03/k8s相关的知识/" class="b-link-green">k8s相关的知识</a>
+                    <a href="/2021/03/03/k8s%E7%9B%B8%E5%85%B3%E7%9A%84%E7%9F%A5%E8%AF%86/" class="b-link-green">k8s相关的知识</a>
                 </p>
             </div>
         </div>
@@ -743,7 +738,7 @@ Deployment是管理 Pod 创建和扩展的推荐方法
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2021/03/03/python直接赋值，浅拷贝,深拷贝解析/">
+                <a href="/2021/03/03/python%E7%9B%B4%E6%8E%A5%E8%B5%8B%E5%80%BC%EF%BC%8C%E6%B5%85%E6%8B%B7%E8%B4%9D,%E6%B7%B1%E6%8B%B7%E8%B4%9D%E8%A7%A3%E6%9E%90/">
                     <div class="card-image">
                         
                         
@@ -781,12 +776,12 @@ Deployment是管理 Pod 创建和扩展的推荐方法
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/基础/" target="_blank">
-                        <span class="chip bg-color">基础</span>
+                    <a href="/tags/%E6%8C%87%E9%92%88/" target="_blank">
+                        <span class="chip bg-color">指针</span>
                     </a>
                     
-                    <a href="/tags/指针/" target="_blank">
-                        <span class="chip bg-color">指针</span>
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/" target="_blank">
+                        <span class="chip bg-color">基础</span>
                     </a>
                     
                 </div>
@@ -798,7 +793,7 @@ Deployment是管理 Pod 创建和扩展的推荐方法
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2021/03/02/对于EndPoint的理解/">
+                <a href="/2021/03/02/%E5%AF%B9%E4%BA%8EEndPoint%E7%9A%84%E7%90%86%E8%A7%A3/">
                     <div class="card-image">
                         
                         

@@ -3,7 +3,7 @@
 <head>
     
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="使用GitHub Action进行hexo自动化部署, One Fly Bird&#39;s Nest">
     <meta name="description" content="
@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 </head>
 
@@ -354,11 +354,7 @@
                     <span class="chip bg-color">git</span>
                 </a>
                 
-                <a href="/tags/持续集成/" target="_blank">
-                    <span class="chip bg-color">持续集成</span>
-                </a>
-                
-                <a href="/tags/博客/" target="_blank">
+                <a href="/tags/%E5%8D%9A%E5%AE%A2/" target="_blank">
                     <span class="chip bg-color">博客</span>
                 </a>
                 
@@ -378,23 +374,23 @@
                 <blockquote>
 <p>当自己使用github action完成hexo自动化构建时非常开心！！！相当有成就感！！虽然不是什么大佬的操作，但也算是自己用技术改变自己的生活了！然鹅开心之后发现自己并没有什么人可以分享= =所以就来写篇博客吧～</p>
 </blockquote>
-<p>参考文章：<a href="https://blog.si-yee.com/2020/05/26/Github-Action-%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2Hexo/" target="_blank" rel="noopener">https://blog.si-yee.com/2020/05/26/Github-Action-%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2Hexo/</a></p>
+<p>参考文章：<a target="_blank" rel="noopener" href="https://blog.si-yee.com/2020/05/26/Github-Action-%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2Hexo/">https://blog.si-yee.com/2020/05/26/Github-Action-%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2Hexo/</a></p>
 <p>GitHub Actions 是 GitHub 的<strong>持续集成服务</strong>。</p>
 <p>事实上我不是第一次见到持续集成这个词，之前在公司例会分享tekton时也有讲到这个，但是那个时候自己没有接触过这个词，只感觉好高大上啊，感觉平时把公司代码传到github上就可以自动化构建镜像包好吊好方便啊，然后看例会pdf看完后其实没怎么看懂，所以也没有想过自己去使用这个工具啥的。</p>
 <p>但是作为合格的摸鱼实习生没有啥活干，某天灵光一现，就突然想到能不能用类似于持续集成的工具来解决自己使用hexo部署博客时的痒点，说干就干，唉干完后也没啥人能分享，于是就有了这篇博客。</p>
 <p>扯淡结束，正文开始。</p>
 <hr>
 <h2><span id="想要解决的问题">想要解决的问题</span></h2><p>自己使用hexo时的痒点：</p>
-<p>平时在本地写完博客后可以使用hexo d把渲染后的静态文件<em>(在.deploy文件下)</em>推到github.io仓库进行部署，推送完之后别人即可通过网址 <a href="https://oneflybird.github.io/" target="_blank" rel="noopener">https://oneflybird.github.io/</a> 来进行访问，所以其实在日常使用中已经很方便了。</p>
+<p>平时在本地写完博客后可以使用hexo d把渲染后的静态文件*(在.deploy文件下)*推到github.io仓库进行部署，推送完之后别人即可通过网址 <a target="_blank" rel="noopener" href="https://oneflybird.github.io/">https://oneflybird.github.io/</a> 来进行访问，所以其实在日常使用中已经很方便了。</p>
 <p>但是问题出现在了自己想换电脑写博客的时候：我打开typora刷刷刷写好了一篇文章，想更新一下博客，然后发现我需要本地有博客源文件，这样执行hexo d的时候才可以部署到github.io仓库上。但是由于之前一直在一台电脑上写，没有遇到这个问题，所以一直没有把自己的博客源文件也上传到github上做个备份。</p>
 <p>意识到这个问题的我，翻出来自己以前的旧电脑，庆幸自己还好没把电脑进行格式化，美滋滋地把源文件也上传到github上做了个备份。</p>
 <p>接下来，在另一台电脑使用<code>git clone</code>拉下博客源文件仓库即可解决我上面遇到的第一个问题，并且以后可以自由选择不同电脑来写博客啦，不用局限在一台电脑上了～</p>
 <p>接下来就出现了一个让我感觉有点点麻烦的问题，也是此次我想使用持续集成服务解决的问题：</p>
-<p>在我备份博客源文件之前，使用<code>hexo g</code> 和<code>hexo d</code>进行部署就完事了。但现在我还需要使用<code>git add</code>,<code>git commit</code>,<code>git push</code>这一系列操作进行备份，让我感觉有点点繁琐。</p>
+<p>在我备份博客源文件之前，使用<code>hexo g</code> 和<code>hexo d</code>进行部署就完事了。但现在我还需要使用<code>git add</code>,<code>git commit </code>,<code>git push</code>这一系列操作进行备份，让我感觉有点点繁琐。</p>
 <h3><span id="想要达到的效果">想要达到的效果</span></h3><ol>
 <li>自己使用git操作把博客源文件push到远程仓库</li>
 <li>接下来，不需要自己进行hexo g 和hexo d，有服务会自动帮我完成这一系列操作。</li>
-<li>也就是说，我只要把博客源文件push到仓库上，我的博客就可以进行自动渲染和部署，自己只要打开博客网站 <a href="https://oneflybird.github.io/" target="_blank" rel="noopener">https://oneflybird.github.io/</a> 就能够看到自己最新的博客。</li>
+<li>也就是说，我只要把博客源文件push到仓库上，我的博客就可以进行自动渲染和部署，自己只要打开博客网站 <a target="_blank" rel="noopener" href="https://oneflybird.github.io/">https://oneflybird.github.io/</a> 就能够看到自己最新的博客。</li>
 </ol>
 <h2><span id="解决方案">解决方案</span></h2><h3><span id="配置ssh-key">配置ssh key</span></h3><blockquote>
 <p>目的：让博客源文件仓库<strong>有权限</strong>把.deploy文件夹推送到io仓库进行部署</p>
@@ -407,7 +403,7 @@
 </code></pre>
 <h4><span id="配置">配置</span></h4><ol>
 <li>在博客<strong>源文件</strong>仓库 ：<strong>Settings -&gt; Secrets</strong> 里添加<strong>私钥</strong>，名称为 <code>ACTION_DEPLOY_KEY</code>。<br><em>注意，要和私钥文件一模一样，包括start和end也要复制粘贴进去。</em></li>
-<li>在用于展示，存放.deploy文件的<strong>.io</strong>仓库：<strong>Settings -&gt; Deploy keys</strong> 添加刚刚生成的<strong>公钥</strong>，名称随意，但要勾选 <strong>Allow write access</strong>。</li>
+<li>在用于展示，存放.deploy文件的**.io<strong>仓库：</strong>Settings -&gt; Deploy keys** 添加刚刚生成的<strong>公钥</strong>，名称随意，但要勾选 <strong>Allow write access</strong>。</li>
 </ol>
 <h3><span id="添加github-action">添加github action</span></h3><blockquote>
 <p>github检测到Action文件后便会根据Action文件的内容进行自动化操作（类似于脚本） </p>
@@ -434,7 +430,7 @@
           <span class="token key atrule">node-version</span><span class="token punctuation">:</span> <span class="token string">'10.x'</span>
       <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> prepare build env
         <span class="token key atrule">env</span><span class="token punctuation">:</span>
-          <span class="token key atrule">ACTION_DEPLOY_KEY</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.ACTION_DEPLOY_KEY <span class="token punctuation">}</span><span class="token punctuation">}</span>
+          <span class="token key atrule">ACTION_DEPLOY_KEY</span><span class="token punctuation">:</span> $&amp;<span class="token comment" spellcheck="true">#123;&amp;#123; secrets.ACTION_DEPLOY_KEY &amp;#125;&amp;#125;</span>
         <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
           # set up private key for deploy
           mkdir -p ~/.ssh/
@@ -444,7 +440,7 @@
           # set git infomation
           git config --global user.name 'oneflybird'
           git config --global user.email '1361569005@qq.com'</span>
-
+          
       <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> NPM
         <span class="token key atrule">run</span><span class="token punctuation">:</span> npm install
       <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Clean
@@ -456,7 +452,7 @@
 </code></pre>
 <p>把git配置改成自己的即可，具体含义也就不多说了，大家把这个文件推送到<strong>博客源文件仓库</strong>上，看看仓库action的执行过程应该就会懂了～</p>
 <h2><span id="完结">完结</span></h2><p>最后，当我写完博客推送到源文件仓库是就可以自动触发构建了。<br>但是，我的脚本仅对自己的博客是有效的，每个人的博客文件可能是不同的，比如我的博客源仓库没有配置Submodule，但有的人配置了，脚本就需要做出改动。<br>因此这篇博客可以用于借鉴，但不能直接照抄喔～</p>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr/>
 
@@ -477,7 +473,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://yoursite.com" class="b-link-green">One Fly Bird's Nest</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2021/04/15/hexo自动化部署/" class="b-link-green">使用GitHub Action进行hexo自动化部署</a>
+                    <a href="/2021/04/15/hexo%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/" class="b-link-green">使用GitHub Action进行hexo自动化部署</a>
                 </p>
             </div>
         </div>
@@ -499,7 +495,7 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2021/05/10/原码，反码，补码的用途/">
+                <a href="/2021/05/10/%E5%8E%9F%E7%A0%81%EF%BC%8C%E5%8F%8D%E7%A0%81%EF%BC%8C%E8%A1%A5%E7%A0%81%E7%9A%84%E7%94%A8%E9%80%94/">
                     <div class="card-image">
                         
                         
@@ -522,13 +518,21 @@
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/计算机原理/" class="post-category" target="_blank">
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/" class="post-category" target="_blank">
                                     计算机原理
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/" target="_blank">
+                        <span class="chip bg-color">二进制</span>
+                    </a>
+                    
                 </div>
                 
             </div>

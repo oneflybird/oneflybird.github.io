@@ -3,7 +3,7 @@
 <head>
     
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="ACM题解-母牛的故事, One Fly Bird&#39;s Nest">
     <meta name="description" content="题目
@@ -30,7 +30,7 @@ Input
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 </head>
 
@@ -351,7 +351,7 @@ Input
             
             <div class="article-tag">
                 
-                <a href="/tags/递归/" target="_blank">
+                <a href="/tags/%E9%80%92%E5%BD%92/" target="_blank">
                     <span class="chip bg-color">递归</span>
                 </a>
                 
@@ -362,7 +362,7 @@ Input
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/算法/" class="post-category" target="_blank">
+                    <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
                         算法
                     </a>
                     
@@ -389,69 +389,71 @@ Input
 4
 5
 0
-</code></pre><p>Sample Output</p>
+</code></pre>
+<p>Sample Output</p>
 <pre><code>2
 4
 6
-</code></pre></blockquote>
+</code></pre>
+</blockquote>
 <h2><span id="题目分析">题目分析</span></h2><p>类似于斐波纳契数列，可得<strong>递推函数</strong></p>
 <blockquote>
 <p>f(n)=n        n&lt;=4</p>
 <p>f(n)=f(n-1) + f(n-3) n&gt;4</p>
 </blockquote>
 <h2><span id="可用方法">可用方法</span></h2><ul>
-<li style="list-style: none"><input type="checkbox"> 递推</li>
-<li style="list-style: none"><input type="checkbox"> 递归</li>
-<li style="list-style: none"><input type="checkbox"> 数组</li>
+<li><input disabled type="checkbox"> 递推</li>
+<li><input disabled type="checkbox"> 递归</li>
+<li><input disabled type="checkbox"> 数组</li>
 </ul>
 <h2><span id="代码">代码</span></h2><h3><span id="递推需要理解">递推（需要理解）</span></h3><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> n<span class="token punctuation">,</span>i<span class="token punctuation">;</span>
 <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span>n<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-<span class="token keyword">int</span> num<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> num<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
 <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token operator">/</span><span class="token number">3.0</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//注意浮点数3.0,并且由于在第4年成熟所以3年一循环</span>
-<span class="token punctuation">{</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 num<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token operator">=</span>num<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//第4年</span>
 num<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token operator">=</span>num<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//第5年</span>
 num<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token operator">=</span>num<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//第6年</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>num<span class="token punctuation">[</span><span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//注意是n-1</span>
 
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 <hr>
 <h3><span id="递归思路很清晰的一种解法">递归(思路很清晰的一种解法)</span></h3><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-
+ 
 <span class="token comment" spellcheck="true">// 递推式 f(n) = n n&lt;=4，f(n) = f(n-1) + f(n-3) n>4</span>
 <span class="token keyword">int</span> <span class="token function">cow</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">4</span><span class="token punctuation">)</span>
         <span class="token keyword">return</span> n<span class="token punctuation">;</span>
     <span class="token keyword">else</span>
         <span class="token keyword">return</span> <span class="token function">cow</span><span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">cow</span><span class="token punctuation">(</span>n<span class="token number">-3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+ 
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> n<span class="token punctuation">;</span>
-
-    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token constant">EOF</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ 
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>n<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token constant">EOF</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">// 判定结束条件</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
             <span class="token keyword">break</span><span class="token punctuation">;</span>
-
+ 
         <span class="token comment" spellcheck="true">// 计算并输出结果</span>
         <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> <span class="token function">cow</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+ 
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span> 
 作者：海岛Blog 
 来源：CSDN 
@@ -461,28 +463,28 @@ num<span class="token punctuation">[</span><span class="token number">2</span><s
 <hr>
 <h3><span id="数组运用数学思想">数组(运用数学思想）</span></h3><p><strong>当年母牛生下的小牛与几年前的母牛数（也就是当年的成熟牛）是相等的</strong></p>
 <pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> n<span class="token punctuation">,</span>count<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> i<span class="token punctuation">;</span>
     <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
+    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">56</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
         <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">56</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
+        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
             <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">&lt;=</span><span class="token number">4</span><span class="token punctuation">)</span>
                 a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
             <span class="token keyword">else</span>
                 a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">+</span>a<span class="token punctuation">[</span>i<span class="token number">-3</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//第一年生的小牛在第四年成熟了</span>
-        <span class="token punctuation">}</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
     <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>a<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 <hr>
 <h2><span id="总结">总结</span></h2><p><strong>注意找出项与项之间的关系，可在草稿纸上进行推演</strong></p>
 <hr>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr/>
 
@@ -503,7 +505,7 @@ num<span class="token punctuation">[</span><span class="token number">2</span><s
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://yoursite.com" class="b-link-green">One Fly Bird's Nest</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/13/母牛的故事/" class="b-link-green">ACM题解-母牛的故事</a>
+                    <a href="/2018/11/13/%E6%AF%8D%E7%89%9B%E7%9A%84%E6%95%85%E4%BA%8B/" class="b-link-green">ACM题解-母牛的故事</a>
                 </p>
             </div>
         </div>
@@ -525,7 +527,7 @@ num<span class="token punctuation">[</span><span class="token number">2</span><s
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2018/11/14/一些关于c的小技巧和基础/">
+                <a href="/2018/11/14/%E4%B8%80%E4%BA%9B%E5%85%B3%E4%BA%8Ec%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%92%8C%E5%9F%BA%E7%A1%80/">
                     <div class="card-image">
                         
                         <img src="https://p.jingyanben.com/1009/a9f8955ec57fe.png" class="responsive-img" alt="一些关于c的小技巧和基础知识">
@@ -573,7 +575,7 @@ A~Z字母对应的十进制65-90 十六进制41-5A
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/基础/" target="_blank">
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/" target="_blank">
                         <span class="chip bg-color">基础</span>
                     </a>
                     
@@ -586,7 +588,7 @@ A~Z字母对应的十进制65-90 十六进制41-5A
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">本篇</div>
             <div class="card">
-                <a href="/2018/11/13/母牛的故事/">
+                <a href="/2018/11/13/%E6%AF%8D%E7%89%9B%E7%9A%84%E6%95%85%E4%BA%8B/">
                     <div class="card-image">
                         
                         
@@ -609,7 +611,7 @@ Input
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/算法/" class="post-category" target="_blank">
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
                                     算法
                                 </a>
                             
@@ -621,7 +623,7 @@ Input
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/递归/" target="_blank">
+                    <a href="/tags/%E9%80%92%E5%BD%92/" target="_blank">
                         <span class="chip bg-color">递归</span>
                     </a>
                     

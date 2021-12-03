@@ -3,7 +3,7 @@
 <head>
     
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="c里的静态变量只初始化一次的原因, One Fly Bird&#39;s Nest">
     <meta name="description" content="c里的静态变量只初始化一次的原因
@@ -12,9 +12,9 @@
 #include &#34;stdafx.h&#34;
 
 int _tmain(int argc, _TCHAR* argv[])
-{
+&amp;amp;#123;
 int initNum = 3;
-for (int i=5; i &gt; ">
+for (int ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -34,7 +34,7 @@ for (int i=5; i &gt; ">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 </head>
 
@@ -353,14 +353,6 @@ for (int i=5; i &gt; ">
     <div class="card">
         <div class="card-content article-info">
             
-            <div class="article-tag">
-                
-                <a href="/tags/静态和动态/" target="_blank">
-                    <span class="chip bg-color">静态和动态</span>
-                </a>
-                
-            </div>
-            
             <div class="post-info">
                 
                 <span class="post-cate">
@@ -387,18 +379,18 @@ for (int i=5; i &gt; ">
 <pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stdafx.h"</span></span>
 
 <span class="token keyword">int</span> <span class="token function">_tmain</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> _TCHAR<span class="token operator">*</span> argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> initNum <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span> i <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token operator">--</span>i<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 <span class="token keyword">static</span> <span class="token keyword">int</span> n1 <span class="token operator">=</span> initNum<span class="token punctuation">;</span>
 n1<span class="token operator">++</span><span class="token punctuation">;</span>
 <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> n1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token punctuation">[</span><span class="token operator">/</span>code<span class="token punctuation">]</span>
 输出结果：
 <span class="token number">4</span>
@@ -409,10 +401,10 @@ n1<span class="token operator">++</span><span class="token punctuation">;</span>
 </code></pre>
 <p>在这里我们可以看到虽然代码循环了5次，静态变量n1确实只初始化了一次。那么为什么呢？继续上代码，相信大家就会明白些许了。</p>
 <pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">_tmain</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> _TCHAR<span class="token operator">*</span> argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> initNum <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span> i <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token operator">--</span>i<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
+<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 <span class="token keyword">static</span> <span class="token keyword">int</span> n1 <span class="token operator">=</span> initNum<span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">//我们在这里了两句代码</span>
@@ -423,11 +415,11 @@ p<span class="token operator">++</span><span class="token punctuation">;</span>
 
 n1<span class="token operator">++</span><span class="token punctuation">;</span>
 <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> n1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token punctuation">[</span><span class="token operator">/</span>code<span class="token punctuation">]</span>
 输出结果：
 <span class="token number">4</span>
@@ -437,7 +429,7 @@ n1<span class="token operator">++</span><span class="token punctuation">;</span>
 <span class="token number">4</span>
 </code></pre>
 <p>这次，静态变量居然跟随着5次循环也初始化了5次。你一定非常诧异，其实我们不难推断，其实<strong>静态变量就是通过静态变量后面的一个32位内存位来做记录，以标识这个静态变量是否已经初始化</strong>。而我们的p++;*p = 0;却每次都将这个值赋值为0，所以程序就一直认为n1一直没有被初始化过，并每次都初始化一次。看一下内存，就更明了了：<br>0x00E8716C 03 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 b0 e7 1e 6a 00 00 00<br>这里的内存地址就是静态变量n1的地址，值是3，后面还有一个1，你看到了吗，这个就是程序用来记录该静态变量是否初始化的标识位啦。现在你一定明白原理了，并且能轻松记住静态变量的特性了吧。<br>以上代码有一点需要说明：代码中之所以要用int initNum = 3;而不是直接用static int n1 = 3;是因为如果给静态变量直接赋值一个常量的话，编译器会进行优化，导致程序在一启动时，就初始化好了，不便于我们观察静态变量内存上的改变。</p>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr/>
 
@@ -458,7 +450,7 @@ n1<span class="token operator">++</span><span class="token punctuation">;</span>
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://yoursite.com" class="b-link-green">One Fly Bird's Nest</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/03/c里的静态变量只初始化一次的原因/" class="b-link-green">c里的静态变量只初始化一次的原因</a>
+                    <a href="/2018/12/03/c%E9%87%8C%E7%9A%84%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E5%8F%AA%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E6%AC%A1%E7%9A%84%E5%8E%9F%E5%9B%A0/" class="b-link-green">c里的静态变量只初始化一次的原因</a>
                 </p>
             </div>
         </div>
@@ -480,7 +472,7 @@ n1<span class="token operator">++</span><span class="token punctuation">;</span>
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2018/12/05/我的第一本算法书重点总结/">
+                <a href="/2018/12/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9C%AC%E7%AE%97%E6%B3%95%E4%B9%A6%E9%87%8D%E7%82%B9%E6%80%BB%E7%BB%93/">
                     <div class="card-image">
                         
                         
@@ -505,7 +497,7 @@ B确实收到了A发送的信息，但可能在</div>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/算法/" class="post-category" target="_blank">
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
                                     算法
                                 </a>
                             
@@ -516,7 +508,7 @@ B确实收到了A发送的信息，但可能在</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/阅读总结/" target="_blank">
+                    <a href="/tags/%E9%98%85%E8%AF%BB%E6%80%BB%E7%BB%93/" target="_blank">
                         <span class="chip bg-color">阅读总结</span>
                     </a>
                     
@@ -566,7 +558,7 @@ document.write(“   1  </div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/基础/" target="_blank">
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/" target="_blank">
                         <span class="chip bg-color">基础</span>
                     </a>
                     

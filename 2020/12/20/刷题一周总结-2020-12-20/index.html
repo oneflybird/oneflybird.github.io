@@ -3,7 +3,7 @@
 <head>
     
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="刷题一周总结 2020.12.20, One Fly Bird&#39;s Nest">
     <meta name="description" content="递归与回溯对比
@@ -18,14 +18,13 @@
 
 
 
-
 第一步
 判断当前情况是否非法，如果非法就立即返回
 判断输入或者状态是否非法，如果非法就报错
 
 
 第二步
-当前情况是否已经满足递归结束条件">
+当前情况是否已经满足递归结束条件，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -45,7 +44,7 @@
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 </head>
 
@@ -366,16 +365,12 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/双指针/" target="_blank">
+                <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" target="_blank">
                     <span class="chip bg-color">双指针</span>
                 </a>
                 
-                <a href="/tags/递归/" target="_blank">
+                <a href="/tags/%E9%80%92%E5%BD%92/" target="_blank">
                     <span class="chip bg-color">递归</span>
-                </a>
-                
-                <a href="/tags/动态规划/" target="_blank">
-                    <span class="chip bg-color">动态规划</span>
                 </a>
                 
             </div>
@@ -385,7 +380,7 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/算法/" class="post-category" target="_blank">
+                    <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
                         算法
                     </a>
                     
@@ -406,35 +401,33 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:center">顺序</th>
-<th style="text-align:center">回溯</th>
-<th style="text-align:center">递归</th>
+<th align="center">顺序</th>
+<th align="center">回溯</th>
+<th align="center">递归</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">第一步</td>
-<td style="text-align:center">判断当前情况是否非法，如果非法就立即返回</td>
-<td style="text-align:center">判断输入或者状态是否非法，如果非法就报错</td>
+<tbody><tr>
+<td align="center">第一步</td>
+<td align="center">判断当前情况是否非法，如果非法就立即返回</td>
+<td align="center">判断输入或者状态是否非法，如果非法就报错</td>
 </tr>
 <tr>
-<td style="text-align:center">第二步</td>
-<td style="text-align:center">当前情况是否已经满足递归结束条件，如果是就将当前结果保存起来并返回</td>
-<td style="text-align:center">判断是否满足结束递归的条件。在这一步当中，处理的基本上都是一些推导过程当中所定义的初始情况</td>
+<td align="center">第二步</td>
+<td align="center">当前情况是否已经满足递归结束条件，如果是就将当前结果保存起来并返回</td>
+<td align="center">判断是否满足结束递归的条件。在这一步当中，处理的基本上都是一些推导过程当中所定义的初始情况</td>
 </tr>
 <tr>
-<td style="text-align:center">第三步</td>
-<td style="text-align:center">当前情况下，遍历所有可能出现的情况并进行下一步的尝试</td>
-<td style="text-align:center">将问题的规模缩小，递归调用。在归并排序和快速排序中，我们将问题的规模缩小了一半，而在汉诺塔和解码的例子中，我们将问题的规模缩小了一个</td>
+<td align="center">第三步</td>
+<td align="center">当前情况下，遍历所有可能出现的情况并进行下一步的尝试</td>
+<td align="center">将问题的规模缩小，递归调用。在归并排序和快速排序中，我们将问题的规模缩小了一半，而在汉诺塔和解码的例子中，我们将问题的规模缩小了一个</td>
 </tr>
 <tr>
-<td style="text-align:center">第四步</td>
-<td style="text-align:center">递归完毕后，立即回溯，回溯的方法就是取消前一步进行的尝试</td>
-<td style="text-align:center">利用在小规模问题中的答案，结合当前的数据进行整合，得出最终的答案</td>
+<td align="center">第四步</td>
+<td align="center">递归完毕后，立即回溯，回溯的方法就是取消前一步进行的尝试</td>
+<td align="center">利用在小规模问题中的答案，结合当前的数据进行整合，得出最终的答案</td>
 </tr>
-</tbody>
-</table>
-<h2><span id="题目归类">题目归类</span></h2><h3><span id="构建最大最小字符串数字">构建最大（最小）字符串（数字）</span></h3><p><a href="https://leetcode-cn.com/problems/create-maximum-number/" target="_blank" rel="noopener">拼接最大数</a><br><a href="https://leetcode-cn.com/problems/remove-duplicate-letters/" target="_blank" rel="noopener">去除重复字母</a><br><a href="https://leetcode-cn.com/problems/remove-k-digits/" target="_blank" rel="noopener">移掉K位数字</a></p>
+</tbody></table>
+<h2><span id="题目归类">题目归类</span></h2><h3><span id="构建最大最小字符串数字">构建最大（最小）字符串（数字）</span></h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/create-maximum-number/">拼接最大数</a><br><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-duplicate-letters/">去除重复字母</a><br><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-k-digits/">移掉K位数字</a></p>
 <h4><span id="核心思想">核心思想</span></h4><ol>
 <li><p>都使用单调递增栈来进行操作并保存最后答案</p>
 </li>
@@ -455,9 +448,9 @@
 <li><p>一般时间复杂度和空间复杂度都为O(N)，所有字符最多各进栈出栈一次，空间复杂度为单调递增栈</p>
 </li>
 </ol>
-<h4><span id="题解参考">题解参考</span></h4><p><a href="https://leetcode-cn.com/problems/remove-k-digits/solution/yi-zhao-chi-bian-li-kou-si-dao-ti-ma-ma-zai-ye-b-5/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/remove-k-digits/solution/yi-zhao-chi-bian-li-kou-si-dao-ti-ma-ma-zai-ye-b-5/</a></p>
+<h4><span id="题解参考">题解参考</span></h4><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-k-digits/solution/yi-zhao-chi-bian-li-kou-si-dao-ti-ma-ma-zai-ye-b-5/">https://leetcode-cn.com/problems/remove-k-digits/solution/yi-zhao-chi-bian-li-kou-si-dao-ti-ma-ma-zai-ye-b-5/</a></p>
 <hr>
-<h3><span id="队列">队列</span></h3><p><a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal/" target="_blank" rel="noopener">二叉树的层序遍历</a></p>
+<h3><span id="队列">队列</span></h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal/">二叉树的层序遍历</a></p>
 <h4><span id="核心思想">核心思想</span></h4><ol>
 <li>用队列，先入先出</li>
 <li>如何分层次：<ol>
@@ -468,7 +461,7 @@
 <li>结束的标志：栈为空</li>
 </ol>
 <hr>
-<h3><span id="栈">栈</span></h3><p><a href="https://leetcode-cn.com/problems/valid-parentheses/" target="_blank" rel="noopener">有效的括号</a></p>
+<h3><span id="栈">栈</span></h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-parentheses/">有效的括号</a></p>
 <ul>
 <li>简单题</li>
 <li>要注意判断最后是否有效的条件：<ul>
@@ -478,7 +471,7 @@
 </li>
 </ul>
 <hr>
-<h3><span id="动态规划贪心">动态规划/贪心</span></h3><p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/" target="_blank" rel="noopener">买卖股票的最佳时机</a></p>
+<h3><span id="动态规划贪心">动态规划/贪心</span></h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/">买卖股票的最佳时机</a></p>
 <ul>
 <li><p>能买卖1次，贪心</p>
 </li>
@@ -492,7 +485,7 @@
 </code></pre>
 </li>
 </ul>
-<p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/" target="_blank" rel="noopener">买卖股票的最佳时机含手续费</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/">买卖股票的最佳时机含手续费</a></p>
 <ul>
 <li><p>能买卖n次，可以dp也可以贪心</p>
 </li>
@@ -509,12 +502,11 @@
         profit <span class="token operator">+=</span> prices<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> buy
         buy <span class="token operator">=</span> prices<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
         <span class="token keyword">return</span> profit
-
 </code></pre>
 <ul>
 <li><p>Dp，需要考虑当前手上持有股票（现在买入，之前就买入），不持有股票两种状态（现在卖出，之前就不持有）。</p>
 </li>
-<li><p>转移方程：<code>dp[i][0]=max{dp[i−1][0],dp[i−1][1]+prices[i]−fee}</code></p>
+<li><p>转移方程：<code>dp[i][0]=max&#123;dp[i−1][0],dp[i−1][1]+prices[i]−fee&#125;</code></p>
 <pre class=" language-python"><code class="language-python">dp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span>prices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>prices<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
         a1 <span class="token operator">=</span> <span class="token number">0</span>
         a2 <span class="token operator">=</span> <span class="token operator">-</span>prices<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
@@ -525,7 +517,7 @@
 </code></pre>
 </li>
 </ul>
-<p><a href="https://leetcode-cn.com/problems/maximum-subarray/" target="_blank" rel="noopener">最大子序和</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-subarray/">最大子序和</a></p>
 <ul>
 <li><p>和贪婪差不多，子序必须是连续的，如果前面的序列为负数，则去掉。</p>
 </li>
@@ -539,7 +531,7 @@ maxAns <span class="token operator">=</span> max<span class="token punctuation">
 <h3><span id="数学题">数学题</span></h3><blockquote>
 <p>要找到数学公式</p>
 </blockquote>
-<p><a href="https://leetcode-cn.com/problems/rotate-image/" target="_blank" rel="noopener"> 旋转图像</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/rotate-image/"> 旋转图像</a></p>
 <ol>
 <li><p>方法1:找公式</p>
 <ol>
@@ -551,29 +543,30 @@ maxAns <span class="token operator">=</span> max<span class="token punctuation">
 <li>拆解一次旋转的步骤<br>matrix[row] [col] = matrix[col] [n−row−1]<br>-&gt; matrix[n−row−1] [col]<br>-&gt; matrix[col] [n−row−1]</li>
 </ol>
 </li>
-<li>水平翻转的特性：<br>   [x,y] = [n-x-1,y]<br>   沿着对角线翻转的特性：<br>   [x,y] = [y,x]<br>   垂直翻转的特性：<br>   [x,y]=[x,n-y-1]</li>
+<li><p>水平翻转的特性：<br>   [x,y] = [n-x-1,y]<br>   沿着对角线翻转的特性：<br>   [x,y] = [y,x]<br>   垂直翻转的特性：<br>   [x,y]=[x,n-y-1]</p>
+</li>
 </ol>
-<p><a href="https://leetcode-cn.com/problems/monotone-increasing-digits/" target="_blank" rel="noopener">单调递增的数字</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/monotone-increasing-digits/">单调递增的数字</a></p>
 <ul>
 <li>找到最大数字的规律：低位变9，高位-1</li>
 <li>关键位置是非递增的位置</li>
 </ul>
 <hr>
-<h3><span id="双指针">双指针</span></h3><p><a href="https://leetcode-cn.com/problems/valid-palindrome/" target="_blank" rel="noopener">验证回文串</a></p>
+<h3><span id="双指针">双指针</span></h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-palindrome/">验证回文串</a></p>
 <ul>
 <li>退出循环条件不是边界值（-1或len），而是双指针相遇</li>
 </ul>
 <hr>
-<h3><span id="小技巧异或计数求和数据结构的应用">小技巧（异或，计数，求和，数据结构的应用）</span></h3><p><a href="https://leetcode-cn.com/problems/find-the-difference/" target="_blank" rel="noopener">找不同</a></p>
-<p><a href="https://leetcode-cn.com/problems/merge-sorted-array/" target="_blank" rel="noopener">合并两个有序数组</a></p>
-<p><a href="https://leetcode-cn.com/problems/monotone-increasing-digits/" target="_blank" rel="noopener">单调递增的数字</a></p>
+<h3><span id="小技巧异或计数求和数据结构的应用">小技巧（异或，计数，求和，数据结构的应用）</span></h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-the-difference/">找不同</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/merge-sorted-array/">合并两个有序数组</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/monotone-increasing-digits/">单调递增的数字</a></p>
 <ul>
 <li>累加法 1..11..111..1111..11111…11111</li>
 </ul>
-<p><a href="https://leetcode-cn.com/problems/group-anagrams/" target="_blank" rel="noopener">字母异位词分组</a></p>
-<p><a href="https://leetcode-cn.com/problems/contains-duplicate/" target="_blank" rel="noopener">存在重复元素</a></p>
-<p><a href="https://leetcode-cn.com/problems/word-pattern/" target="_blank" rel="noopener">单词规律</a></p>
-
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/group-anagrams/">字母异位词分组</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/contains-duplicate/">存在重复元素</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/word-pattern/">单词规律</a></p>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr/>
 
@@ -594,7 +587,7 @@ maxAns <span class="token operator">=</span> max<span class="token punctuation">
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://yoursite.com" class="b-link-green">One Fly Bird's Nest</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2020/12/20/刷题一周总结-2020-12-20/" class="b-link-green">刷题一周总结 2020.12.20</a>
+                    <a href="/2020/12/20/%E5%88%B7%E9%A2%98%E4%B8%80%E5%91%A8%E6%80%BB%E7%BB%93-2020-12-20/" class="b-link-green">刷题一周总结 2020.12.20</a>
                 </p>
             </div>
         </div>
@@ -616,7 +609,7 @@ maxAns <span class="token operator">=</span> max<span class="token punctuation">
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2021/01/17/python基础-一/">
+                <a href="/2021/01/17/python%E5%9F%BA%E7%A1%80-%E4%B8%80/">
                     <div class="card-image">
                         
                         
@@ -651,12 +644,12 @@ JAVA是混合型语言，p</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/基础/" target="_blank">
-                        <span class="chip bg-color">基础</span>
+                    <a href="/tags/%E9%9D%A2%E8%AF%95/" target="_blank">
+                        <span class="chip bg-color">面试</span>
                     </a>
                     
-                    <a href="/tags/面试/" target="_blank">
-                        <span class="chip bg-color">面试</span>
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/" target="_blank">
+                        <span class="chip bg-color">基础</span>
                     </a>
                     
                 </div>
@@ -668,7 +661,7 @@ JAVA是混合型语言，p</div>
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2020/12/13/排序&异或/">
+                <a href="/2020/12/13/%E6%8E%92%E5%BA%8F&%E5%BC%82%E6%88%96/">
                     <div class="card-image">
                         
                         
@@ -692,7 +685,7 @@ leetcode(排序）:https://leetcode-cn.com/problems/sort-an-array/submissions/
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/算法/" class="post-category" target="_blank">
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
                                     算法
                                 </a>
                             
@@ -703,12 +696,8 @@ leetcode(排序）:https://leetcode-cn.com/problems/sort-an-array/submissions/
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/排序/" target="_blank">
+                    <a href="/tags/%E6%8E%92%E5%BA%8F/" target="_blank">
                         <span class="chip bg-color">排序</span>
-                    </a>
-                    
-                    <a href="/tags/异或/" target="_blank">
-                        <span class="chip bg-color">异或</span>
                     </a>
                     
                 </div>

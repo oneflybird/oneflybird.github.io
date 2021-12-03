@@ -3,7 +3,7 @@
 <head>
     
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="js的基本操作, One Fly Bird&#39;s Nest">
     <meta name="description" content="定义变量声明var 变量名；
@@ -33,7 +33,7 @@ document.write(“   1  ">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 </head>
 
@@ -354,7 +354,7 @@ document.write(“   1  ">
             
             <div class="article-tag">
                 
-                <a href="/tags/基础/" target="_blank">
+                <a href="/tags/%E5%9F%BA%E7%A1%80/" target="_blank">
                     <span class="chip bg-color">基础</span>
                 </a>
                 
@@ -393,16 +393,16 @@ document.write(“   1  ">
 <p>这是因为浏览器显示机制，对手动敲入的空格，将连续多个空格显示成1个空格。</p>
 <p><strong>解决方法:</strong></p>
 <ol>
-<li><p>使用输出html标签&nbsp;来解决</p>
-<p><strong>document.write(“&nbsp;&nbsp;”+”1”+”&nbsp;&nbsp;&nbsp;&nbsp;”+”23”);</strong></p>
-<p><strong>结果:</strong>  1    23</p>
-</li>
-<li><p>使用CSS样式来解决</p>
-<p>document.write(“<span style="white-space:pre;">“+”  1        2    3    “+”</span>“);</p>
-<p><strong>结果:</strong>  1       2     3    </p>
-<p>在输出时添加“white-space:pre;”样式属性。这个样式表示”<strong>空白会被浏览器保留</strong>“</p>
-</li>
+<li>使用输出html标签&nbsp;来解决</li>
 </ol>
+<p> <strong>document.write(“&nbsp;&nbsp;”+”1”+”&nbsp;&nbsp;&nbsp;&nbsp;”+”23”);</strong></p>
+<p> <strong>结果:</strong>  1    23</p>
+<ol start="2">
+<li>使用CSS样式来解决</li>
+</ol>
+<p> document.write(“<span style="white-space:pre;">“+”  1        2    3    “+”</span>“);</p>
+<p> <strong>结果:</strong>  1       2     3    </p>
+<p> 在输出时添加“white-space:pre;”样式属性。这个样式表示”<strong>空白会被浏览器保留</strong>“</p>
 <h2><span id="输出">输出</span></h2><h3><span id="documentwrite">document.write();</span></h3><pre class=" language-js"><code class="language-js">输出多项内容，内容之间用<span class="token operator">+</span>号连接。
 
 <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span>
@@ -439,26 +439,33 @@ document<span class="token punctuation">.</span><span class="token function">wri
 <p><strong>消息对话框是排它的，即用户在点击对话框按钮前，不能进行任何其它操作。</strong></p>
 <p><strong>语法:</strong></p>
 <pre><code>confirm(str);
-</code></pre><p><strong>参数说明:</strong></p>
+</code></pre>
+<p><strong>参数说明:</strong></p>
 <pre><code>str：在消息对话框中要显示的文本
 返回值: Boolean值
-</code></pre><p><strong>返回值:</strong></p>
+</code></pre>
+<p><strong>返回值:</strong></p>
 <pre><code>当用户点击&quot;确定&quot;按钮时，返回true
 当用户点击&quot;取消&quot;按钮时，返回false
-</code></pre><p><strong>注:</strong> <strong>通过返回值可以判断用户点击了什么按钮</strong></p>
+</code></pre>
+<p><strong>注:</strong> <strong>通过返回值可以判断用户点击了什么按钮</strong></p>
 <h2><span id="javascript-提问prompt-消息对话框">JavaScript-提问（prompt 消息对话框）</span></h2><p><strong>prompt</strong>弹出消息对话框,通常用于询问一些需要与用户交互的信息。弹出消息对话框（包含一个确定按钮、取消按钮与一个文本输入框）。</p>
 <p><strong>语法:</strong></p>
 <pre><code>prompt(str1, str2);
-</code></pre><p><strong>参数说明：</strong></p>
+</code></pre>
+<p><strong>参数说明：</strong></p>
 <pre><code>str1: 要显示在消息对话框中的文本，不可修改
 str2：文本框中的内容，可以修改
-</code></pre><p><strong>返回值:</strong></p>
+</code></pre>
+<p><strong>返回值:</strong></p>
 <pre><code>1. 点击确定按钮，文本框中的内容将作为函数返回值
 2. 点击取消按钮，将返回null
-</code></pre><h2><span id="javascript-打开新窗口windowopen">JavaScript-打开新窗口（window.open）</span></h2><p>open() 方法可以查找一个已经存在或者新建的浏览器窗口。</p>
+</code></pre>
+<h2><span id="javascript-打开新窗口windowopen">JavaScript-打开新窗口（window.open）</span></h2><p>open() 方法可以查找一个已经存在或者新建的浏览器窗口。</p>
 <p><strong>语法：</strong></p>
 <pre><code>window.open([URL], [窗口名称], [参数字符串])
-</code></pre><p><strong>参数说明:</strong></p>
+</code></pre>
+<p><strong>参数说明:</strong></p>
 <pre><code>URL：可选参数，在窗口中要显示网页的网址或路径。如果省略这个参数，或者它的值是空字符串，那么窗口就不显示任何文档。
 窗口名称：可选参数，被打开窗口的名称。
     1.该名称由字母、数字和下划线字符组成。
@@ -469,9 +476,10 @@ str2：文本框中的内容，可以修改
    3.相同 name 的窗口只能创建一个，要想创建多个窗口则 name 不能相同。
    4.name 不能包含有空格。
 参数字符串：可选参数，设置窗口参数，各参数用逗号隔开。
-</code></pre><p><strong>参数表:</strong></p>
+</code></pre>
+<p><strong>参数表:</strong></p>
 <p><strong><img src="http://img.mukewang.com/52e3677900013d6a05020261.jpg" alt="img"></strong></p>
-<p>例如:打开<a href="http://www.imooc.com网站，大小为300px" target="_blank" rel="noopener">http://www.imooc.com网站，大小为300px</a> * 200px，无菜单，无工具栏，无状态栏，有滚动条窗口：</p>
+<p>例如:打开<a target="_blank" rel="noopener" href="http://www.imooc.com网站,大小为300px/">http://www.imooc.com网站，大小为300px</a> * 200px，无菜单，无工具栏，无状态栏，有滚动条窗口：</p>
 <pre class=" language-js"><code class="language-js"><span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">></span> window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'http://www.imooc.com'</span><span class="token punctuation">,</span><span class="token string">'_blank'</span><span class="token punctuation">,</span><span class="token string">'width=300,height=200,menubar=no,toolbar=no, status=no,scrollbars=yes'</span><span class="token punctuation">)</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
 </code></pre>
@@ -479,14 +487,17 @@ str2：文本框中的内容，可以修改
 <h2><span id="javascript-关闭窗口windowclose">JavaScript-关闭窗口（window.close）</span></h2><p>close()关闭窗口</p>
 <p><strong>用法：</strong></p>
 <pre><code>window.close();   //关闭本窗口(暂时不知道怎么用)
-</code></pre><p>或</p>
+</code></pre>
+<p>或</p>
 <pre><code>&lt;窗口对象&gt;.close();   //关闭指定的窗口
-</code></pre><p>例如:关闭新建的窗口。</p>
+</code></pre>
+<p>例如:关闭新建的窗口。</p>
 <pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
    var mywin=window.open(&#39;http://www.imooc.com&#39;); //将新打的窗口对象，存储在变量mywin中
    mywin.close();
 &lt;/script&gt;
-</code></pre><p><strong>注意:上面代码在打开新窗口的同时，关闭该窗口，看不到被打开的窗口。</strong></p>
+</code></pre>
+<p><strong>注意:上面代码在打开新窗口的同时，关闭该窗口，看不到被打开的窗口。</strong></p>
 <h2><span id="认识dom">认识DOM</span></h2><p>文档对象模型DOM（Document Object Model）定义访问和处理HTML文档的标准方法。DOM 将HTML文档呈现为带有元素、属性和文本的树结构（节点树）。</p>
 <p><strong>先来看看下面代码:</strong></p>
 <p><strong><img src="http://img.mukewang.com/52e4be610001c67307860420.jpg" alt="img"></strong></p>
@@ -494,15 +505,17 @@ str2：文本框中的内容，可以修改
 <p><strong><img src="http://img.mukewang.com/52e4bd0f0001dd8d04830279.jpg" alt="img"></strong></p>
 <p><strong>HTML文档可以说由节点构成的集合，三种常见的DOM节点:</strong></p>
 <p><strong>1. 元素节点：</strong>上图中<html>、<body>、<p>等都是元素节点，即标签。</p>
-<p><strong>2. 文本节点:</strong>向用户展示的内容，如<li>…</li>中的JavaScript、DOM、CSS等文本。</p>
-<p><strong>3. 属性节点:</strong>元素属性，如<a>标签的链接属性href=”<a href="http://www.imooc.com&quot;。" target="_blank" rel="noopener">http://www.imooc.com&quot;。</a></a></p>
+<p>**2. 文本节点:**向用户展示的内容，如<li>…</li>中的JavaScript、DOM、CSS等文本。</p>
+<p>**3. 属性节点:**元素属性，如<a>标签的链接属性href=”<a target="_blank" rel="noopener" href="http://www.imooc.com&quot;./">http://www.imooc.com&quot;。</a></a></p>
 <p><strong>看下面代码:</strong></p>
 <pre><code>&lt;a href=&quot;http://www.imooc.com&quot;&gt;JavaScript DOM&lt;/a&gt;
-</code></pre><p><a href="http://img.mukewang.com/52e4bdb80001064c04480196.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/52e4bdb80001064c04480196.jpg" alt="img"></a></p>
+</code></pre>
+<p><a target="_blank" rel="noopener" href="http://img.mukewang.com/52e4bdb80001064c04480196.jpg"><img src="http://img.mukewang.com/52e4bdb80001064c04480196.jpg" alt="img"></a></p>
 <h3><span id="id">id</span></h3><p>学过HTML/CSS样式，都知道，网页由标签将信息组织起来，而标签的id属性值是唯一的，就像是每人有一个身份证号一样，只要通过身份证号就可以找到相对应的人。那么在网页中，我们通过id先找到标签，然后进行操作。</p>
 <p><strong>语法:</strong></p>
 <pre><code> document.getElementById(“id”) 
-</code></pre><p><strong>看看下面代码:</strong></p>
+</code></pre>
+<p><strong>看看下面代码:</strong></p>
 <p><strong><img src="http://img.mukewang.com/52e4c5950001054207900423.jpg" alt="img"></strong></p>
 <p><strong>结果:null</strong> <strong>或[object HTMLParagraphElement]</strong></p>
 <p><strong><img src="http://img.mukewang.com/52e4c6080001734c03800275.jpg" alt="img"></strong></p>
@@ -510,7 +523,8 @@ str2：文本框中的内容，可以修改
 <h2><span id="innerhtml-属性">innerHTML 属性</span></h2><p>innerHTML 属性用于获取或替换 HTML 元素的内容。</p>
 <p><strong>语法:</strong></p>
 <pre><code>Object.innerHTML
-</code></pre><p><strong>注意:</strong></p>
+</code></pre>
+<p><strong>注意:</strong></p>
 <p>1.Object是获取的元素对象，如通过document.getElementById(“ID”)获取的元素。</p>
 <p>2.注意书写，innerHTML区分大小写。</p>
 <p>3.输出方式</p>
@@ -523,10 +537,11 @@ document<span class="token punctuation">.</span><span class="token function">wri
 </blockquote>
 <h2><span id="改变-html-元素的样式">改变 HTML 元素的样式</span></h2><p><strong>语法:</strong></p>
 <pre><code>Object.style.property=new style;
-</code></pre><p><strong>注意:</strong>Object是获取的元素对象，如通过document.getElementById(“id”)获取的元素。</p>
+</code></pre>
+<p>**注意:**Object是获取的元素对象，如通过document.getElementById(“id”)获取的元素。</p>
 <p><strong>基本属性表（property）:</strong></p>
 <p><strong><img src="http://img.mukewang.com/52e4d4240001dd6c04850229.jpg" alt="img"></strong></p>
-<p><strong>注意:</strong>该表只是一小部分CSS样式属性，其它样式也可以通过该方法设置和修改。</p>
+<p>**注意:**该表只是一小部分CSS样式属性，其它样式也可以通过该方法设置和修改。</p>
 <h4><span id="例子">例子</span></h4><p>改变 </p><p> 元素的样式，将颜色改为红色，字号改为20,背景颜色改为蓝：</p>
 <pre><code>&lt;p id=&quot;pcon&quot;&gt;Hello World!&lt;/p&gt;
 &lt;script&gt;
@@ -535,12 +550,14 @@ document<span class="token punctuation">.</span><span class="token function">wri
    mychar.style.fontSize=&quot;20&quot;;
    mychar.style.backgroundColor =&quot;blue&quot;;
 &lt;/script&gt;
-</code></pre><h2><span id="display属性">display属性</span></h2><blockquote>
+</code></pre>
+<h2><span id="display属性">display属性</span></h2><blockquote>
 <p>显示和隐藏</p>
 </blockquote>
 <p><strong>语法：</strong></p>
 <pre><code>Object.style.display = value
-</code></pre><p><strong>注意:</strong>Object是获取的元素对象，如通过document.getElementById(“id”)获取的元素。</p>
+</code></pre>
+<p>**注意:**Object是获取的元素对象，如通过document.getElementById(“id”)获取的元素。</p>
 <p><strong>value取值</strong>:</p>
 <p><strong><img src="http://img.mukewang.com/52e4dba5000179da04110095.jpg" alt="img"></strong></p>
 <p><strong>看看下面代码:</strong></p>
@@ -548,14 +565,15 @@ document<span class="token punctuation">.</span><span class="token function">wri
 <h2><span id="控制类名classname-属性">控制类名（className 属性）</span></h2><p>className 属性设置或返回元素的class 属性。</p>
 <p><strong>语法：</strong></p>
 <pre><code>object.className = classname
-</code></pre><p><strong>作用:</strong></p>
+</code></pre>
+<p><strong>作用:</strong></p>
 <p>1.获取元素的class 属性</p>
 <p>2.为网页内的某个元素指定一个css样式来更改该元素的外观</p>
 <p><strong>看看下面代码，获得 <p> 元素的 class 属性和改变className：</p></strong></p>
-<p><a href="http://img.mukewang.com/52e4e28c0001c97f07980838.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/52e4e28c0001c97f07980838.jpg" alt="img"></a></p>
+<p><a target="_blank" rel="noopener" href="http://img.mukewang.com/52e4e28c0001c97f07980838.jpg"><img src="http://img.mukewang.com/52e4e28c0001c97f07980838.jpg" alt="img"></a></p>
 <p><strong>结果:</strong></p>
 <p><strong><img src="http://img.mukewang.com/52e4e711000135d903810270.jpg" alt="img"></strong></p>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":200,"height":300},"mobile":{"show":false},"log":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":200,"height":300},"mobile":{"show":false},"log":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":200,"height":300},"mobile":{"show":false},"log":false});</script></body></html></p>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css"></body></html></p>
             </div>
             <hr/>
 
@@ -598,7 +616,7 @@ document<span class="token punctuation">.</span><span class="token function">wri
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2018/12/03/c里的静态变量只初始化一次的原因/">
+                <a href="/2018/12/03/c%E9%87%8C%E7%9A%84%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E5%8F%AA%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E6%AC%A1%E7%9A%84%E5%8E%9F%E5%9B%A0/">
                     <div class="card-image">
                         
                         
@@ -614,9 +632,9 @@ document<span class="token punctuation">.</span><span class="token function">wri
 #include "stdafx.h"
 
 int _tmain(int argc, _TCHAR* argv[])
-{
+&amp;#123;
 int initNum = 3;
-for (int i=5; i > </div>
+for (int </div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-03
@@ -632,14 +650,6 @@ for (int i=5; i > </div>
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/静态和动态/" target="_blank">
-                        <span class="chip bg-color">静态和动态</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -679,7 +689,7 @@ for (int i=5; i > </div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/基础/" target="_blank">
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/" target="_blank">
                         <span class="chip bg-color">基础</span>
                     </a>
                     

@@ -3,7 +3,7 @@
 <head>
     
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="隐藏和覆盖的区别和用法, One Fly Bird&#39;s Nest">
     <meta name="description" content="隐藏和覆盖的区别和用法
@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 </head>
 
@@ -349,18 +349,6 @@
     <div class="card">
         <div class="card-content article-info">
             
-            <div class="article-tag">
-                
-                <a href="/tags/静态和动态/" target="_blank">
-                    <span class="chip bg-color">静态和动态</span>
-                </a>
-                
-                <a href="/tags/面向对象/" target="_blank">
-                    <span class="chip bg-color">面向对象</span>
-                </a>
-                
-            </div>
-            
             <div class="post-info">
                 
                 <span class="post-cate">
@@ -382,7 +370,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2><span id="隐藏和覆盖的区别和用法">隐藏和覆盖的区别和用法</span></h2><blockquote>
-<p>以下内容来自<a href="https://www.cnblogs.com/shakinghead/p/7445831.html" target="_blank" rel="noopener">隐藏和覆盖的区别和用法</a></p>
+<p>以下内容来自<a target="_blank" rel="noopener" href="https://www.cnblogs.com/shakinghead/p/7445831.html">隐藏和覆盖的区别和用法</a></p>
 </blockquote>
 <h3><span id="静态类型和动态类型">静态类型和动态类型</span></h3><p>任何一个引用变量都有两个类型：一个叫<strong>静态类型</strong>，也就是定义该引用变量的类型；另一个叫<strong>动态类型</strong>，也就是该引用实际指向的对象类型。</p>
 <p>比如对于两个类A和类B，有：<strong>A a=new B()；</strong></p>
@@ -410,41 +398,41 @@
 <h3><span id="总结">总结</span></h3><p>在子类继承父类后：</p>
 <p><strong>父类的成员变量只会被隐藏，而且支持交叉隐藏（比如静态变量被非静态变量隐藏）。父类的静态方法只会被静态方法隐藏，不支持交叉隐藏。父类的非静态方法会被覆盖，但是不能交叉覆盖。</strong></p>
 <p>代码测试如下：</p>
-<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<p><a href="javascript:void(0);"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> test<span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">/* 隐藏和覆盖的区别 */</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HideAndCover</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HideAndCover</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         Father father<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Son</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>father<span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>father<span class="token punctuation">.</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
         father<span class="token punctuation">.</span><span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         father<span class="token punctuation">.</span><span class="token function">d</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//声明父类</span>
-<span class="token keyword">class</span> <span class="token class-name">Father</span><span class="token punctuation">{</span>
+<span class="token keyword">class</span> <span class="token class-name">Father</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">static</span> <span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> b<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">void</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">d</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">d</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//声明子类</span>
-<span class="token keyword">class</span> <span class="token class-name">Son</span> <span class="token keyword">extends</span> <span class="token class-name">Father</span><span class="token punctuation">{</span>
+<span class="token keyword">class</span> <span class="token class-name">Son</span> <span class="token keyword">extends</span> <span class="token class-name">Father</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">static</span> <span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> b<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">void</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">d</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">d</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 <p>运行结果为：</p>
 <p>0</p>
@@ -468,7 +456,7 @@
 <li>重写</li>
 <li>父类引用指向子类对象（超类又称为父类）</li>
 </ol>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr/>
 
@@ -489,7 +477,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://yoursite.com" class="b-link-green">One Fly Bird's Nest</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/23/隐藏和覆盖的区别和用法/" class="b-link-green">隐藏和覆盖的区别和用法</a>
+                    <a href="/2018/11/23/%E9%9A%90%E8%97%8F%E5%92%8C%E8%A6%86%E7%9B%96%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E7%94%A8%E6%B3%95/" class="b-link-green">隐藏和覆盖的区别和用法</a>
                 </p>
             </div>
         </div>
@@ -541,7 +529,7 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/基础/" target="_blank">
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/" target="_blank">
                         <span class="chip bg-color">基础</span>
                     </a>
                     
@@ -554,7 +542,7 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/11/22/c的指针/">
+                <a href="/2018/11/22/c%E7%9A%84%E6%8C%87%E9%92%88/">
                     <div class="card-image">
                         
                         
@@ -593,7 +581,7 @@ T是任何变量类型
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/指针/" target="_blank">
+                    <a href="/tags/%E6%8C%87%E9%92%88/" target="_blank">
                         <span class="chip bg-color">指针</span>
                     </a>
                     

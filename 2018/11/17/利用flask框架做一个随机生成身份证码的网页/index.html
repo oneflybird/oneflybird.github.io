@@ -3,19 +3,19 @@
 <head>
     
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="一个随机生成身份证码的网页, One Fly Bird&#39;s Nest">
     <meta name="description" content="任务做出一个随机生成身份证码的网页
 
 前期准备
-黑马程序员入门视频（表单之前即可完成任务）
+ 黑马程序员入门视频（表单之前即可完成任务）
 flask官方中文手册
 flask官方英文手册
 pycharm3专业版
 在终端上生成身份证的代码
 
-安装flaskpip install Flask">
+安装flaskpip install Flas">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -35,7 +35,7 @@ pycharm3专业版
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 </head>
 
@@ -385,14 +385,15 @@ pycharm3专业版
                 <h2><span id="任务">任务</span></h2><p>做出一个随机生成身份证码的网页</p>
 <hr>
 <h2><span id="前期准备">前期准备</span></h2><ol>
-<li><a href="https://www.bilibili.com/video/av19817183/?p=14" title="黑马程序员的入门视频" target="_blank" rel="noopener">黑马程序员入门视频</a>（表单之前即可完成任务）</li>
-<li><a href="https://dormousehole.readthedocs.io/en/latest/" title="flask官方中文手册" target="_blank" rel="noopener">flask官方中文手册</a></li>
-<li><a href="http://flask.pocoo.org/" title="flask官方英文手册" target="_blank" rel="noopener">flask官方英文手册</a></li>
+<li> <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av19817183/?p=14" title="黑马程序员的入门视频">黑马程序员入门视频</a>（表单之前即可完成任务）</li>
+<li><a target="_blank" rel="noopener" href="https://dormousehole.readthedocs.io/en/latest/" title="flask官方中文手册">flask官方中文手册</a></li>
+<li><a target="_blank" rel="noopener" href="http://flask.pocoo.org/" title="flask官方英文手册">flask官方英文手册</a></li>
 <li>pycharm3专业版</li>
 <li>在终端上生成身份证的代码</li>
 </ol>
 <h3><span id="安装flask">安装flask</span></h3><pre><code>pip install Flask
-</code></pre><p>在命令行上输完这条命令就可以开心地开始用py啦~（话说我不知道如果不输这条命令会有什么样的结果诶）</p>
+</code></pre>
+<p>在命令行上输完这条命令就可以开心地开始用py啦~（话说我不知道如果不输这条命令会有什么样的结果诶）</p>
 <h3><span id="各文件夹里的内容">各文件夹里的内容</span></h3><blockquote>
 <p><strong>template_folder</strong>：模板所在文件夹的名字</p>
 <p>此任务只需用到这个文件夹即可，在templates文件夹里创建html类型，html上的内容会显示在页面上</p>
@@ -403,7 +404,8 @@ pycharm3专业版
 <p><strong>static_folder</strong>：静态文件所在文件的名字，默认是static，可以不用填</p>
 <p><strong>static_url_path</strong>：静态文件的地址前缀，写成什么，访问静态文件时，就要在前面加上这个</p>
 <pre><code>app = Flask(__name__,template_folder=&#39;templates&#39;,static_url_path=&#39;/xxxxxx&#39;)
-</code></pre><p> 如：在根目录下创建目录，templates和static，则return render_template时，可以找到里面的模板页面；如在static文件夹里存放11.png，在引用该图片时，静态文件地址为：/xxxxxx/11.png</p>
+</code></pre>
+<p> 如：在根目录下创建目录，templates和static，则return render_template时，可以找到里面的模板页面；如在static文件夹里存放11.png，在引用该图片时，静态文件地址为：/xxxxxx/11.png</p>
 <hr>
 <h2><span id="基本操作">基本操作</span></h2><p>放在每个函数最前面，/是指路径，get是获得网页内容，post是向网页进行推送，方法可按需选择</p>
 <pre class=" language-python"><code class="language-python">@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span> <span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#py文件里面的内容</span>
@@ -435,62 +437,85 @@ pycharm3专业版
 <h5><span id="注释">注释</span></h5><p>py的注释为#</p>
 <p>html的注释为</p>
 <h5><span id="变量后面会有相关的代码和更详细的解释现在看不懂也没关系">变量（后面会有相关的代码和更详细的解释，现在看不懂也没关系）</span></h5><p>html中的</p>
-<pre><code>{{}}
-</code></pre><p>是变量模块，可在p y里面用return（）将python里的变量输入到html中的变量然后显示出来，html中得到的变量可通过在py中用requet. form.get（）传给python</p>
-<h5><span id="关于导入的文件">关于导入的文件</span></h5><blockquote>
-<p>render_template: 有了这个文件才能在python和html中传输变量</p>
-<p>flash：后面会用到的，作用大概是将py里面想要传送到页面上的语句通过html文件里的</p>
-<p>get_flashed_messages()捕捉到，然后在页面上显示出来 ，此操作需设置app.secret_key= 进行加密</p>
-<p>request：python通过request请求得到用户在网页上输入的类型</p>
-</blockquote>
-<h5><span id="html里面的基本格式说明">html里面的基本格式说明</span></h5><blockquote>
-<ul>
-<li>&lt; br &gt; 换行</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>label里面是在页面山会显示出来的内容</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li><p>type属性如下表</p>
-<p>属性值</p>
-<p>| 值       | 描述                                                         |<br>| ——– | ———————————————————— |<br>| button   | 定义可点击按钮（多数情况下，用于通过 JavaScript 启动脚本）。 |<br>| checkbox | 定义复选框。                                                 |<br>| file     | 定义输入字段和 “浏览”按钮，供文件上传。                      |<br>| hidden   | 定义隐藏的输入字段。                                         |<br>| image    | 定义图像形式的提交按钮。                                     |<br>| password | 定义密码字段。该字段中的字符被掩码。                         |<br>| radio    | 定义单选按钮。                                               |<br>| reset    | 定义重置按钮。重置按钮会清除表单中的所有数据。               |<br>| submit   | 定义提交按钮。提交按钮会把表单数据发送到服务器。             |<br>| text     | 定义单行的输入字段，用户可在其中输入文本。默认宽度为 20 个字符。 |</p>
-</li>
-</ul>
-</blockquote>
-<hr>
-<p>省略python里随机生成身份证部分的代码</p>
-<p>下面是判断参数的代码：</p>
-<pre class=" language-python"><code class="language-python"> <span class="token comment" spellcheck="true"># 判断请求方式</span>
-    <span class="token keyword">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">'POST'</span><span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true"># 获取参数 year month day</span>
-        year <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'year'</span><span class="token punctuation">)</span>
-        month <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'month'</span><span class="token punctuation">)</span>
-        date <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'date'</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># 判断参数是否完整</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> all<span class="token punctuation">(</span><span class="token punctuation">[</span>year<span class="token punctuation">,</span> month<span class="token punctuation">,</span> date<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            flash<span class="token punctuation">(</span>u<span class="token string">'请将您的资料填写完整'</span><span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true"># 判断输入是否符合要求</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true">#将str转换成int，text类型里面得到的是字符</span>
-            year <span class="token operator">=</span> int<span class="token punctuation">(</span>year<span class="token punctuation">)</span>
-            month <span class="token operator">=</span> int<span class="token punctuation">(</span>month<span class="token punctuation">)</span>
-            date <span class="token operator">=</span> int<span class="token punctuation">(</span>date<span class="token punctuation">)</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>year <span class="token operator">&lt;</span> <span class="token number">999</span> <span class="token operator">or</span> year <span class="token operator">></span> <span class="token number">2018</span> <span class="token punctuation">)</span><span class="token operator">or</span><span class="token punctuation">(</span>date <span class="token operator">&lt;</span> <span class="token number">0</span>  <span class="token operator">or</span> date <span class="token operator">></span> <span class="token number">31</span> <span class="token punctuation">)</span><span class="token operator">or</span><span class="token punctuation">(</span>month <span class="token operator">&lt;</span><span class="token number">1</span> <span class="token operator">or</span> month <span class="token operator">></span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                flash<span class="token punctuation">(</span>u<span class="token string">'资料错误'</span><span class="token punctuation">)</span>
+<pre><code>&#123;&#123;&#125;&#125;
+```
+
+
+
+是变量模块，可在p y里面用return（）将python里的变量输入到html中的变量然后显示出来，html中得到的变量可通过在py中用requet. form.get（）传给python
+
+##### 关于导入的文件
+
+> render_template: 有了这个文件才能在python和html中传输变量
+>
+> flash：后面会用到的，作用大概是将py里面想要传送到页面上的语句通过html文件里的
+>
+> get_flashed_messages()捕捉到，然后在页面上显示出来 ，此操作需设置app.secret_key= 进行加密
+>
+> request：python通过request请求得到用户在网页上输入的类型
+
+##### html里面的基本格式说明
+
+> * < br > 换行
+
+> * label里面是在页面山会显示出来的内容
+
+> * type属性如下表
+>
+>   属性值
+>
+>   | 值       | 描述                                                         |
+>   | -------- | ------------------------------------------------------------ |
+>   | button   | 定义可点击按钮（多数情况下，用于通过 JavaScript 启动脚本）。 |
+>   | checkbox | 定义复选框。                                                 |
+>   | file     | 定义输入字段和 "浏览"按钮，供文件上传。                      |
+>   | hidden   | 定义隐藏的输入字段。                                         |
+>   | image    | 定义图像形式的提交按钮。                                     |
+>   | password | 定义密码字段。该字段中的字符被掩码。                         |
+>   | radio    | 定义单选按钮。                                               |
+>   | reset    | 定义重置按钮。重置按钮会清除表单中的所有数据。               |
+>   | submit   | 定义提交按钮。提交按钮会把表单数据发送到服务器。             |
+>   | text     | 定义单行的输入字段，用户可在其中输入文本。默认宽度为 20 个字符。 |
+
+----
+
+省略python里随机生成身份证部分的代码
+
+下面是判断参数的代码：
+
+```python
+ # 判断请求方式
+    if request.method == 'POST':
+        # 获取参数 year month day
+        year = request.form.get('year')
+        month = request.form.get('month')
+        date = request.form.get('date')
+        # 判断参数是否完整
+        if not all([year, month, date]):
+            flash(u'请将您的资料填写完整')
+    # 判断输入是否符合要求
+        else:
+        #将str转换成int，text类型里面得到的是字符
+            year = int(year)
+            month = int(month)
+            date = int(date)
+            if(year < 999 or year > 2018 )or(date < 0  or date > 31 )or(month <1 or month> 12):
+                flash(u'资料错误')
+```
+
+html：
+
+```html
+&#123;# 使用便利获取年月日的闪现消息 #&#125;
+&#123;% for message in get_flashed_messages() %&#125;
+    &#123;&#123;message&#125;&#125;
+&#123;% endfor %&#125;
+</1></code></pre>
+<h4><span id="上述内容的简单解释">上述内容的简单解释</span></h4><pre><code>&#123;% %&#125;
 </code></pre>
-<p>html：</p>
-<pre class=" language-html"><code class="language-html">
-{% for message in get_flashed_messages() %}
-    {{message}}
-{% endfor %}
-</code></pre>
-<h4><span id="上述内容的简单解释">上述内容的简单解释</span></h4><pre><code>{% %}
-</code></pre><p>是html中的控制模块，由于message是变量，则需要</p>
-<pre class=" language-{{}}"><code class="language-{{}}">{{}}
+<p>是html中的控制模块，由于message是变量，则需要</p>
+<pre><code class="&#123;&#123;&#125;&#125;
+&#123;&#123;&#125;&#125;">
 </code></pre>
 <p>变量模块;<strong>get_flashed_messages()是个函数，必须要加（），否则会报错</strong></p>
 <h5><span id="py里面的u">py里面的u’ ‘</span></h5><p>对里面的字符进行转码以使他正确输出，否则有可能会编码错乱导致报错</p>
@@ -501,7 +526,7 @@ pycharm3专业版
 <p>返回success.html文件，并将list ID传给success.html（list ID可以是list数组，也可以是 int变量等任何变量，<strong>但是必须和文件里变量名相同，前一个list ID是success.html文件里的变量名，后一个是py里的变量名</strong>。</p>
 <hr>
 <h2><span id="基础知识的讲解就到此完毕啦撒花">基础知识的讲解就到此完毕啦！！！撒花！</span></h2><h2><span id="总结">总结</span></h2><p>如果看了这篇文章之后还云里雾里的话，强烈推荐先去看黑马程序员里面的视频再回来看这篇文章哟，并且可以在这个程序里面加入表单等操作来更装逼一点~~对了，如果页面不能正确显示报错的话心态不要爆炸，请回到py里面看error（error get下面的部分）出现在哪里以进行修改哦<strong>注意缩进，（），大小写等错误</strong></p>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr/>
 
@@ -522,7 +547,7 @@ pycharm3专业版
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://yoursite.com" class="b-link-green">One Fly Bird's Nest</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/17/利用flask框架做一个随机生成身份证码的网页/" class="b-link-green">一个随机生成身份证码的网页</a>
+                    <a href="/2018/11/17/%E5%88%A9%E7%94%A8flask%E6%A1%86%E6%9E%B6%E5%81%9A%E4%B8%80%E4%B8%AA%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E8%BA%AB%E4%BB%BD%E8%AF%81%E7%A0%81%E7%9A%84%E7%BD%91%E9%A1%B5/" class="b-link-green">一个随机生成身份证码的网页</a>
                 </p>
             </div>
         </div>
@@ -544,7 +569,7 @@ pycharm3专业版
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2018/11/18/archlinux基础安装步骤/">
+                <a href="/2018/11/18/archlinux%E5%9F%BA%E7%A1%80%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4/">
                     <div class="card-image">
                         
                         
@@ -579,7 +604,7 @@ linux下（fdisk,gdisk,p</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/基础/" target="_blank">
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/" target="_blank">
                         <span class="chip bg-color">基础</span>
                     </a>
                     
@@ -592,7 +617,7 @@ linux下（fdisk,gdisk,p</div>
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/11/14/一些关于c的小技巧和基础/">
+                <a href="/2018/11/14/%E4%B8%80%E4%BA%9B%E5%85%B3%E4%BA%8Ec%E7%9A%84%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%92%8C%E5%9F%BA%E7%A1%80/">
                     <div class="card-image">
                         
                         <img src="https://p.jingyanben.com/1009/a9f8955ec57fe.png" class="responsive-img" alt="一些关于c的小技巧和基础知识">
@@ -640,7 +665,7 @@ A~Z字母对应的十进制65-90 十六进制41-5A
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/基础/" target="_blank">
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/" target="_blank">
                         <span class="chip bg-color">基础</span>
                     </a>
                     

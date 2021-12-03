@@ -1,0 +1,660 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="使用defaultdict的注意点, One Fly Bird&#39;s Nest">
+    <meta name="description" content="使用defaultdict的注意点总结
+前提： 下面提到的dict都是在要为value里添加数据时才会添加key，也就是说不会存在添加了key但value为空的情况
+
+对于value是list的dict，通常对value(list)使用索引">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>使用defaultdict的注意点 | One Fly Bird&#39;s Nest</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">One Fly Bird's Nest</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>Index</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>Tags</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>Categories</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>Archives</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">One Fly Bird's Nest</div>
+        <div class="logo-desc">
+            
+            我的目标是星辰大海
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Index
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                Tags
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                Categories
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                Archives
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/oneflybird" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/oneflybird" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:1361569005@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 1361569005" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #b3e0ff;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/oneflybird" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/30.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        使用defaultdict的注意点
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/%E8%B8%A9%E5%9D%91/" target="_blank">
+                    <span class="chip bg-color">踩坑</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/python/" class="post-category" target="_blank">
+                        python
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2021-06-20
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1><span id="使用defaultdict的注意点">使用defaultdict的注意点</span></h1><h2><span id="总结">总结</span></h2><blockquote>
+<p>前提： 下面提到的dict都是在要为value里添加数据时才会添加key，也就是说不会存在添加了key但value为空的情况</p>
+</blockquote>
+<p>对于value是list的dict，通常对value(list)使用索引时，会使用<code>key in items</code>来判断在items中是否存在此key，在存在的情况下再对items[key]使用索引，以免使用索引时越界。</p>
+<p>但是，对于默认值是list的defaultdict，使用items[key]会为此key初始化为默认值，如果在不当心使用items[key]后再进行<code>key in items</code>就会返回True，但此时items[key]=[]，使用索引会越界。</p>
+<p>原因是对于 defaultdict，使用 items[key] 会调用 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__getitem__"><code>__getitem__()</code></a>，继而调用<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/collections.html#collections.defaultdict.__missing__"><code>__missing__()</code></a>，从而为不存在的key初始化默认值。而dict不会为不存在的key进行初始化，因此存在的key的value始终不为[]，不会发生越界。</p>
+<h2><span id="踩坑场景">踩坑场景</span></h2><p>在多叉树的前序遍历中，使用defaultdict来保存某个父节点的子节点，并且需要<strong>多次调用</strong>此函数来返回前序遍历的结果，同时还需要判断当前父节点的<strong>子节点列表中的最后一个值</strong>是否为None。</p>
+<pre class=" language-python"><code class="language-python">self<span class="token punctuation">.</span>children_list <span class="token operator">=</span> collections<span class="token punctuation">.</span>defaultdict<span class="token punctuation">(</span>list<span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">getInheritanceOrder</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>str<span class="token punctuation">]</span><span class="token punctuation">:</span>
+  <span class="token keyword">def</span> <span class="token function">if_death</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 预想中如果x不存在，就会直接返回False，不会执行and后面的语句</span>
+    <span class="token keyword">if</span> x <span class="token keyword">in</span> self<span class="token punctuation">.</span>children_list <span class="token operator">and</span> self<span class="token punctuation">.</span>children_list<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> None<span class="token punctuation">:</span>
+      <span class="token keyword">return</span> <span class="token boolean">True</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> <span class="token boolean">False</span>
+    <span class="token keyword">def</span> <span class="token function">Successor</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+      <span class="token keyword">if</span> <span class="token operator">not</span> if_death<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        ans<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+      <span class="token comment" spellcheck="true"># 对父节点的子节点进行dfs遍历，如果为[]就不会进行</span>
+      <span class="token keyword">for</span> children <span class="token keyword">in</span> self<span class="token punctuation">.</span>children_list<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 跳过标记位子</span>
+        <span class="token keyword">if</span> children <span class="token operator">==</span> None<span class="token punctuation">:</span>
+          <span class="token keyword">break</span>
+        Successor<span class="token punctuation">(</span>children<span class="token punctuation">)</span>
+        ans <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    Successor<span class="token punctuation">(</span>self<span class="token punctuation">.</span>kingName<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> ans
+</code></pre>
+<p>在同一个程序中第二次调用getInheritanceOrder这个函数时，在if_death的判断语句中抛出了越界异常，经排查，发现在对<strong>叶节点</strong>进行self.children_list[key]遍历时，虽然通过默认值self.children_list[x]为[]不会进入for，但是defaultdict还是为把该key进行初始化放入字典。</p>
+<p>也就是说自己既想利用defaultdict的默认值特性免去在子节点遍历前对key是否存在进行判断，又想在事后让该字典对不存在的key返回False，可谓渣男行为了。。</p>
+<h2><span id="改进后的代码">改进后的代码</span></h2><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">if_death</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token comment" spellcheck="true"># 使用len进行判断</span>
+  <span class="token keyword">if</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>children_list<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span> <span class="token operator">and</span> self<span class="token punctuation">.</span>children_list<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">==</span>None<span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token boolean">True</span>
+  <span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token boolean">False</span>
+</code></pre>
+<h2><span id="补充">补充</span></h2><ol>
+<li>官方defaultdict地址：<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/collections.html#collections.defaultdict">https://docs.python.org/zh-cn/3/library/collections.html#collections.defaultdict</a></li>
+</ol>
+<blockquote>
+<p>上面说明了： <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/collections.html#collections.defaultdict"><code>defaultdict</code></a> 是内置 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/stdtypes.html#dict"><code>dict</code></a> 类的子类。它重载了一个方法并添加了一个可写的实例变量。其余的功能与 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/stdtypes.html#dict"><code>dict</code></a> 类相同。</p>
+<p>本对象包含一个名为 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/collections.html#collections.defaultdict.default_factory"><code>default_factory</code></a> 的属性，构造时，第一个参数用于为该属性提供初始值，默认为 <code>None</code>。所有其他参数（包括关键字参数）都相当于传递给 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/stdtypes.html#dict"><code>dict</code></a> 的构造函数。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/collections.html#collections.defaultdict"><code>defaultdict</code></a> 对象除了支持标准 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/stdtypes.html#dict"><code>dict</code></a> 的操作，还支持以下方法作为扩展：</p>
+<ul>
+<li><p><code>__missing__</code>(<em>key</em>)</p>
+<p>如果 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/collections.html#collections.defaultdict.default_factory"><code>default_factory</code></a> 属性为 <code>None</code>，则调用本方法会抛出 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/exceptions.html#KeyError"><code>KeyError</code></a> 异常，附带参数 <em>key</em>。如果 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/collections.html#collections.defaultdict.default_factory"><code>default_factory</code></a> 不为 <code>None</code>，则它会被（不带参数地）调用来为 <em>key</em> 提供一个默认值，这个值和 <em>key</em> 作为一对键值对被插入到字典中，并作为本方法的返回值返回。如果调用 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/collections.html#collections.defaultdict.default_factory"><code>default_factory</code></a> 时抛出了异常，这个异常会原封不动地向外层传递。在无法找到所需键值时，本方法会被 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/stdtypes.html#dict"><code>dict</code></a> 中的 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__getitem__"><code>__getitem__()</code></a> 方法调用。无论本方法返回了值还是抛出了异常，都会被 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__getitem__"><code>__getitem__()</code></a> 传递。注意，<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/collections.html#collections.defaultdict.__missing__"><code>__missing__()</code></a> <em>不会</em> 被 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/reference/datamodel.html#object.__getitem__"><code>__getitem__()</code></a> 以外的其他方法调用。意味着 <code>get()</code> 会像正常的 dict 那样返回 <code>None</code>，而不是使用 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/collections.html#collections.defaultdict.default_factory"><code>default_factory</code></a>。</p>
+</li>
+</ul>
+</blockquote>
+<ol start="2">
+<li><code>__getitem__() </code>用于实现<code>self[key]</code> 的求值</li>
+<li>对于<code>key in d</code>，d是一个字典，结果和<code>key in d.keys()</code>是一样的<br>Return <code>True</code> if <em>d</em> has a key <em>key</em>, else <code>False</code>.</li>
+</ol>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
+            </div>
+            <hr/>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="http://yoursite.com" class="b-link-green">One Fly Bird's Nest</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2021/06/20/%E4%BD%BF%E7%94%A8defaultdict%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9/" class="b-link-green">使用defaultdict的注意点</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/2021/12/03/go%E7%9A%84%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86%E5%8F%8A%E7%BC%96%E8%AF%91/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="go的依赖管理及编译">
+                        
+                        <span class="card-title">go的依赖管理及编译</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">go的依赖管理及编译依赖管理工具为什么go需要依赖管理工具早期go下载的第三方包都在$GOPATH$/src下，查找时也从$GOPATH$/src/ 中进行查找，如果没有$GOPATH$则会使用$GOROOT$。
+而在有多个go项目时，同一</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-12-03
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/go/" class="post-category" target="_blank">
+                                    go
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2021/05/30/%E5%B0%9D%E8%AF%95%E5%9C%A8hexo%E4%B8%8A%E8%BF%9B%E8%A1%8Clatex%E6%B8%B2%E6%9F%93%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="尝试在hexo上进行latex渲染遇到的坑">
+                        
+                        <span class="card-title">尝试在hexo上进行latex渲染遇到的坑</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">尝试在hexo上进行latex渲染遇到的坑自顺利在hexo上安装插件渲染出思维导图后，我有点飘了，正好遇到在写文章时遇到一个地方要写上下标，于是就在想，能不能在hexo上渲染出latex呢？
+在查阅了一些文章后，我信心满满的按照教程开始了安</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-05-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category" target="_blank">
+                                    工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%B8%A9%E5%9D%91/" target="_blank">
+                        <span class="chip bg-color">踩坑</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h1,h2, h3, h4,h5,h6'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1,h2, h3, h4,h5,h6').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Oneflybird</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>的主题搭建.
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="https://github.com/oneflybird" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:1361569005@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 1361569005" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":200,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>

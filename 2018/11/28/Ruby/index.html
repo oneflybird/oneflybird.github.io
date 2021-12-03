@@ -3,7 +3,7 @@
 <head>
     
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="Ruby的基础知识, One Fly Bird&#39;s Nest">
     <meta name="description" content="RubyInterpreted vs CompiledDepending on the programming language you’re using, it will either be a compiled language or ">
@@ -26,7 +26,7 @@
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 </head>
 
@@ -347,7 +347,7 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/基础/" target="_blank">
+                <a href="/tags/%E5%9F%BA%E7%A1%80/" target="_blank">
                     <span class="chip bg-color">基础</span>
                 </a>
                 
@@ -373,7 +373,7 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1><span id="ruby">Ruby</span></h1><h3><span id="interpreted-vs-compiled">Interpreted vs Compiled</span></h3><p>Depending on the programming language you’re using, it will either be a <a href="http://en.wikipedia.org/wiki/Compiled_language" target="_blank" rel="noopener">compiled language</a> or an <a href="https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/0B/05/ChMkJlcgb6mIY7cbAAg5YZ7Q3FwAAQrzAAWO2sACDl5956.jpg[interpreted" target="_blank" rel="noopener">https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/0B/05/ChMkJlcgb6mIY7cbAAg5YZ7Q3FwAAQrzAAWO2sACDl5956.jpg[interpreted</a> language](<a href="http://en.wikipedia.org/wiki/Interpreted_language)" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/Interpreted_language)</a>. <strong>Compiled</strong> programs will first be converted to machine code and then you will be able to run the program. <strong>Interpreted languages</strong> will be interpreted and converted to machine code <strong>at run time.</strong></p>
+                <h1><span id="ruby">Ruby</span></h1><h3><span id="interpreted-vs-compiled">Interpreted vs Compiled</span></h3><p>Depending on the programming language you’re using, it will either be a <a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Compiled_language">compiled language</a> or an <a target="_blank" rel="noopener" href="https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/0B/05/ChMkJlcgb6mIY7cbAAg5YZ7Q3FwAAQrzAAWO2sACDl5956.jpg[interpreted">https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/0B/05/ChMkJlcgb6mIY7cbAAg5YZ7Q3FwAAQrzAAWO2sACDl5956.jpg[interpreted</a> language](<a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Interpreted_language">http://en.wikipedia.org/wiki/Interpreted_language</a>). <strong>Compiled</strong> programs will first be converted to machine code and then you will be able to run the program. <strong>Interpreted languages</strong> will be interpreted and converted to machine code <strong>at run time.</strong></p>
 <h3><span id="putsampampprint">puts&amp;&amp;print</span></h3><p>you need to use the method <code>puts</code> which is short for “out<strong>put s</strong>tring.” And because Hello World! is a string, you need to surround your text with <code>&quot;&quot;</code>.</p>
 <blockquote>
 <p>both “” and ‘’  is ok</p>
@@ -387,14 +387,16 @@
 <pre><code>def print_and_return_name  
   puts &quot;Guy Fieri&quot;  &quot;Guy Fieri&quot;
 end
-</code></pre><p>There is one other way to return a value from a method and that is to use the <code>return</code> keyword.</p>
+</code></pre>
+<p>There is one other way to return a value from a method and that is to use the <code>return</code> keyword.</p>
 <p>Let’s take a look:</p>
 <pre><code>def stylish_chef  
   best_hairstyle = &quot;Guy Fieri&quot;  
   return &quot;Martha Stewart&quot;  
   &quot;Guy Fieri&quot;
 end
-</code></pre><blockquote>
+</code></pre>
+<blockquote>
 <p> it will just return the first value following <code>return</code></p>
 </blockquote>
 <h3><span id="sanitizing-user-input-the-strip-and-chomp-methods">Sanitizing User Input: The <code>strip</code> and <code>chomp</code> Methods</span></h3><p>One thing to know about the <code>#gets</code> method is that it captures a new line character at the end of whatever input it is storing. We don’t want extra whitespace or new lines to be appended to the user input we are trying to store. So, we can chain a call to the <code>#strip</code>method to remove any new lines or leading and trailing whitespace.</p>
@@ -405,16 +407,20 @@ end
 <h2><span id="four-common-error-types">Four Common Error Types</span></h2><h3><span id="name-errors">Name Errors</span></h3><p>NameErrors are caused when a given name is invalid or undefined. Whenever the Ruby interpreter encounters a word it doesn’t recognize, it assumes that word is the name of a variable or a method. If that word was never defined as either a variable or a method, it will result in a name error.</p>
 <h3><span id="syntax-errors">Syntax Errors</span></h3><p>Syntax errors are pretty self-explanatory: they’re the result of incorrect syntax. Thankfully, they’re usually followed by a guess about the location of the error. For instance:</p>
 <pre><code>2.times do  puts &quot;hi&quot;
-</code></pre><p>Will result in:</p>
+</code></pre>
+<p>Will result in:</p>
 <pre><code>2: syntax error, unexpected end-of-input, expecting keyword_end
-</code></pre><p>Here, Ruby is saying that on line 2, there is a missing <code>end</code> (every <code>do</code> keyword must be followed by some code and then an <code>end</code> keyword). Always read the full details of syntax errors and look for line numbers, which usually appear at the beginning of the error message.</p>
+</code></pre>
+<p>Here, Ruby is saying that on line 2, there is a missing <code>end</code> (every <code>do</code> keyword must be followed by some code and then an <code>end</code> keyword). Always read the full details of syntax errors and look for line numbers, which usually appear at the beginning of the error message.</p>
 <h3><span id="type-errors">Type Errors</span></h3><p>When you try and do a mathematical operation on two objects of a different type, you will receive a TypeError. For example if you try and add a string to an integer, Ruby will complain.</p>
 <pre><code>1 + &quot;1&quot;
-</code></pre><p>Will produce the following error:</p>
+</code></pre>
+<p>Will produce the following error:</p>
 <pre><code>TypeError: String can&#39;t be coerced into Fixnum
-</code></pre><h3><span id="division-errors">Division Errors</span></h3><p>DivisionErrors are caused when a given number is divided by 0.</p>
+</code></pre>
+<h3><span id="division-errors">Division Errors</span></h3><p>DivisionErrors are caused when a given number is divided by 0.</p>
 <hr>
-<h2><span id="variable">variable</span></h2><p>Note: The syntax of <code>#{current_president}</code> simply injects the value of the variable <code>current_president</code> into the string. This is called <a href="http://stackoverflow.com/questions/10076579/string-concatenation-vs-interpolation-in-ruby" target="_blank" rel="noopener">Interpolation</a> .where you are simply adding together multiple strings.</p>
+<h2><span id="variable">variable</span></h2><p>Note: The syntax of <code>#&#123;current_president&#125;</code> simply injects the value of the variable <code>current_president</code> into the string. This is called <a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/10076579/string-concatenation-vs-interpolation-in-ruby">Interpolation</a> .where you are simply adding together multiple strings.</p>
 <blockquote>
 <p>In Ruby, a variable can point to almost any type of value including numbers, strings, arrays, and hashes.</p>
 </blockquote>
@@ -443,11 +449,12 @@ end
 <li>It is also a <em>strongly typed</em> language. This means a variable will never be automatically <em>coerced</em> to another type without you explicitly changing the type. </li>
 </ul>
 </blockquote>
-<h4><span id="how-you-interpolate-variables-into-strings">How You Interpolate Variables into Strings</span></h4><p>To interpolate, you wrap the variable like <code>#{this}</code>.</p>
+<h4><span id="how-you-interpolate-variables-into-strings">How You Interpolate Variables into Strings</span></h4><p>To interpolate, you wrap the variable like <code>#&#123;this&#125;</code>.</p>
 <h4><span id="another-way-to-interpolate-variables-into-strings">Another Way to Interpolate Variables into Strings</span></h4><p>Some Rubyists write this another way, like this:</p>
 <pre><code>answer = &quot;Flamboyance&quot;
 puts &quot;A group of flamingos is called a &quot; + answer + &quot;.&quot;
-</code></pre><blockquote>
+</code></pre>
+<blockquote>
 <p> Single quotes: <code>&#39;&#39;</code> <strong>do not support string interpolation</strong></p>
 </blockquote>
 <hr>
@@ -457,11 +464,12 @@ puts &quot;A group of flamingos is called a &quot; + answer + &quot;.&quot;
 <p><strong>The Literal Constructor:</strong> This is the method through which we created our “hello” string.</p>
 <p><strong>The Class Constructor:</strong> You can also create a string with <code>String.new</code>. This will create an empty string.</p>
 <p><code>String.new(&quot;hello&quot;)</code> on the other hand, will create this string: <code>&quot;hello&quot;</code>. For the most part, you will create strings using the first method discussed here––simply by enclosing whatever text you want in quotes.</p>
-<p>Because every string is based on Ruby’s String class, there are certain behaviors, or methods, available to us for operating on them. You can learn more about the many String methods by reading the <a href="http://ruby-doc.org/core-2.2.0/String.html" target="_blank" rel="noopener">Ruby documentation</a> on Strings. For now, we’ll just take a look at a few examples.</p>
+<p>Because every string is based on Ruby’s String class, there are certain behaviors, or methods, available to us for operating on them. You can learn more about the many String methods by reading the <a target="_blank" rel="noopener" href="http://ruby-doc.org/core-2.2.0/String.html">Ruby documentation</a> on Strings. For now, we’ll just take a look at a few examples.</p>
 <pre><code>&quot;hello&quot;.size   =&gt; 5
 &quot;hello&quot;.upcase   =&gt; &quot;HELLO&quot;
 &quot;hello&quot;.reverse   =&gt; &quot;olleh&quot;
-</code></pre><h3><span id="booleans">Booleans</span></h3><p>There are only two values of the Boolean data type: <code>true</code> and <code>false</code>. In Ruby, however, there is no such thing as a Boolean class. <strong>Instead</strong>, every appearance, or instance, of <code>true</code> and <code>false</code> in your program are instances of TrueClass and FalseClass respectively.</p>
+</code></pre>
+<h3><span id="booleans">Booleans</span></h3><p>There are only two values of the Boolean data type: <code>true</code> and <code>false</code>. In Ruby, however, there is no such thing as a Boolean class. <strong>Instead</strong>, every appearance, or instance, of <code>true</code> and <code>false</code> in your program are instances of TrueClass and FalseClass respectively.</p>
 <blockquote>
 <p>Unlike strings, there is not a way to create a Boolean value, other than to explicitly write <code>true</code> or <code>false</code>. Later, we will see that we can write lines of code that <em>evaluate to</em> or return <code>true</code> and <code>false</code>, </p>
 </blockquote>
@@ -480,8 +488,7 @@ puts &quot;A group of flamingos is called a &quot; + answer + &quot;.&quot;
 <th>Operation</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>==</code></td>
 <td>If the values of the two operands are <em>equal</em>, then the evaluation is <code>true</code>.</td>
 </tr>
@@ -505,32 +512,35 @@ puts &quot;A group of flamingos is called a &quot; + answer + &quot;.&quot;
 <td><code>&lt;=</code></td>
 <td>If the left operand is <em>less than or equal to</em> the value of the right operand, then the evaluation is <code>true</code>.</td>
 </tr>
-</tbody>
-</table>
-<h3><span id="number">number</span></h3><p> You can read more about Fixnums <a href="http://ruby-doc.org/core-2.2.0/Fixnum.html" target="_blank" rel="noopener">here</a> and more about Floats <a href="http://ruby-doc.org/core-2.2.0/Float.html" target="_blank" rel="noopener">here</a>.</p>
+</tbody></table>
+<h3><span id="number">number</span></h3><p> You can read more about Fixnums <a target="_blank" rel="noopener" href="http://ruby-doc.org/core-2.2.0/Fixnum.html">here</a> and more about Floats <a target="_blank" rel="noopener" href="http://ruby-doc.org/core-2.2.0/Float.html">here</a>.</p>
 <pre><code>7.5.floor  =&gt; this method will round the float down to the nearest fixnum. Here it will return 7 
 7.5.ceil  =&gt; 8
 10.next  =&gt; 11
-</code></pre><blockquote>
+</code></pre>
+<blockquote>
 <p>change: <code>&#39;5&#39;.to_i</code>.</p>
 </blockquote>
 <h3><span id="symbols">Symbols</span></h3><p>A symbol is a representation of a piece of data. Symbols look like this <code>:my_symbol</code>. If I make a symbol, <code>:my_symbol</code>, and then use that symbol later on in my code, my program will refer to the same area of memory in both cases. This is different from, for example, strings, which take up new areas of memory every time they are used.</p>
 <blockquote>
 <p>You write symbols by placing a <code>:</code> in front of the symbol name.</p>
 <pre><code>:this_is_a_symbol
-</code></pre></blockquote>
+</code></pre>
+</blockquote>
 <h2><span id="arrays">Arrays</span></h2><p>Arrays are collections of Ruby objects. You can store any type of data in an array.</p>
 <p>There are a number of ways to create an array. Just like with creating strings, you can use the literal constructor or the class constructor.</p>
 <p><strong>The Literal Constructor:</strong><code>[1, 3, 400, 7]</code> is an array of integers. Any set of comma separated data enclosed in brackets is an array. So, by simply writing something like the above, you can create an array.</p>
-<p><strong>The Class Constructor:</strong> You can also create an array with the <a href="http://ruby-doc.org/core-2.2.0/Array.html" target="_blank" rel="noopener"><code>Array.new</code> syntax</a>. Just typing <code>Array.new</code> will create an empty array (<code>=&gt; []</code>).</p>
-<p> For now, we’ll preview a few array methods, and you can check out more <a href="http://ruby-doc.org/core-2.2.0/Array.html" target="_blank" rel="noopener">here</a>.</p>
+<p><strong>The Class Constructor:</strong> You can also create an array with the <a target="_blank" rel="noopener" href="http://ruby-doc.org/core-2.2.0/Array.html"><code>Array.new</code> syntax</a>. Just typing <code>Array.new</code> will create an empty array (<code>=&gt; []</code>).</p>
+<p> For now, we’ll preview a few array methods, and you can check out more <a target="_blank" rel="noopener" href="http://ruby-doc.org/core-2.2.0/Array.html">here</a>.</p>
 <pre><code>[5, 100, 234, 7, 2].sort   =&gt; [2, 5, 7, 100, 234]
 [1, 2, 3].reverse  =&gt; [3, 2, 1]
-</code></pre><h3><span id="more-ways">more ways</span></h3><p>The shovel method employs the “shovel” operator <code>&lt;&lt;</code> and allows you to add (“shovel”) items onto the <strong>end</strong> of an array:</p>
+</code></pre>
+<h3><span id="more-ways">more ways</span></h3><p>The shovel method employs the “shovel” operator <code>&lt;&lt;</code> and allows you to add (“shovel”) items onto the <strong>end</strong> of an array:</p>
 <pre><code>famous_cats = [&quot;lil&#39; bub&quot;, &quot;grumpy cat&quot;, &quot;Maru&quot;] 
 famous_cats &lt;&lt; &quot;nala cat&quot; 
 famous_cats #=&gt; [&quot;lil&#39; bub&quot;, &quot;grumpy cat&quot;, &quot;Maru&quot;, &quot;nala cat&quot;]
-</code></pre><p>The shovel method <code>&lt;&lt;</code> is the preferred syntax for adding elements to an array, however you might see other methods used in examples online:</p>
+</code></pre>
+<p>The shovel method <code>&lt;&lt;</code> is the preferred syntax for adding elements to an array, however you might see other methods used in examples online:</p>
 <h4><span id="the-push-method">The <code>.push</code> Method</span></h4><p>Calling <code>.push</code> on an array with an argument of the element you wish to add to that array, will also add that element to the <strong>end</strong> of the array. It has the same effect as the shovel method explained above. However the <code>.push</code> will also let you add multiple elements to an array, whereas the shovel method will only add one element.</p>
 <pre class=" language-ruby"><code class="language-ruby">famous_cats <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"lil' bub"</span><span class="token punctuation">,</span> <span class="token string">"grumpy cat"</span><span class="token punctuation">,</span> <span class="token string">"Maru"</span><span class="token punctuation">]</span> 
 famous_cats<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">"nala cat"</span><span class="token punctuation">)</span> 
@@ -540,27 +550,32 @@ famous_cats <span class="token comment" spellcheck="true">#=> ["lil' bub", "grum
 <pre><code>famous_cats = [&quot;lil&#39; bub&quot;, &quot;grumpy cat&quot;, &quot;Maru&quot;]
 famous_cats.unshift(&quot;nala cat&quot;)
 famous_cats.inspect #=&gt; [&quot;nala cat&quot;, &quot;lil&#39; bub&quot;, &quot;grumpy cat&quot;, &quot;Maru&quot;]
-</code></pre><h3><span id="removing-items-from-an-array">Removing Items From an Array</span></h3><h4><span id="the-pop-method">The <code>.pop</code> Method</span></h4><p>Calling <code>.pop</code> on an array will remove the <em>last</em> item from the <em>end</em> of the array. The <code>.pop</code> method will also supply the removed element as its return:</p>
+</code></pre>
+<h3><span id="removing-items-from-an-array">Removing Items From an Array</span></h3><h4><span id="the-pop-method">The <code>.pop</code> Method</span></h4><p>Calling <code>.pop</code> on an array will remove the <em>last</em> item from the <em>end</em> of the array. The <code>.pop</code> method will also supply the removed element as its return:</p>
 <pre><code>famous_cats = [&quot;lil&#39; bub&quot;, &quot;grumpy cat&quot;, &quot;Maru&quot;]
 maru_cat = famous_cats.pop 
 famous_cats #=&gt; [&quot;lil&#39; bub&quot;, &quot;grumpy cat&quot;]
 maru_cat #=&gt; Maru
-</code></pre><h4><span id="the-shift-method">The <code>.shift</code> Method</span></h4><p>Calling <code>.shift</code> on an array will remove the <em>first</em> item from the <em>front</em> of the array. The <code>.shift</code> method will also supply the removed element as a return:</p>
+</code></pre>
+<h4><span id="the-shift-method">The <code>.shift</code> Method</span></h4><p>Calling <code>.shift</code> on an array will remove the <em>first</em> item from the <em>front</em> of the array. The <code>.shift</code> method will also supply the removed element as a return:</p>
 <pre><code>famous_cats = [&quot;lil&#39; bub&quot;, &quot;grumpy cat&quot;, &quot;Maru&quot;]
 lil_bub = famous_cats.shift 
 famous_cats #=&gt; [&quot;grumpy cat&quot;, &quot;Maru&quot;]
 lil_bub #=&gt; lil&#39; bub
-</code></pre><h4><span id="the-reverse-method">The <code>.reverse</code> Method</span></h4><p>This method reverses an array.</p>
+</code></pre>
+<h4><span id="the-reverse-method">The <code>.reverse</code> Method</span></h4><p>This method reverses an array.</p>
 <pre><code>famous_wizards = [&quot;Dumbledore&quot;, &quot;Gandalf&quot;, &quot;Merlin&quot;]
 famous_wizards.reverse #=&gt; [&quot;Merlin&quot;, &quot;Gandalf&quot;, &quot;Dumbledore&quot;]
-</code></pre><h4><span id="the-include-method">The <code>.include?</code> Method</span></h4><p>This method will return a boolean of whether or not the array contains (or <em>includes</em>) the element submitted to it inside the parentheses:</p>
+</code></pre>
+<h4><span id="the-include-method">The <code>.include?</code> Method</span></h4><p>This method will return a boolean of whether or not the array contains (or <em>includes</em>) the element submitted to it inside the parentheses:</p>
 <pre><code>famous_cats = [&quot;lil&#39; bub&quot;, &quot;grumpy cat&quot;, &quot;Maru&quot;]
 famous_cats.include?(&quot;Garfield&quot;) #=&gt; false
 famous_cats.include?(&quot;Maru&quot;) #=&gt; true
-</code></pre><h2><span id="additional-resources">Additional Resources</span></h2><ul>
-<li><a href="https://www.codecademy.com/courses/ruby-beginner-en-F3loB/0/1?curriculum_id=5059f8619189a5000201fbcb" target="_blank" rel="noopener">Arrays on Codecademy</a></li>
-<li><a href="http://zetcode.com/lang/rubytutorial/arrays/" target="_blank" rel="noopener">Ruby Arrays on Zet Code</a></li>
-<li><a href="http://www.tutorialspoint.com/ruby/ruby_arrays.htm" target="_blank" rel="noopener">Ruby Arrays on Tutorials Point</a></li>
+</code></pre>
+<h2><span id="additional-resources">Additional Resources</span></h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.codecademy.com/courses/ruby-beginner-en-F3loB/0/1?curriculum_id=5059f8619189a5000201fbcb">Arrays on Codecademy</a></li>
+<li><a target="_blank" rel="noopener" href="http://zetcode.com/lang/rubytutorial/arrays/">Ruby Arrays on Zet Code</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.tutorialspoint.com/ruby/ruby_arrays.htm">Ruby Arrays on Tutorials Point</a></li>
 </ul>
 <h3><span id="nested-array">nested array</span></h3><blockquote>
 <p> A nested, or multidimensional array, is an array whose individual elements are also arrays.</p>
@@ -574,15 +589,18 @@ students <span class="token operator">&lt;</span><span class="token operator">&l
 <p>To add an element to an array that is nested inside of another array, we first use the same bracket notation as above to dig down to the nested array, and <em>then</em> we can use the <code>&lt;&lt;</code> on it. To illustrate, let’s add another piece of info, <code>&quot;Class President&quot;</code>, to the nested array that describes Monique.</p>
 <p>First, we have to access Monique’s array.</p>
 <pre><code>nested_students[2]
-</code></pre><p>Then – bam! – we hit it with the shovel, <code>&lt;&lt;</code>.</p>
+</code></pre>
+<p>Then – bam! – we hit it with the shovel, <code>&lt;&lt;</code>.</p>
 <pre><code>nested_students[2] &lt;&lt; &quot;Class President&quot;
-</code></pre><p>Now, our <code>nested_students</code> array looks like this:</p>
+</code></pre>
+<p>Now, our <code>nested_students</code> array looks like this:</p>
 <pre><code>nested_students = [ 
 [&quot;Mike&quot;, &quot;Grade 10&quot;, &quot;A average&quot;], 
 [&quot;Tim&quot;, &quot;Grade 10&quot;, &quot;C average&quot;],  
 [&quot;Monique&quot;, &quot;Grade 11&quot;, &quot;B average&quot;, &quot;Class President&quot;]
 ]
-</code></pre><h3><span id="iterating-over-nested-arrays">Iterating Over Nested Arrays</span></h3><p>What if we want to add data to <em>every array that is nested within the parent array</em>? It would be very tedious if we had to calculate the length of the array and then, one-by-one, modify each individual child array using bracket notation and the <code>&lt;&lt;</code> method.</p>
+</code></pre>
+<h3><span id="iterating-over-nested-arrays">Iterating Over Nested Arrays</span></h3><p>What if we want to add data to <em>every array that is nested within the parent array</em>? It would be very tedious if we had to calculate the length of the array and then, one-by-one, modify each individual child array using bracket notation and the <code>&lt;&lt;</code> method.</p>
 <p>When we are dealing with a one-dimensional array and want to do something to every element, we iterate, using methods like <code>#each</code> and <code>#collect</code>. If, for example, we wanted to <code>puts</code> out every member of the <code>students</code> array, we could do so like this:</p>
 <pre class=" language-ruby"><code class="language-ruby">students<span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token keyword">do</span> <span class="token operator">|</span>student<span class="token operator">|</span>  
     puts student
@@ -604,7 +622,8 @@ nested_students<span class="token punctuation">.</span><span class="token keywor
 [&quot;Tim&quot;, &quot;Grade 10&quot;, &quot;C average&quot;]
 [&quot;Monique&quot;, &quot;Grade 11&quot;, &quot;B average&quot;, &quot;Class President&quot;]
 #  =&gt; [[&quot;Mike&quot;, &quot;Grade 10&quot;, &quot;A average&quot;], [&quot;Tim&quot;, &quot;Grade 10&quot;, &quot;C average&quot;], [&quot;Monique&quot;, &quot;Grade 11&quot;, &quot;B average&quot;, &quot;Class President&quot;]]
-</code></pre><p>In the example above, we are iterating through the list of arrays that make up the top level of the <code>nested_students</code> array. If we want to iterate through the elements <em>inside</em> each child array, we add a second layer of iteration <em>inside</em> the first:</p>
+</code></pre>
+<p>In the example above, we are iterating through the list of arrays that make up the top level of the <code>nested_students</code> array. If we want to iterate through the elements <em>inside</em> each child array, we add a second layer of iteration <em>inside</em> the first:</p>
 <pre class=" language-ruby"><code class="language-ruby">nested_students <span class="token operator">=</span> <span class="token punctuation">[</span>  <span class="token punctuation">[</span><span class="token string">"Mike"</span><span class="token punctuation">,</span> <span class="token string">"Grade 10"</span><span class="token punctuation">,</span> <span class="token string">"A average"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token punctuation">[</span><span class="token string">"Tim"</span><span class="token punctuation">,</span> <span class="token string">"Grade 10"</span><span class="token punctuation">,</span> <span class="token string">"C average"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token punctuation">[</span><span class="token string">"Monique"</span><span class="token punctuation">,</span> <span class="token string">"Grade 11"</span><span class="token punctuation">,</span> <span class="token string">"B average"</span><span class="token punctuation">,</span> <span class="token string">"Class President"</span><span class="token punctuation">]</span><span class="token punctuation">]</span> nested_students<span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token keyword">do</span> <span class="token operator">|</span>student_array<span class="token operator">|</span>  
     student_array<span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token keyword">do</span> <span class="token operator">|</span>student_detail<span class="token operator">|</span>    
         puts student_detail  
@@ -621,7 +640,8 @@ Monique
 Grade 11
 B average
 Class President
-</code></pre><blockquote>
+</code></pre>
+<blockquote>
 <p>album_element.class != Array</p>
 </blockquote>
 <h3><span id="boolean-enumerables">Boolean Enumerables</span></h3><blockquote>
@@ -632,9 +652,9 @@ Class President
 <li>include?</li>
 </ul>
 </blockquote>
-<h4><span id="examples">examples</span></h4><pre class=" language-ruby"><code class="language-ruby"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span>none<span class="token operator">?</span><span class="token punctuation">{</span><span class="token operator">|</span>i<span class="token operator">|</span> i<span class="token punctuation">.</span>even<span class="token operator">?</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">#=> true</span>
+<h4><span id="examples">examples</span></h4><pre class=" language-ruby"><code class="language-ruby"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span>none<span class="token operator">?</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;|i| i.even?&amp;#125; #=> true</span>
 </code></pre>
-<pre class=" language-ruby"><code class="language-ruby"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">.</span>any<span class="token operator">?</span><span class="token punctuation">{</span><span class="token operator">|</span>i<span class="token operator">|</span> i <span class="token operator">></span> <span class="token number">99</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">#=> true</span>
+<pre class=" language-ruby"><code class="language-ruby"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">.</span>any<span class="token operator">?</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;|i| i > 99&amp;#125; #=> true</span>
 </code></pre>
 <pre class=" language-ruby"><code class="language-ruby">the_numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token number">42</span><span class="token punctuation">]</span>
 the_numbers<span class="token punctuation">.</span>include<span class="token operator">?</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">#=> true</span>
@@ -647,34 +667,36 @@ the_numbers<span class="token punctuation">.</span>include<span class="token ope
 <li>reject</li>
 </ul>
 </blockquote>
-<pre class=" language-ruby"><code class="language-ruby"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">.</span>select<span class="token punctuation">{</span><span class="token operator">|</span>i<span class="token operator">|</span> i<span class="token punctuation">.</span>odd<span class="token operator">?</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">#=> [1,3,5]</span>
-
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span>select<span class="token punctuation">{</span><span class="token operator">|</span>i<span class="token operator">|</span> i<span class="token punctuation">.</span>is_a<span class="token operator">?</span><span class="token punctuation">(</span><span class="token builtin">String</span><span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">#=> []</span>
+<pre class=" language-ruby"><code class="language-ruby"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">.</span>select<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;|i| i.odd?&amp;#125; #=> [1,3,5]</span>
+ 
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span>select<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;|i| i.is_a?(String)&amp;#125; #=> []</span>
 </code></pre>
-<pre class=" language-ruby"><code class="language-ruby"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">.</span>detect<span class="token punctuation">{</span><span class="token operator">|</span>i<span class="token operator">|</span> i<span class="token punctuation">.</span>even<span class="token operator">?</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">#=> 2</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">.</span>detect<span class="token punctuation">{</span><span class="token operator">|</span>i<span class="token operator">|</span> i<span class="token punctuation">.</span>is_a<span class="token operator">?</span><span class="token punctuation">(</span><span class="token builtin">String</span><span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">#=> nil</span>
+<pre class=" language-ruby"><code class="language-ruby"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">.</span>detect<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;|i| i.even?&amp;#125; #=> 2</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">.</span>detect<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;|i| i.is_a?(String)&amp;#125; #=> nil</span>
 </code></pre>
 <blockquote>
 <p>Notice also that <code>#detect</code> will always return a single object where <code>#select</code> will always return an array.</p>
 </blockquote>
-<pre class=" language-ruby"><code class="language-ruby"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>reject<span class="token punctuation">{</span><span class="token operator">|</span>i<span class="token operator">|</span> i<span class="token punctuation">.</span>even<span class="token operator">?</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">#=> [1]</span>
+<pre class=" language-ruby"><code class="language-ruby"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>reject<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;|i| i.even?&amp;#125; #=> [1]</span>
 </code></pre>
 <h2><span id="hashes">Hashes</span></h2><p>Hashes also store objects in Ruby. However, they differ from arrays in that they function like dictionaries. Instead of a simple comma separated list, hashes are composed of key/value pairs. Each key points to a specific value––just like a word and a definition in a regular dictionary.</p>
-<p>Hashes look like this: <code>{&quot;i&#39;m a key&quot; =&gt; &quot;i&#39;m a value!&quot;, &quot;key2&quot; =&gt; &quot;value2&quot;}</code></p>
+<p>Hashes look like this: <code>&#123;&quot;i&#39;m a key&quot; =&gt; &quot;i&#39;m a value!&quot;, &quot;key2&quot; =&gt; &quot;value2&quot;&#125;</code></p>
 <p>The curly brackets denote the hash and this particular hash has two key/value pairs.</p>
 <h3><span id="creating-hashes">Creating Hashes</span></h3><p>Hashes can be created with literal constructors and class constructors.</p>
 <p><strong>The Literal Constructor:</strong> You can create a hash by simply writing key/value pairs enclosed in curly braces.</p>
-<p><strong>The Class Constructor:</strong> Or, you can use the <a href="http://ruby-doc.org/core-2.2.0/Hash.html" target="_blank" rel="noopener"><code>Hash.new</code> syntax</a>, which would create an empty hash, <code>{}</code>.</p>
-<h3><span id="operating-on-hashes">Operating on Hashes</span></h3><p>There are many methods for operating on hashes and their individual key/value pairs. We will learn much more about them later, but you can preview some methods <a href="http://ruby-doc.org/core-2.2.0/Hash.html" target="_blank" rel="noopener">here</a>.</p>
+<p><strong>The Class Constructor:</strong> Or, you can use the <a target="_blank" rel="noopener" href="http://ruby-doc.org/core-2.2.0/Hash.html"><code>Hash.new</code> syntax</a>, which would create an empty hash, <code>&#123;&#125;</code>.</p>
+<h3><span id="operating-on-hashes">Operating on Hashes</span></h3><p>There are many methods for operating on hashes and their individual key/value pairs. We will learn much more about them later, but you can preview some methods <a target="_blank" rel="noopener" href="http://ruby-doc.org/core-2.2.0/Hash.html">here</a>.</p>
 <h2><span id="method">Method</span></h2><h3><span id="defining-a-method">Defining a Method</span></h3><p>You can define a method in Ruby with the <code>def</code> keyword. A method’s name can begin with any lowercase letter. Here’s a quick example:</p>
 <pre><code>def greeting # Method Signature  
 puts &quot;Hello World&quot; # Method Body
 end # Method Closing
-</code></pre><p>That first line, <code>def greeting</code>, is called the method signature, it defines the basic properties of the method including the name of the method, <code>greeting</code>.</p>
+</code></pre>
+<p>That first line, <code>def greeting</code>, is called the method signature, it defines the basic properties of the method including the name of the method, <code>greeting</code>.</p>
 <p>Once you open a method definition with the <code>def</code> keyword, all subsequent lines in your program are considered the method’s body, the actual procedure or code that your method will run every time it’s called.</p>
 <p>You must terminate every opening <code>def</code> of a method with a corresponding <code>end</code> in order to close the method body.<strong>The body of a method should be indented two (2) spaces, placing it visually within the method.</strong>(<em>just for beauty</em>)</p>
 <h4><span id="excute-it">Excute it</span></h4><pre><code>greeting
-</code></pre><blockquote>
+</code></pre>
+<blockquote>
 <p>no()</p>
 </blockquote>
 <h3><span id="control-flow">control flow</span></h3><ul>
@@ -683,7 +705,7 @@ end # Method Closing
 <li>loops.</li>
 </ul>
 <h4><span id="if">if</span></h4><pre class=" language-ruby"><code class="language-ruby">dog <span class="token operator">=</span> <span class="token string">"thirsty"</span>
-
+ 
 <span class="token keyword">if</span> dog <span class="token operator">==</span> <span class="token string">"hungry"</span>
   puts <span class="token string">"Refilling food bowl."</span>
 <span class="token keyword">elsif</span> dog <span class="token operator">==</span> <span class="token string">"thirsty"</span>
@@ -697,10 +719,10 @@ end # Method Closing
 <span class="token keyword">end</span>
 </code></pre>
 <pre class=" language-ruby"><code class="language-ruby">counter <span class="token operator">=</span> <span class="token number">0</span>
-
+ 
 loop <span class="token keyword">do</span> 
   counter <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span>
-  puts <span class="token string">"Iteration <span class="token interpolation"><span class="token delimiter tag">#{</span>counter<span class="token delimiter tag">}</span></span> of the loop"</span>
+  puts <span class="token string">"Iteration #&amp;#123;counter&amp;#125; of the loop"</span>
   <span class="token keyword">if</span> counter <span class="token operator">>=</span> <span class="token number">10</span> 
     <span class="token keyword">break</span>
   <span class="token keyword">end</span>
@@ -727,7 +749,7 @@ loop <span class="token keyword">do</span>
 <h2><span id="using-each">Using <code>#each</code></span></h2><p>The <code>#each</code> method is a prime example of an iterator. Here’s a boilerplate example of its usage:</p>
 <pre class=" language-ruby"><code class="language-ruby">primary_colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Red"</span><span class="token punctuation">,</span> <span class="token string">"Yellow"</span><span class="token punctuation">,</span> <span class="token string">"Blue"</span><span class="token punctuation">]</span>
 primary_colors<span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token keyword">do</span> <span class="token operator">|</span>color<span class="token operator">|</span>
-    puts <span class="token string">"Primary Color <span class="token interpolation"><span class="token delimiter tag">#{</span>color<span class="token delimiter tag">}</span></span> is <span class="token interpolation"><span class="token delimiter tag">#{</span>color<span class="token punctuation">.</span>length<span class="token delimiter tag">}</span></span> letters long."</span>
+    puts <span class="token string">"Primary Color #&amp;#123;color&amp;#125; is #&amp;#123;color.length&amp;#125; letters long."</span>
 <span class="token keyword">end</span>
 </code></pre>
 <p><code>#each</code> is called on the collection <code>primary_colors</code>, which is an array containing 3 individual strings.</p>
@@ -735,20 +757,22 @@ primary_colors<span class="token punctuation">.</span><span class="token keyword
 <pre class=" language-ruby"><code class="language-ruby">primary_colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Red"</span><span class="token punctuation">,</span> <span class="token string">"Yellow"</span><span class="token punctuation">,</span> <span class="token string">"Blue"</span><span class="token punctuation">]</span>
 primary_colors<span class="token punctuation">.</span><span class="token keyword">each</span> <span class="token keyword">do</span> <span class="token operator">|</span>color<span class="token operator">|</span> <span class="token comment" spellcheck="true"># do begins a block  </span>
 <span class="token comment" spellcheck="true"># the lines between the do/end are the block's body</span>
-    puts <span class="token string">"Primary Color <span class="token interpolation"><span class="token delimiter tag">#{</span>color<span class="token delimiter tag">}</span></span> is <span class="token interpolation"><span class="token delimiter tag">#{</span>color<span class="token punctuation">.</span>length<span class="token delimiter tag">}</span></span> letters long."</span>
+    puts <span class="token string">"Primary Color #&amp;#123;color&amp;#125; is #&amp;#123;color.length&amp;#125; letters long."</span>
 <span class="token keyword">end</span> <span class="token comment" spellcheck="true"># end terminates the block</span>
 </code></pre>
 <p>The output from this code is:</p>
 <pre><code>Primary Color Red is 3 letters long.
 Primary Color Yellow is 6 letters long.
 Primary Color Blue is 4 letters long.
-</code></pre><p>We can see that the block passed to <code>each</code> is executed once for each element in the original collection. If there were 5 colors in <code>primary_colors</code>, the block would have run 5 times. We call each run, each execution, of the block passed to the iterator (<code>#each</code> in this case), an iteration. It’s a word used to refer to each ‘step’, or each ‘execution’, of a block. An iteration is the singular execution of a sequence of code (that we call a block) within a loop.</p>
-<p>When we iterate over a collection of elements using <code>#each</code> (and also in other iterators and enumerables we’ll soon learn about),<strong> the iterator <code>#each</code> yields each element one at a time to every iteration via a variable declared with the opening of the block.</strong></p>
+</code></pre>
+<p>We can see that the block passed to <code>each</code> is executed once for each element in the original collection. If there were 5 colors in <code>primary_colors</code>, the block would have run 5 times. We call each run, each execution, of the block passed to the iterator (<code>#each</code> in this case), an iteration. It’s a word used to refer to each ‘step’, or each ‘execution’, of a block. An iteration is the singular execution of a sequence of code (that we call a block) within a loop.</p>
+<p>When we iterate over a collection of elements using <code>#each</code> (and also in other iterators and enumerables we’ll soon learn about),** the iterator <code>#each</code> yields each element one at a time to every iteration via a variable declared with the opening of the block.**</p>
 <p>After the opening <code>do</code> of our code above, we see <code>|color|</code>. <code>|</code> is called a pipe. After <code>do</code>, <strong>we declare a local variable <code>color</code> by enclosing it in <code>| |</code> pipes.</strong> This variable’s value is automatically assigned the element from the array for the current iteration. So on the first iteration of the <code>each</code> above, the variable <code>color</code> would be equal to <code>&quot;Red&quot;</code>. But on the next iteration of the block, <code>color</code> will be reassigned the value of the next element in the <code>primary_colors</code> array, <code>&quot;Yellow&quot;</code>.</p>
-<h4><span id="the-syntax">The <code>{ }</code> Syntax</span></h4><p>Another way of establishing a code block that you may encounter is to use curly brackets, <code>{ }</code>, instead of the <code>do</code>/<code>end</code> keywords. Let’s take a look:</p>
+<h4><span id="the-123-125-syntax">The <code>&#123; &#125;</code> Syntax</span></h4><p>Another way of establishing a code block that you may encounter is to use curly brackets, <code>&#123; &#125;</code>, instead of the <code>do</code>/<code>end</code> keywords. Let’s take a look:</p>
 <pre><code>brothers = [&quot;Tim&quot;, &quot;Tom&quot;, &quot;Jim&quot;]
-brothers.each{|brother| puts &quot;Stop hitting yourself #{brother}!&quot;}
-</code></pre><p>It is appropriate to use the <code>{ }</code> syntax when the code in the block is short and can <strong>fit on one line</strong>.</p>
+brothers.each&#123;|brother| puts &quot;Stop hitting yourself #&#123;brother&#125;!&quot;&#125;
+</code></pre>
+<p>It is appropriate to use the <code>&#123; &#125;</code> syntax when the code in the block is short and can <strong>fit on one line</strong>.</p>
 <h3><span id="rsepc">rsepc</span></h3><blockquote>
 <pre class=" language-ruby"><code class="language-ruby">rspec <span class="token operator">--</span>fail<span class="token operator">-</span>fast
 </code></pre>
@@ -757,12 +781,15 @@ brothers.each{|brother| puts &quot;Stop hitting yourself #{brother}!&quot;}
 <h4><span id="it"><code>it</code></span></h4><p>Now that we’ve created a structure to group our tests together using the <code>describe</code> method, we can move on to actually describing the desired functionality. Every specification in RSpec begins with the <code>it</code> method.</p>
 <h4><span id="expect-to-and-eq"><code>expect</code>, <code>to</code>, and <code>eq</code>.</span></h4><p><code>expect()</code> is a method that accepts our unknown value or variable, the thing we’re testing. So for instance, in a simple math equation, imagine the following:</p>
 <pre><code>x = 1 + 1expect(x)
-</code></pre><p>Since <code>x</code> is the unknown variable, we’d be testing the expectation of the value of <code>x</code>, so we pass that value to the <code>expect</code> method. I can imagine it’s weird to think of the variable <code>x</code> as an unknown value worth confirming. You’re thinking, “It’s obviously 2!” But the truth is, you’re making the assumption that Ruby has a correct notion of arithmetic. As our programs become more complex and we use more variables, it’s very important to constantly validate our assumptions with expectations and testing. Let’s finish the example.</p>
+</code></pre>
+<p>Since <code>x</code> is the unknown variable, we’d be testing the expectation of the value of <code>x</code>, so we pass that value to the <code>expect</code> method. I can imagine it’s weird to think of the variable <code>x</code> as an unknown value worth confirming. You’re thinking, “It’s obviously 2!” But the truth is, you’re making the assumption that Ruby has a correct notion of arithmetic. As our programs become more complex and we use more variables, it’s very important to constantly validate our assumptions with expectations and testing. Let’s finish the example.</p>
 <p>In addition to the <code>expect(x)</code> call, we need to communicate what we expect <code>x</code> to be equal to. To accomplish this, we chain a <code>to()</code>method to the <code>expect()</code>, so it simply looks like:</p>
 <pre><code>x = 1 + 1expect(x).to
-</code></pre><p>Then finally we use what is known as a matcher, <code>eq</code>, to specify our expectation: that we expect the value of <code>x</code>, passed to the <code>expect</code>method, to equal (<code>to eq</code>) 2.</p>
+</code></pre>
+<p>Then finally we use what is known as a matcher, <code>eq</code>, to specify our expectation: that we expect the value of <code>x</code>, passed to the <code>expect</code>method, to equal (<code>to eq</code>) 2.</p>
 <pre><code>x = 1 + 1expect(x).to eq(2)
-</code></pre><p>You won’t have to write your own tests for a while, so don’t worry about mastering the <code>expect</code>, <code>to</code>, and <code>eq</code> usage. The important part is that you can read the DSL and understand what it is trying to suggest.</p>
+</code></pre>
+<p>You won’t have to write your own tests for a while, so don’t worry about mastering the <code>expect</code>, <code>to</code>, and <code>eq</code> usage. The important part is that you can read the DSL and understand what it is trying to suggest.</p>
 <blockquote>
 <ol>
 <li>RSpec looks in a directory named <code>spec</code> for all files that end with the pattern <code>_spec.rb</code>. Why the <code>spec</code> folder and the <code>_spec.rb</code> pattern? No reason, just convention.</li>
@@ -771,13 +798,13 @@ brothers.each{|brother| puts &quot;Stop hitting yourself #{brother}!&quot;}
 </blockquote>
 <h3><span id="class">class</span></h3><pre class=" language-ruby"><code class="language-ruby"><span class="token keyword">class</span> <span class="token class-name">Dog</span>
 <span class="token keyword">end</span>
-
+ 
 fido <span class="token operator">=</span> <span class="token constant">Dog</span><span class="token punctuation">.</span><span class="token keyword">new</span>
 <span class="token class-name">fido</span> <span class="token comment" spellcheck="true">#=> #&lt;Dog:0x007fc52c2d7d20></span>
-
+ 
 snoopy <span class="token operator">=</span> <span class="token constant">Dog</span><span class="token punctuation">.</span><span class="token keyword">new</span>
 <span class="token class-name">snoopy</span> <span class="token comment" spellcheck="true">#=> #&lt;Dog:0x007fc52c2d4170></span>
-
+ 
 snoopy <span class="token operator">==</span> fido <span class="token comment" spellcheck="true">#=> false - these dogs are not the same.</span>
 </code></pre>
 <h4><span id="implementing-instance-variables">Implementing Instance Variables</span></h4><p>We define an instance variable by prefacing the variable name with an <strong><code>@</code></strong> symbol.</p>
@@ -803,12 +830,12 @@ puts lassie<span class="token punctuation">.</span>name
   <span class="token keyword">def</span> <span class="token function">initialize</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
     <span class="token variable">@name</span> <span class="token operator">=</span> name
   <span class="token keyword">end</span>
-
+ 
   <span class="token keyword">def</span> name
     <span class="token variable">@name</span>
   <span class="token keyword">end</span>
 <span class="token keyword">end</span>
-
+ 
 kanye <span class="token operator">=</span> <span class="token constant">Person</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token string">"Kanye"</span><span class="token punctuation">)</span>
 kanye<span class="token punctuation">.</span>name <span class="token comment" spellcheck="true">#=> "Kanye"</span>
 </code></pre>
@@ -869,7 +896,7 @@ kanye<span class="token punctuation">.</span><span class="token function">instan
         <span class="token variable">@last_name</span> <span class="token operator">=</span> last_name  
     <span class="token keyword">end</span>  
     <span class="token keyword">def</span> name   
-        <span class="token string">"<span class="token interpolation"><span class="token delimiter tag">#{</span>@first_name<span class="token delimiter tag">}</span></span> <span class="token interpolation"><span class="token delimiter tag">#{</span>@last_name<span class="token delimiter tag">}</span></span>"</span><span class="token punctuation">.</span>strip  
+        <span class="token string">"#&amp;#123;@first_name&amp;#125; #&amp;#123;@last_name&amp;#125;"</span><span class="token punctuation">.</span>strip  
     <span class="token keyword">end</span>
 <span class="token keyword">end</span>
 </code></pre>
@@ -877,7 +904,7 @@ kanye<span class="token punctuation">.</span><span class="token function">instan
 </li>
 </ul>
 </blockquote>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr/>
 
@@ -957,7 +984,7 @@ document.write(“   1  </div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/基础/" target="_blank">
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/" target="_blank">
                         <span class="chip bg-color">基础</span>
                     </a>
                     
@@ -970,7 +997,7 @@ document.write(“   1  </div>
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/11/23/隐藏和覆盖的区别和用法/">
+                <a href="/2018/11/23/%E9%9A%90%E8%97%8F%E5%92%8C%E8%A6%86%E7%9B%96%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E7%94%A8%E6%B3%95/">
                     <div class="card-image">
                         
                         
@@ -1000,18 +1027,6 @@ document.write(“   1  </div>
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/静态和动态/" target="_blank">
-                        <span class="chip bg-color">静态和动态</span>
-                    </a>
-                    
-                    <a href="/tags/面向对象/" target="_blank">
-                        <span class="chip bg-color">面向对象</span>
-                    </a>
-                    
                 </div>
                 
             </div>

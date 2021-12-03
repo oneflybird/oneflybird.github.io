@@ -3,7 +3,7 @@
 <head>
     
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="《我的第一本算法书》知识总结, One Fly Bird&#39;s Nest">
     <meta name="description" content="安全算法概论用互联网传输数据时可能会发生的四个主要问题1.窃听：
@@ -32,7 +32,7 @@ B确实收到了A发送的信息，但可能在">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 </head>
 
@@ -353,7 +353,7 @@ B确实收到了A发送的信息，但可能在">
             
             <div class="article-tag">
                 
-                <a href="/tags/阅读总结/" target="_blank">
+                <a href="/tags/%E9%98%85%E8%AF%BB%E6%80%BB%E7%BB%93/" target="_blank">
                     <span class="chip bg-color">阅读总结</span>
                 </a>
                 
@@ -364,7 +364,7 @@ B确实收到了A发送的信息，但可能在">
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/算法/" class="post-category" target="_blank">
+                    <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category" target="_blank">
                         算法
                     </a>
                     
@@ -395,8 +395,7 @@ B确实收到了A发送的信息，但可能在">
 <th>解决方法</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>窃听</td>
 <td>加密</td>
 </tr>
@@ -412,8 +411,7 @@ B确实收到了A发送的信息，但可能在">
 <td>事后否认</td>
 <td>数字签名</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
 <blockquote>
 <p>加密方法分为两种：加密和解密都使用相同密钥的”<strong>共享密钥加密</strong>“，分别使用不同密钥加密的”<strong>公开密钥加密</strong>“</p>
@@ -521,8 +519,7 @@ B确实收到了A发送的信息，但可能在">
 <th>堆</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>特点</td>
 <td>每个结点的值大于其左子树任意一个结点的值，小于其右子树任意一个结点的值</td>
 <td>父结点大于子节结点</td>
@@ -547,8 +544,7 @@ B确实收到了A发送的信息，但可能在">
 <td>如果树的形状较为均衡，比较大小和移动的次数最多为logn（树的高度）</td>
 <td>在不断需要计算最小值的算法中可以优化时间复杂度，如排序。</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <blockquote>
 <ul>
 <li>树删除有节点的子树移动右子树的最小节点也没问题，只需要保持树的特点就行。</li>
@@ -566,8 +562,7 @@ B确实收到了A发送的信息，但可能在">
 <th>深度优先</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>特点</td>
 <td>从起点开始顺着边搜索直到达到指定顶点</td>
 <td>沿着一条路径不断向下直到不能继续为止再折返</td>
@@ -587,8 +582,7 @@ B确实收到了A发送的信息，但可能在">
 <td></td>
 <td>递归</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <blockquote>
 <ul>
 <li>有闭环的图算法也是一样的</li>
@@ -605,8 +599,7 @@ B确实收到了A发送的信息，但可能在">
 <th>堆</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>时间复杂度(最糟糕的情况下)</td>
 <td>n^2^/2=O(n^2^)</td>
 <td>n^2^/2=O(n^2^)</td>
@@ -620,8 +613,7 @@ B确实收到了A发送的信息，但可能在">
 <td>假设最左已排好序，从未排好序区域（除最左以外的区域）与排好序的区域进行比较往左插入，依次类推。最糟糕的情况是要将数据从小到大排序时，输入数据是从大到小的。</td>
 <td>一开始需要将n个数据存进堆里，时间复杂度为O(nlogn)【重构一次要O(logn)，需要重构n次】每次取出最大的数据并重构dO(logn)</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <blockquote>
 <ul>
 <li>堆排序其实相当于把堆嵌入到包含序列的数组中，强行在数组中使用了堆结构</li>
@@ -647,7 +639,7 @@ B确实收到了A发送的信息，但可能在">
 <p>用游走模型计算的加权结果和网页排名算出来的值几乎是一样的。</p>
 <p>事实上 一般不会用模拟而用更高效的算法来计算，但无论使用哪种计算，计算结果几乎都是相同的。</p>
 </blockquote>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr/>
 
@@ -668,7 +660,7 @@ B确实收到了A发送的信息，但可能在">
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="http://yoursite.com" class="b-link-green">One Fly Bird's Nest</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/05/我的第一本算法书重点总结/" class="b-link-green">《我的第一本算法书》知识总结</a>
+                    <a href="/2018/12/05/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9C%AC%E7%AE%97%E6%B3%95%E4%B9%A6%E9%87%8D%E7%82%B9%E6%80%BB%E7%BB%93/" class="b-link-green">《我的第一本算法书》知识总结</a>
                 </p>
             </div>
         </div>
@@ -690,7 +682,7 @@ B确实收到了A发送的信息，但可能在">
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2018/12/23/植物养护知识/">
+                <a href="/2018/12/23/%E6%A4%8D%E7%89%A9%E5%85%BB%E6%8A%A4%E7%9F%A5%E8%AF%86/">
                     <div class="card-image">
                         
                         
@@ -700,8 +692,7 @@ B确实收到了A发送的信息，但可能在">
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">多肉植物购买：
-名字+多肉 的方式搜索，按销量排名，你可以开始看最低价格了，只看第一页，一般来说我们最终会选的店铺不会在第一二排（第一常识）。价格低的店铺鼠标放店家名上看评分，不是红的，跳过，宿迁沭阳，直接跳过，一般这样筛选下来，只会剩两三</div>
+                    <div class="summary">多肉植物购买：名字+多肉 的方式搜索，按销量排名，你可以开始看最低价格了，只看第一页，一般来说我们最终会选的店铺不会在第一二排（第一常识）。价格低的店铺鼠标放店家名上看评分，不是红的，跳过，宿迁沭阳，直接跳过，一般这样筛选下来，只会剩两三家</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-23
@@ -710,21 +701,13 @@ B确实收到了A发送的信息，但可能在">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/娱乐/" class="post-category" target="_blank">
+                            <a href="/categories/%E5%A8%B1%E4%B9%90/" class="post-category" target="_blank">
                                     娱乐
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/植物/" target="_blank">
-                        <span class="chip bg-color">植物</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -734,7 +717,7 @@ B确实收到了A发送的信息，但可能在">
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/12/03/c里的静态变量只初始化一次的原因/">
+                <a href="/2018/12/03/c%E9%87%8C%E7%9A%84%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E5%8F%AA%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E6%AC%A1%E7%9A%84%E5%8E%9F%E5%9B%A0/">
                     <div class="card-image">
                         
                         
@@ -750,9 +733,9 @@ B确实收到了A发送的信息，但可能在">
 #include "stdafx.h"
 
 int _tmain(int argc, _TCHAR* argv[])
-{
+&amp;#123;
 int initNum = 3;
-for (int i=5; i > </div>
+for (int </div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-03
@@ -768,14 +751,6 @@ for (int i=5; i > </div>
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/静态和动态/" target="_blank">
-                        <span class="chip bg-color">静态和动态</span>
-                    </a>
-                    
                 </div>
                 
             </div>

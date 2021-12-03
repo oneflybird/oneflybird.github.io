@@ -3,7 +3,7 @@
 <head>
     
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="marshmallow库的简单介绍, One Fly Bird&#39;s Nest">
     <meta name="description" content="marshmallow库marshmallow库是用来进行对象序列化(dump/dumps)和反序列化(load/loads)的处理的。
@@ -27,7 +27,7 @@
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 </head>
 
@@ -389,24 +389,24 @@
 </ul>
 <h4><span id="最基本的使用例子">最基本的使用例子</span></h4><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> datetime <span class="token keyword">import</span> date
 <span class="token keyword">from</span> marshmallow <span class="token keyword">import</span> Schema<span class="token punctuation">,</span> fields
-
+       
 <span class="token keyword">class</span> <span class="token class-name">User</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> email<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
         self<span class="token punctuation">.</span>email <span class="token operator">=</span> email
         self<span class="token punctuation">.</span>created_at <span class="token operator">=</span> dt<span class="token punctuation">.</span>datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
+        
 <span class="token comment" spellcheck="true"># 继承Schema，声明自己的类</span>
 <span class="token keyword">class</span> <span class="token class-name">UserSchema</span><span class="token punctuation">(</span>Schema<span class="token punctuation">)</span><span class="token punctuation">:</span>
     name <span class="token operator">=</span> fields<span class="token punctuation">.</span>Str<span class="token punctuation">(</span><span class="token punctuation">)</span>
     email <span class="token operator">=</span> fields<span class="token punctuation">.</span>Email<span class="token punctuation">(</span><span class="token punctuation">)</span>
     created_at <span class="token operator">=</span> fields<span class="token punctuation">.</span>DateTime<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
+    
     <span class="token comment" spellcheck="true"># 用于在使用load时把他反序列化为User object</span>
     @post_load
     <span class="token keyword">def</span> <span class="token function">make_user</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> data<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> User<span class="token punctuation">(</span><span class="token operator">**</span>data<span class="token punctuation">)</span>
-
+      
 <span class="token comment" spellcheck="true"># 初始化schema类</span>
 schema <span class="token operator">=</span> UserSchema<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
@@ -415,209 +415,212 @@ user <span class="token operator">=</span> User<span class="token punctuation">(
 
 <span class="token comment" spellcheck="true"># 序列化。dumps可以转换为json字符串对象</span>
 result <span class="token operator">=</span> schema<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>user<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># {"name": "Monty",</span>
+<span class="token comment" spellcheck="true"># &amp;#123;"name": "Monty",</span>
 <span class="token comment" spellcheck="true">#  "email": "monty@python.org",</span>
-<span class="token comment" spellcheck="true">#  "created_at": "2014-08-17T14:54:16.049594+00:00"}</span>
+<span class="token comment" spellcheck="true">#  "created_at": "2014-08-17T14:54:16.049594+00:00"&amp;#125;</span>
 
 <span class="token comment" spellcheck="true"># 反序列化。loads可以将json字符串对象转换为object或者字符串/列表</span>
-user_data <span class="token operator">=</span> <span class="token punctuation">{</span>
+user_data <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
     <span class="token string">"created_at"</span><span class="token punctuation">:</span> <span class="token string">"2014-08-11T05:26:03.869245"</span><span class="token punctuation">,</span>
     <span class="token string">"email"</span><span class="token punctuation">:</span> <span class="token string">"ken@yahoo.com"</span><span class="token punctuation">,</span>
     <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Ken"</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
 result <span class="token operator">=</span> schema<span class="token punctuation">.</span>load<span class="token punctuation">(</span>user_data<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># => &lt;User(name='Ken')></span>
 </code></pre>
 <h4><span id="捕获异常">捕获异常</span></h4><pre><code>try:
-    result = UserSchema().load({&quot;name&quot;: &quot;John&quot;, &quot;email&quot;: &quot;foo&quot;})
+    result = UserSchema().load(&#123;&quot;name&quot;: &quot;John&quot;, &quot;email&quot;: &quot;foo&quot;&#125;)
 except ValidationError as err:
-    print(err.messages)  # =&gt; {&quot;email&quot;: [&#39;&quot;foo&quot; is not a valid email address.&#39;]}
-    print(err.valid_data)  # =&gt; {&quot;name&quot;: &quot;John&quot;}
-</code></pre><h5><span id="可以验证的类型">可以验证的类型</span></h5><table>
+    print(err.messages)  # =&gt; &#123;&quot;email&quot;: [&#39;&quot;foo&quot; is not a valid email address.&#39;]&#125;
+    print(err.valid_data)  # =&gt; &#123;&quot;name&quot;: &quot;John&quot;&#125;
+</code></pre>
+<h5><span id="可以验证的类型">可以验证的类型</span></h5><table>
 <thead>
 <tr>
-<th><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.AwareDateTime" target="_blank" rel="noopener"><code>AwareDateTime</code></a>(format, *, default_timezone, …)</th>
+<th><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.AwareDateTime"><code>AwareDateTime</code></a>(format, *, default_timezone, …)</th>
 <th>A formatted aware datetime string.</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Bool" target="_blank" rel="noopener"><code>Bool</code></a></td>
-<td>alias of <a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Boolean" target="_blank" rel="noopener"><code>marshmallow.fields.Boolean</code></a></td>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Bool"><code>Bool</code></a></td>
+<td>alias of <a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Boolean"><code>marshmallow.fields.Boolean</code></a></td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Boolean" target="_blank" rel="noopener"><code>Boolean</code></a>(*, truthy, falsy, **kwargs)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Boolean"><code>Boolean</code></a>(*, truthy, falsy, **kwargs)</td>
 <td>A boolean field.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Constant" target="_blank" rel="noopener"><code>Constant</code></a>(constant, **kwargs)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Constant"><code>Constant</code></a>(constant, **kwargs)</td>
 <td>A field that (de)serializes to a preset constant.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Date" target="_blank" rel="noopener"><code>Date</code></a>(format, **kwargs)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Date"><code>Date</code></a>(format, **kwargs)</td>
 <td>ISO8601-formatted date string.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.DateTime" target="_blank" rel="noopener"><code>DateTime</code></a>(format, **kwargs)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.DateTime"><code>DateTime</code></a>(format, **kwargs)</td>
 <td>A formatted datetime string.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Decimal" target="_blank" rel="noopener"><code>Decimal</code></a>(places, rounding, *, allow_nan, …)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Decimal"><code>Decimal</code></a>(places, rounding, *, allow_nan, …)</td>
 <td>A field that (de)serializes to the Python <code>decimal.Decimal</code> type.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Dict" target="_blank" rel="noopener"><code>Dict</code></a>(keys, type]] = None, values, …)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Dict"><code>Dict</code></a>(keys, type]] = None, values, …)</td>
 <td>A dict field.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Email" target="_blank" rel="noopener"><code>Email</code></a>(*args, **kwargs)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Email"><code>Email</code></a>(*args, **kwargs)</td>
 <td>A validated email field.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Field" target="_blank" rel="noopener"><code>Field</code></a>(*, default, missing, data_key, …)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Field"><code>Field</code></a>(*, default, missing, data_key, …)</td>
 <td>Basic field from which other fields should extend.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Float" target="_blank" rel="noopener"><code>Float</code></a>(*, allow_nan, as_string, **kwargs)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Float"><code>Float</code></a>(*, allow_nan, as_string, **kwargs)</td>
 <td>A double as an IEEE-754 double precision string.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Function" target="_blank" rel="noopener"><code>Function</code></a>(serialize, Any], Callable[[Any, …)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Function"><code>Function</code></a>(serialize, Any], Callable[[Any, …)</td>
 <td>A field that takes the value returned by a function.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.IP" target="_blank" rel="noopener"><code>IP</code></a>(*args[, exploded])</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.IP"><code>IP</code></a>(*args[, exploded])</td>
 <td>A IP address field.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.IPInterface" target="_blank" rel="noopener"><code>IPInterface</code></a>(*args[, exploded])</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.IPInterface"><code>IPInterface</code></a>(*args[, exploded])</td>
 <td>A IPInterface field.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.IPv4" target="_blank" rel="noopener"><code>IPv4</code></a>(*args[, exploded])</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.IPv4"><code>IPv4</code></a>(*args[, exploded])</td>
 <td>A IPv4 address field.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.IPv4Interface" target="_blank" rel="noopener"><code>IPv4Interface</code></a>(*args[, exploded])</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.IPv4Interface"><code>IPv4Interface</code></a>(*args[, exploded])</td>
 <td>A IPv4 Network Interface field.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.IPv6" target="_blank" rel="noopener"><code>IPv6</code></a>(*args[, exploded])</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.IPv6"><code>IPv6</code></a>(*args[, exploded])</td>
 <td>A IPv6 address field.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.IPv6Interface" target="_blank" rel="noopener"><code>IPv6Interface</code></a>(*args[, exploded])</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.IPv6Interface"><code>IPv6Interface</code></a>(*args[, exploded])</td>
 <td>A IPv6 Network Interface field.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Int" target="_blank" rel="noopener"><code>Int</code></a></td>
-<td>alias of <a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Integer" target="_blank" rel="noopener"><code>marshmallow.fields.Integer</code></a></td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Int"><code>Int</code></a></td>
+<td>alias of <a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Integer"><code>marshmallow.fields.Integer</code></a></td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Integer" target="_blank" rel="noopener"><code>Integer</code></a>(*, strict, **kwargs)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Integer"><code>Integer</code></a>(*, strict, **kwargs)</td>
 <td>An integer field.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.List" target="_blank" rel="noopener"><code>List</code></a>(cls_or_instance, type], **kwargs)</td>
-<td>A list field, composed with another <a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Field" target="_blank" rel="noopener"><code>Field</code></a> class or instance.</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.List"><code>List</code></a>(cls_or_instance, type], **kwargs)</td>
+<td>A list field, composed with another <a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Field"><code>Field</code></a> class or instance.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Mapping" target="_blank" rel="noopener"><code>Mapping</code></a>(keys, type]] = None, values, …)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Mapping"><code>Mapping</code></a>(keys, type]] = None, values, …)</td>
 <td>An abstract class for objects with key-value pairs.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Method" target="_blank" rel="noopener"><code>Method</code></a>(serialize, deserialize, **kwargs)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Method"><code>Method</code></a>(serialize, deserialize, **kwargs)</td>
 <td>A field that takes the value returned by a <code>Schema</code> method.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.NaiveDateTime" target="_blank" rel="noopener"><code>NaiveDateTime</code></a>(format, *, timezone, **kwargs)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.NaiveDateTime"><code>NaiveDateTime</code></a>(format, *, timezone, **kwargs)</td>
 <td>A formatted naive datetime string.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Nested" target="_blank" rel="noopener"><code>Nested</code></a>(nested, type, str, Callable[[], …)</td>
-<td>Allows you to nest a <a href="https://marshmallow.readthedocs.io/en/stable/api_reference.html#marshmallow.Schema" target="_blank" rel="noopener"><code>Schema</code></a> inside a field.</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Nested"><code>Nested</code></a>(nested, type, str, Callable[[], …)</td>
+<td>Allows you to nest a <a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/api_reference.html#marshmallow.Schema"><code>Schema</code></a> inside a field.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Number" target="_blank" rel="noopener"><code>Number</code></a>(*, as_string, **kwargs)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Number"><code>Number</code></a>(*, as_string, **kwargs)</td>
 <td>Base class for number fields.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Pluck" target="_blank" rel="noopener"><code>Pluck</code></a>(nested, type, str, Callable[[], …)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Pluck"><code>Pluck</code></a>(nested, type, str, Callable[[], …)</td>
 <td>Allows you to replace nested data with one of the data’s fields.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Raw" target="_blank" rel="noopener"><code>Raw</code></a>(*, default, missing, data_key, …)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Raw"><code>Raw</code></a>(*, default, missing, data_key, …)</td>
 <td>Field that applies no formatting.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Str" target="_blank" rel="noopener"><code>Str</code></a></td>
-<td>alias of <a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.String" target="_blank" rel="noopener"><code>marshmallow.fields.String</code></a></td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Str"><code>Str</code></a></td>
+<td>alias of <a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.String"><code>marshmallow.fields.String</code></a></td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.String" target="_blank" rel="noopener"><code>String</code></a>(*, default, missing, data_key, …)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.String"><code>String</code></a>(*, default, missing, data_key, …)</td>
 <td>A string field.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Time" target="_blank" rel="noopener"><code>Time</code></a>(format, **kwargs)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Time"><code>Time</code></a>(format, **kwargs)</td>
 <td>A formatted time string.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.TimeDelta" target="_blank" rel="noopener"><code>TimeDelta</code></a>(precision, **kwargs)</td>
-<td>A field that (de)serializes a <a href="https://python.readthedocs.io/en/latest/library/datetime.html#datetime.timedelta" target="_blank" rel="noopener"><code>datetime.timedelta</code></a> object to an integer and vice versa.</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.TimeDelta"><code>TimeDelta</code></a>(precision, **kwargs)</td>
+<td>A field that (de)serializes a <a target="_blank" rel="noopener" href="https://python.readthedocs.io/en/latest/library/datetime.html#datetime.timedelta"><code>datetime.timedelta</code></a> object to an integer and vice versa.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Tuple" target="_blank" rel="noopener"><code>Tuple</code></a>(tuple_fields, *args, **kwargs)</td>
-<td>A tuple field, composed of a fixed number of other <a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Field" target="_blank" rel="noopener"><code>Field</code></a> classes or instances</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Tuple"><code>Tuple</code></a>(tuple_fields, *args, **kwargs)</td>
+<td>A tuple field, composed of a fixed number of other <a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Field"><code>Field</code></a> classes or instances</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.URL" target="_blank" rel="noopener"><code>URL</code></a></td>
-<td>alias of <a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Url" target="_blank" rel="noopener"><code>marshmallow.fields.Url</code></a></td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.URL"><code>URL</code></a></td>
+<td>alias of <a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Url"><code>marshmallow.fields.Url</code></a></td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.UUID" target="_blank" rel="noopener"><code>UUID</code></a>(*, default, missing, data_key, …)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.UUID"><code>UUID</code></a>(*, default, missing, data_key, …)</td>
 <td>A UUID field.</td>
 </tr>
 <tr>
-<td><a href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Url" target="_blank" rel="noopener"><code>Url</code></a>(*, relative, schemes, Set[str]]] = None, …)</td>
+<td><a target="_blank" rel="noopener" href="https://marshmallow.readthedocs.io/en/stable/marshmallow.fields.html#marshmallow.fields.Url"><code>Url</code></a>(*, relative, schemes, Set[str]]] = None, …)</td>
 <td>A validated URL field.</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h4><span id="通过可选参数使用它的更多功能">通过可选参数使用它的更多功能</span></h4><p><code>only</code>: 返回过滤后的输出，只返回<code>only</code>指定的字段</p>
 <pre><code>summary_schema = UserSchema(only=(&quot;name&quot;, &quot;email&quot;))
 summary_schema.dump(user)
-# {&quot;name&quot;: &quot;Monty&quot;, &quot;email&quot;: &quot;monty@python.org&quot;}
-</code></pre><p><code>many</code>: 处理可迭代对象</p>
+# &#123;&quot;name&quot;: &quot;Monty&quot;, &quot;email&quot;: &quot;monty@python.org&quot;&#125;
+</code></pre>
+<p><code>many</code>: 处理可迭代对象</p>
 <pre><code>user1 = User(name=&quot;Mick&quot;, email=&quot;mick@stones.com&quot;)
 user2 = User(name=&quot;Keith&quot;, email=&quot;keith@stones.com&quot;)
 users = [user1, user2]
 schema = UserSchema(many=True)
 result = schema.dump(users)  # OR UserSchema().dump(users, many=True)
 pprint(result)
-# [{&#39;name&#39;: u&#39;Mick&#39;,
+# [&#123;&#39;name&#39;: u&#39;Mick&#39;,
 #   &#39;email&#39;: u&#39;mick@stones.com&#39;,
-#   &#39;created_at&#39;: &#39;2014-08-17T14:58:57.600623+00:00&#39;}
-#  {&#39;name&#39;: u&#39;Keith&#39;,
+#   &#39;created_at&#39;: &#39;2014-08-17T14:58:57.600623+00:00&#39;&#125;
+#  &#123;&#39;name&#39;: u&#39;Keith&#39;,
 #   &#39;email&#39;: u&#39;keith@stones.com&#39;,
-#   &#39;created_at&#39;: &#39;2014-08-17T14:58:57.600623+00:00&#39;}]
-</code></pre><p><code>required</code>: 必须字段</p>
+#   &#39;created_at&#39;: &#39;2014-08-17T14:58:57.600623+00:00&#39;&#125;]
+</code></pre>
+<p><code>required</code>: 必须字段</p>
 <p><code>partial</code>: 忽视必须字段</p>
 <pre><code>class UserSchema(Schema):
     name = fields.String(required=True)
     age = fields.Integer(required=True)
 
-result = UserSchema().load({&quot;age&quot;: 42}， partial=(&quot;name&quot;,))# partial=True：忽视全部必须字段
-print(result)  # =&gt; {&#39;age&#39;: 42}
-</code></pre><p><code>missing</code>: 指定默认反序列化缺失的值<br><code>default</code> : 指定默认序列化缺失的值</p>
+result = UserSchema().load(&#123;&quot;age&quot;: 42&#125;， partial=(&quot;name&quot;,))# partial=True：忽视全部必须字段
+print(result)  # =&gt; &#123;&#39;age&#39;: 42&#125;
+</code></pre>
+<p><code>missing</code>: 指定默认反序列化缺失的值<br><code>default</code> : 指定默认序列化缺失的值</p>
 <pre><code>class UserSchema(Schema):
     id = fields.UUID(missing=uuid.uuid1)
     birthdate = fields.DateTime(default=dt.datetime(2017, 9, 29))
 
-UserSchema().load({})
-# {&#39;id&#39;: UUID(&#39;337d946c-32cd-11e8-b475-0022192ed31b&#39;)}
-UserSchema().dump({})
-# {&#39;birthdate&#39;: &#39;2017-09-29T00:00:00+00:00&#39;}
+UserSchema().load(&#123;&#125;)
+# &#123;&#39;id&#39;: UUID(&#39;337d946c-32cd-11e8-b475-0022192ed31b&#39;)&#125;
+UserSchema().dump(&#123;&#125;)
+# &#123;&#39;birthdate&#39;: &#39;2017-09-29T00:00:00+00:00&#39;&#125;
 </code></pre>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
             </div>
             <hr/>
 
@@ -660,7 +663,7 @@ UserSchema().dump({})
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2021/04/15/hexo自动化部署/">
+                <a href="/2021/04/15/hexo%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/">
                     <div class="card-image">
                         
                         
@@ -693,11 +696,7 @@ UserSchema().dump({})
                         <span class="chip bg-color">git</span>
                     </a>
                     
-                    <a href="/tags/持续集成/" target="_blank">
-                        <span class="chip bg-color">持续集成</span>
-                    </a>
-                    
-                    <a href="/tags/博客/" target="_blank">
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2/" target="_blank">
                         <span class="chip bg-color">博客</span>
                     </a>
                     
@@ -710,7 +709,7 @@ UserSchema().dump({})
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2021/03/12/flask获取前端数据的几个方法的区别/">
+                <a href="/2021/03/12/flask%E8%8E%B7%E5%8F%96%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E7%9A%84%E5%87%A0%E4%B8%AA%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/">
                     <div class="card-image">
                         
                         
@@ -729,7 +728,6 @@ UserSchema().dump({})
 
 
 
-
 request.json
 Dict
 存放json类型的数据
@@ -737,7 +735,7 @@ Dict
 
 request.view_args
 Dict
-存放URL中定义的变量 比如/login/&lt;string: username</div>
+存放URL中定义的变量 比如/login/&lt;string: username&</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2021-03-12
